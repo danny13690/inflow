@@ -1,11 +1,11 @@
 
 ## OKRS 
-Note: our goal for this course is to create a MVP version of the final product, so OKRs will reflect what constitutes a *minimal* viable product
+Note: our goal for this course is to create a MVP version of the final product, so OKRs will reflect what constitutes a *minimal* viable product:
   * Allow brands to create campaign specs
     * E.g. the brand name, number of influencers needed, pay, KPI, etc.
     * Analogous to a job specification for new hire
   * Allow influencers to apply to/ indicate interest in brand campaigns
-  * Functional log-in and authentication of instagram
+  * Functional log-in and authentication of Instagram
     * Look into Instagram direct log-in
   * Web scraping to report engage metrics
 
@@ -38,13 +38,14 @@ Note: our goal for this course is to create a MVP version of the final product, 
 | KR3 | Allow influencers to create profiles with biographies | Not started |
 
 ## KPIs
-
+KPIs that we will use while testing this quarter to create the MVP. 
 | Key Performance Indicators (KPIs)| Details | Relevant Metrics and Notes|
 | ------------- | ------------- | -------------
 | % of users who connect their Instagram | Users with Instagram connected / total users % |  |
 | Avg time spent by an influencer looking at and applying to campaigns | Out of all influencers, find the average time that the influencers spend time on the Campaign Explore page. |  |
 | Daily active users % | Daily active users / total users % | |
 
+KPIs that we will use when testing in the future when we are able to get more companies with campaigns on the platform.
 | Key Performance Indicators (KPIs)| Details | Relevant Metrics and Notes|
 | ------------- | ------------- | -------------
 | Number of influencers with completed profiles | Total number of influencers with a linked Instagram account and relevant profile information filled in. | |
@@ -52,3 +53,5 @@ Note: our goal for this course is to create a MVP version of the final product, 
 | Number of successful influencers and campaign matches | Total count of times that brands accept an application by an influencer. (even if the influencer or brand eventually doesn’t go through with the deal). |  |
 | Number of applications from influencers to campaigns | Total number of times that influencers have fully filled out an application for a campaign, resulting in the brand being notified. |  |
 | Avg time spent by an influencer looking at and applying to campaigns | Out of all influencers, find the average time that the influencers spend time on the Campaign Explore page. |  |
+| Daily active users % for influencers| Daily active influencers / total influencers on platform | |
+| Daily active users % for companies| Daily active companies / total companies on platform | |
