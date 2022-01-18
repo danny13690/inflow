@@ -54,5 +54,5 @@ KPIs that we will use when testing in the future when we are able to get more co
 | Number of successful influencers and campaign matches | Total count of times that brands accept an application by an influencer. (even if the influencer or brand eventually doesn’t go through with the deal). |  |
 | Number of applications from influencers to campaigns | Total number of times that influencers have fully filled out an application for a campaign, resulting in the brand being notified. |  |
 | Avg time spent by an influencer looking at and applying to campaigns | Out of all influencers, find the average time that the influencers spend time on the Campaign Explore page. |  |
-| Daily active users % for influencers| Daily active influencers / total influencers on platform | |
-| Daily active users % for companies| Daily active companies / total companies on platform | |
+| Daily active users % for influencers| Daily active influencers / total influencers on platform. A daily active influencer is an influencer that uses the app (for any amount of time) at least once a day. | |
+| Daily active users % for companies| Daily active companies / total companies on platform. A daily active company is a company that uses the app (for any amount of time) at least once a day. | |
