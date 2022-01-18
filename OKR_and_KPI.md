@@ -43,8 +43,8 @@ KPIs that we will use while testing this quarter to create the MVP.
 | ------------- | ------------- | -------------
 | % of users who connect their Instagram | Users with Instagram connected / total users % |  |
 | Avg time spent by an influencer looking at and applying to campaigns | Out of all influencers, find the average time that the influencers spend time on the Campaign Explore page. |  |
-| Daily active users % for influencers| Daily active influencers / total influencers on platform | |
-| Daily active users % for companies| Daily active companies / total companies on platform | |
+| Daily active users % for influencers| Daily active influencers / total influencers on platform. A daily active influencer is an influencer that uses the app (for any amount of time) at least once a day. | |
+| Daily active users % for companies| Daily active companies / total companies on platform. A daily active company is a company that uses the app (for any amount of time) at least once a day. | |
 
 KPIs that we will use when testing in the future when we are able to get more companies with campaigns on the platform.
 | Key Performance Indicators (KPIs)| Details | Relevant Metrics and Notes|
