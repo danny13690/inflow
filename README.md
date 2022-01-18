@@ -2,7 +2,7 @@
 <img src="./images/logo_large.png" width="300">
 
 ## Project Synopsis
-Inflow is a platform built for brand managers to assembler teams of influencers for their next campaign without the hassle and inefficiencies of a brute-force search. Instead, our clients will be able to initiate campaigns on our platform and have influencers apply to them. Influencers will similarly be saved from reading countless fruitless DMs, and instead have the opportunity to view what opportunities may be available from the brands they love and care about.
+Inflow is a platform built for brand managers to assemble teams of influencers for their next campaign without the hassle and inefficiencies of a brute-force search. Instead, our client companies will be able to initiate campaigns on our platform and have influencers apply to them. Influencers will similarly be saved from reading countless fruitless DMs, and instead have the opportunity to view what opportunities may be available from the brands they love and care about.
 
 ## Team Members
 Member | Photo | Skills | Personal Traits | Desired Growth | Weaknesses
