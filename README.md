@@ -1,8 +1,8 @@
-# Team9
+# Inflow
 <img src="./images/logo_large.png" width="300">
 
 ## Project Synopsis
-Füd is the culinary recommendation engine for your ideal lifestyle! Using AI techniques, Füd will help you plan your meals weekly to optimize health while still catering to personal taste. By taking into account user health goals, food preferences, and dietary constrictions, Füd will create a roadmap towards health each week that ensures that you get the nutrients you need, the taste you deserve, and the life you desire.
+Inflow is a platform built for brand managers to assembler teams of influencers for their next campaign without the hassle and inefficiencies of a brute-force search. Instead, our clients will be able to initiate campaigns on our platform and have influencers apply to them. Influencers will similarly be saved from reading countless fruitless DMs, and instead have the opportunity to view what opportunities may be available from the brands they love and care about.
 
 ## Team Members
 Member | Photo | Skills | Personal Traits | Desired Growth | Weaknesses
