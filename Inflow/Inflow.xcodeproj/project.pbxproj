@@ -15,6 +15,9 @@
 		F5ACB167279B6A7A00DC5A82 /* InflowUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5ACB166279B6A7A00DC5A82 /* InflowUITests.swift */; };
 		F5ACB169279B6A7A00DC5A82 /* InflowUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5ACB168279B6A7A00DC5A82 /* InflowUITestsLaunchTests.swift */; };
 		F5B96D8E279E218A006651C7 /* JobBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B96D8D279E218A006651C7 /* JobBoard.swift */; };
+		F5B96D90279E2B28006651C7 /* JobInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B96D8F279E2B28006651C7 /* JobInfo.swift */; };
+		F5B96D92279E2B55006651C7 /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B96D91279E2B55006651C7 /* HomePage.swift */; };
+		F5B96D94279E2BBF006651C7 /* Conversation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B96D93279E2BBF006651C7 /* Conversation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +49,9 @@
 		F5ACB166279B6A7A00DC5A82 /* InflowUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InflowUITests.swift; sourceTree = "<group>"; };
 		F5ACB168279B6A7A00DC5A82 /* InflowUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InflowUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		F5B96D8D279E218A006651C7 /* JobBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobBoard.swift; sourceTree = "<group>"; };
+		F5B96D8F279E2B28006651C7 /* JobInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobInfo.swift; sourceTree = "<group>"; };
+		F5B96D91279E2B55006651C7 /* HomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; };
+		F5B96D93279E2BBF006651C7 /* Conversation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conversation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +105,9 @@
 				F5ACB14B279B6A7700DC5A82 /* InflowApp.swift */,
 				F5ACB14D279B6A7700DC5A82 /* ContentView.swift */,
 				F5B96D8D279E218A006651C7 /* JobBoard.swift */,
+				F5B96D8F279E2B28006651C7 /* JobInfo.swift */,
+				F5B96D93279E2BBF006651C7 /* Conversation.swift */,
+				F5B96D91279E2B55006651C7 /* HomePage.swift */,
 				F5ACB14F279B6A7900DC5A82 /* Assets.xcassets */,
 				F5ACB151279B6A7900DC5A82 /* Preview Content */,
 			);
@@ -260,9 +269,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5B96D94279E2BBF006651C7 /* Conversation.swift in Sources */,
+				F5B96D92279E2B55006651C7 /* HomePage.swift in Sources */,
 				F5ACB14E279B6A7700DC5A82 /* ContentView.swift in Sources */,
 				F5ACB14C279B6A7700DC5A82 /* InflowApp.swift in Sources */,
 				F5B96D8E279E218A006651C7 /* JobBoard.swift in Sources */,
+				F5B96D90279E2B28006651C7 /* JobInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
