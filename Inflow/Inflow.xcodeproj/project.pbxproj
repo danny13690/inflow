@@ -14,6 +14,7 @@
 		F5ACB15D279B6A7A00DC5A82 /* InflowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5ACB15C279B6A7A00DC5A82 /* InflowTests.swift */; };
 		F5ACB167279B6A7A00DC5A82 /* InflowUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5ACB166279B6A7A00DC5A82 /* InflowUITests.swift */; };
 		F5ACB169279B6A7A00DC5A82 /* InflowUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5ACB168279B6A7A00DC5A82 /* InflowUITestsLaunchTests.swift */; };
+		F5B96D8E279E218A006651C7 /* JobBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B96D8D279E218A006651C7 /* JobBoard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		F5ACB162279B6A7A00DC5A82 /* InflowUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InflowUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5ACB166279B6A7A00DC5A82 /* InflowUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InflowUITests.swift; sourceTree = "<group>"; };
 		F5ACB168279B6A7A00DC5A82 /* InflowUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InflowUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F5B96D8D279E218A006651C7 /* JobBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobBoard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 			children = (
 				F5ACB14B279B6A7700DC5A82 /* InflowApp.swift */,
 				F5ACB14D279B6A7700DC5A82 /* ContentView.swift */,
+				F5B96D8D279E218A006651C7 /* JobBoard.swift */,
 				F5ACB14F279B6A7900DC5A82 /* Assets.xcassets */,
 				F5ACB151279B6A7900DC5A82 /* Preview Content */,
 			);
@@ -259,6 +262,7 @@
 			files = (
 				F5ACB14E279B6A7700DC5A82 /* ContentView.swift in Sources */,
 				F5ACB14C279B6A7700DC5A82 /* InflowApp.swift in Sources */,
+				F5B96D8E279E218A006651C7 /* JobBoard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,6 +423,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Inflow/Preview Content\"";
+				DEVELOPMENT_TEAM = 6VW3AD2XHN;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -447,6 +452,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Inflow/Preview Content\"";
+				DEVELOPMENT_TEAM = 6VW3AD2XHN;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
