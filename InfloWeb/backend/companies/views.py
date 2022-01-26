@@ -1,5 +1,4 @@
 from django.shortcuts import render
-
 # vercel-django-example/example/views.py
 # https://github.com/jayhale/vercel-django-example/blob/main/example/views.py#L6
 
