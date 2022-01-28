@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  LoginView.swift
 //  Inflow
 //
 //  Created by Tracy Cai on 1/21/22.
@@ -84,6 +84,7 @@ extension Color {
 }
 
 let lightPink = Color(hex: "FFA5BF")
+let lightGray = Color(hex: "D4D4D4")
 
 struct ContentView: View {
     @State private var email: String = ""
@@ -149,3 +150,5 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
+
