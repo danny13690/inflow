@@ -96,7 +96,7 @@ struct ContentView: View {
                     .resizable()
                     .scaledToFill()
                     .frame(width: 250,height: 250)
-                
+
                 TextField(
                     "Email",
                     text: $email
@@ -104,20 +104,20 @@ struct ContentView: View {
                     .frame(width: 250, height: 40,alignment: .center)
                     .cornerRadius(10)
                     .padding(.bottom, 10)
-                
+
                 TextField(
                     "Password",
                     text: $password
                 ).textFieldStyle(.roundedBorder)
                     .frame(width: 250, height: 40,alignment: .center)
                     .cornerRadius(10)
-                
+
                 HStack{
                     Spacer().frame(width: 110)
                     Text("Forget password?").foregroundColor(lightPink)
                         .bold()
                 }
-                
+
                 Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/) {
                     Text("Log In")
                     .foregroundColor(.white)
@@ -125,7 +125,7 @@ struct ContentView: View {
                     .frame(width: 250, height: 40, alignment: .center)
                 }.background(lightPink)
                     .cornerRadius(10)
-                
+
                 HStack{
                     Spacer().frame(width: 85)
                     Text("New here?").foregroundColor(lightPink)
@@ -138,9 +138,10 @@ struct ContentView: View {
                         .cornerRadius(10)
                 }.frame(width: 500, height: 40, alignment: .center)
                 Spacer().frame(height: 120)
-                
+
             }
         }
+//        LandingView()
     }
     
 }
