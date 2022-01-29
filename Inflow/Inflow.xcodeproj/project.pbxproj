@@ -16,6 +16,7 @@
 		F5B737E527A349E20081CA75 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B737E427A349E20081CA75 /* ContentView.swift */; };
 		F5B737E727A34E7A0081CA75 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B737E627A34E7A0081CA75 /* RegisterView.swift */; };
 		F5B737E927A353700081CA75 /* LandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B737E827A353700081CA75 /* LandingView.swift */; };
+		F5B8D1FD27A4BA5100E74166 /* BookmarksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B8D1FC27A4BA5100E74166 /* BookmarksView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		F5B737E427A349E20081CA75 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F5B737E627A34E7A0081CA75 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		F5B737E827A353700081CA75 /* LandingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingView.swift; sourceTree = "<group>"; };
+		F5B8D1FC27A4BA5100E74166 /* BookmarksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				F5B737E427A349E20081CA75 /* ContentView.swift */,
 				F5B737E827A353700081CA75 /* LandingView.swift */,
 				F5B737E627A34E7A0081CA75 /* RegisterView.swift */,
+				F5B8D1FC27A4BA5100E74166 /* BookmarksView.swift */,
 				F5ACB14F279B6A7900DC5A82 /* Assets.xcassets */,
 				F5ACB151279B6A7900DC5A82 /* Preview Content */,
 			);
@@ -266,6 +269,7 @@
 				F5B737E927A353700081CA75 /* LandingView.swift in Sources */,
 				F5B737E527A349E20081CA75 /* ContentView.swift in Sources */,
 				F5B737E727A34E7A0081CA75 /* RegisterView.swift in Sources */,
+				F5B8D1FD27A4BA5100E74166 /* BookmarksView.swift in Sources */,
 				F5ACB14C279B6A7700DC5A82 /* InflowApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
