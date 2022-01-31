@@ -17,6 +17,10 @@
 		F5B737E727A34E7A0081CA75 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B737E627A34E7A0081CA75 /* RegisterView.swift */; };
 		F5B737E927A353700081CA75 /* LandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B737E827A353700081CA75 /* LandingView.swift */; };
 		F5B8D1FD27A4BA5100E74166 /* BookmarksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B8D1FC27A4BA5100E74166 /* BookmarksView.swift */; };
+		F5B8D1FF27A7659400E74166 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B8D1FE27A7659400E74166 /* SearchView.swift */; };
+		F5B8D20127A7677400E74166 /* SearchTypingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B8D20027A7677400E74166 /* SearchTypingView.swift */; };
+		F5B8D20327A76C2C00E74166 /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B8D20227A76C2C00E74166 /* MessageView.swift */; };
+		F5B8D20527A76DFA00E74166 /* MessageDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B8D20427A76DFA00E74166 /* MessageDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +54,10 @@
 		F5B737E627A34E7A0081CA75 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		F5B737E827A353700081CA75 /* LandingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingView.swift; sourceTree = "<group>"; };
 		F5B8D1FC27A4BA5100E74166 /* BookmarksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksView.swift; sourceTree = "<group>"; };
+		F5B8D1FE27A7659400E74166 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		F5B8D20027A7677400E74166 /* SearchTypingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTypingView.swift; sourceTree = "<group>"; };
+		F5B8D20227A76C2C00E74166 /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
+		F5B8D20427A76DFA00E74166 /* MessageDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,8 +111,12 @@
 				F5ACB14B279B6A7700DC5A82 /* InflowApp.swift */,
 				F5B737E427A349E20081CA75 /* ContentView.swift */,
 				F5B737E827A353700081CA75 /* LandingView.swift */,
+				F5B8D20227A76C2C00E74166 /* MessageView.swift */,
+				F5B8D20427A76DFA00E74166 /* MessageDetailView.swift */,
 				F5B737E627A34E7A0081CA75 /* RegisterView.swift */,
 				F5B8D1FC27A4BA5100E74166 /* BookmarksView.swift */,
+				F5B8D1FE27A7659400E74166 /* SearchView.swift */,
+				F5B8D20027A7677400E74166 /* SearchTypingView.swift */,
 				F5ACB14F279B6A7900DC5A82 /* Assets.xcassets */,
 				F5ACB151279B6A7900DC5A82 /* Preview Content */,
 			);
@@ -267,9 +279,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				F5B737E927A353700081CA75 /* LandingView.swift in Sources */,
+				F5B8D20527A76DFA00E74166 /* MessageDetailView.swift in Sources */,
 				F5B737E527A349E20081CA75 /* ContentView.swift in Sources */,
+				F5B8D20127A7677400E74166 /* SearchTypingView.swift in Sources */,
 				F5B737E727A34E7A0081CA75 /* RegisterView.swift in Sources */,
+				F5B8D20327A76C2C00E74166 /* MessageView.swift in Sources */,
 				F5B8D1FD27A4BA5100E74166 /* BookmarksView.swift in Sources */,
+				F5B8D1FF27A7659400E74166 /* SearchView.swift in Sources */,
 				F5ACB14C279B6A7700DC5A82 /* InflowApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

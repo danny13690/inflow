@@ -1,13 +1,13 @@
 //
-//  BookmarksView.swift
+//  SearchView.swift
 //  Inflow
 //
-//  Created by Tracy Cai on 1/28/22.
+//  Created by Tracy Cai on 1/30/22.
 //
 
 import SwiftUI
 
-struct BookmarksView: View {
+struct SearchView: View {
     @State private var search: String = ""
     var body: some View {
         VStack{
@@ -38,7 +38,18 @@ struct BookmarksView: View {
                         .padding(.bottom, 10)
                 Spacer().frame(width: 10)
             }
-            Spacer().frame(height: 650)
+            HStack{
+                Text("Trends to follow").font(Font.custom("Avenir", size: 20))
+                    .foregroundColor(lightPink)
+                Spacer().frame(width: 160)
+            }
+            Spacer().frame(height: 100)
+            HStack{
+                Text("Brands to follow").font(Font.custom("Avenir", size: 20))
+                    .foregroundColor(lightPink)
+                Spacer().frame(width: 160)
+            }
+            Spacer().frame(height: 480)
             Divider().foregroundColor(.gray)
             Spacer().frame(height: 12)
             HStack{
@@ -46,7 +57,7 @@ struct BookmarksView: View {
                     print("Edit button was tapped")
                 } label: {
                     Image(systemName: "house")
-                        .foregroundColor(lightPink)
+                        .foregroundColor(lightGray)
                         .font(.system(size: 32))
 
                 }
@@ -55,7 +66,7 @@ struct BookmarksView: View {
                     print("Edit button was tapped")
                 } label: {
                     Image(systemName: "magnifyingglass")
-                        .foregroundColor(lightGray)
+                        .foregroundColor(lightPink)
                         .font(.system(size: 32))
                 }
                 Spacer().frame(width: 45)
@@ -79,8 +90,8 @@ struct BookmarksView: View {
     }
 }
 
-struct BookmarksView_Previews: PreviewProvider {
+struct SearchView_Previews: PreviewProvider {
     static var previews: some View {
-        BookmarksView()
+        SearchView()
     }
 }

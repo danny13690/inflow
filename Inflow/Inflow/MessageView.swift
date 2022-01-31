@@ -1,13 +1,13 @@
 //
-//  BookmarksView.swift
+//  MessageView.swift
 //  Inflow
 //
-//  Created by Tracy Cai on 1/28/22.
+//  Created by Tracy Cai on 1/30/22.
 //
 
 import SwiftUI
 
-struct BookmarksView: View {
+struct MessageView: View {
     @State private var search: String = ""
     var body: some View {
         VStack{
@@ -46,7 +46,7 @@ struct BookmarksView: View {
                     print("Edit button was tapped")
                 } label: {
                     Image(systemName: "house")
-                        .foregroundColor(lightPink)
+                        .foregroundColor(lightGray)
                         .font(.system(size: 32))
 
                 }
@@ -63,7 +63,7 @@ struct BookmarksView: View {
                     print("Edit button was tapped")
                 } label: {
                     Image(systemName: "ellipsis.bubble")
-                        .foregroundColor(lightGray)
+                        .foregroundColor(lightPink)
                         .font(.system(size: 32))
                 }
                 Spacer().frame(width: 45)
@@ -79,8 +79,8 @@ struct BookmarksView: View {
     }
 }
 
-struct BookmarksView_Previews: PreviewProvider {
+struct MessageView_Previews: PreviewProvider {
     static var previews: some View {
-        BookmarksView()
+        MessageView()
     }
 }

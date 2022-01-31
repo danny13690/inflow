@@ -83,7 +83,7 @@ extension Color {
     }
 }
 
-let lightPink = Color(hex: "FFA5BF")
+let lightPink = Color(hex: "FF89AB")
 let lightGray = Color(hex: "D4D4D4")
 
 struct ContentView: View {
@@ -138,10 +138,39 @@ struct ContentView: View {
                         .cornerRadius(10)
                 }.frame(width: 500, height: 40, alignment: .center)
                 Spacer().frame(height: 120)
-
+                HStack{
+                    Spacer().frame(width: 20)
+                    Button {
+                    } label: {
+                        Image("Apple")
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: 50,height: 50)
+                            .cornerRadius(15)
+                    }
+                    Spacer().frame(width: 75)
+                    Button {
+                    } label:{
+                        Image("Facebook")
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: 50,height: 50)
+                            .cornerRadius(15)
+                    }
+                    Spacer().frame(width: 55)
+                    Button {
+                    } label: {
+                        Image("Google")
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width:70,height: 70)
+                            .cornerRadius(15)
+                    }
+                }
+                
             }
+            
         }
-//        LandingView()
     }
     
 }

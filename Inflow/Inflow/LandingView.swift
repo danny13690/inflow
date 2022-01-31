@@ -46,7 +46,7 @@ struct LandingView: View {
                         print("Edit button was tapped")
                     } label: {
                         Image(systemName: "house")
-                            .foregroundColor(lightGray)
+                            .foregroundColor(lightPink)
                             .font(.system(size: 32))
 
                     }

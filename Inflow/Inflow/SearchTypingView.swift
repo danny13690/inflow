@@ -1,13 +1,13 @@
 //
-//  BookmarksView.swift
+//  SearchTypingView.swift
 //  Inflow
 //
-//  Created by Tracy Cai on 1/28/22.
+//  Created by Tracy Cai on 1/30/22.
 //
 
 import SwiftUI
 
-struct BookmarksView: View {
+struct SearchTypingView: View {
     @State private var search: String = ""
     var body: some View {
         VStack{
@@ -33,12 +33,32 @@ struct BookmarksView: View {
                         "Search",
                         text: $search
                     ).textFieldStyle(.roundedBorder)
-                        .frame(width: 320, height: 40,alignment: .center)
+                        .frame(width: 250, height: 40,alignment: .center)
                         .cornerRadius(10)
                         .padding(.bottom, 10)
-                Spacer().frame(width: 10)
+                Button {
+                    print("Edit button was tapped")
+                } label: {
+                    Text("Cancel").font(Font.custom("Avenir", size: 15))
+                        .foregroundColor(lightPink)
+                }
+//                Spacer().frame(width: 10)
             }
-            Spacer().frame(height: 650)
+            HStack{
+                Text("Recent Searches").font(Font.custom("Avenir", size: 20)).foregroundColor(lightPink)
+                Spacer().frame(width: 150)
+                Button {
+                    print("Edit button was tapped")
+                } label: {
+                    Text("Clear").font(Font.custom("Avenir", size: 15))
+                        .foregroundColor(lightPink)
+                }
+                
+            }
+            
+            Spacer().frame(height: 100)
+
+            Spacer().frame(height: 480)
             Divider().foregroundColor(.gray)
             Spacer().frame(height: 12)
             HStack{
@@ -46,7 +66,7 @@ struct BookmarksView: View {
                     print("Edit button was tapped")
                 } label: {
                     Image(systemName: "house")
-                        .foregroundColor(lightPink)
+                        .foregroundColor(lightGray)
                         .font(.system(size: 32))
 
                 }
@@ -55,7 +75,7 @@ struct BookmarksView: View {
                     print("Edit button was tapped")
                 } label: {
                     Image(systemName: "magnifyingglass")
-                        .foregroundColor(lightGray)
+                        .foregroundColor(lightPink)
                         .font(.system(size: 32))
                 }
                 Spacer().frame(width: 45)
@@ -79,8 +99,8 @@ struct BookmarksView: View {
     }
 }
 
-struct BookmarksView_Previews: PreviewProvider {
+struct SearchTypingView_Previews: PreviewProvider {
     static var previews: some View {
-        BookmarksView()
+        SearchTypingView()
     }
 }
