@@ -8,8 +8,76 @@
 import SwiftUI
 
 struct MessageDetailView: View {
+    @State private var search: String = ""
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack{
+            HStack{
+                Spacer().frame(width: 90)
+                Image("textLogo")
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: 50,height: 50)
+                Spacer().frame(width: 250)
+                Image(systemName:"bookmark")
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: 25,height: 25)
+                    .foregroundColor(lightPink)
+                Spacer().frame(width: 70)
+            }
+            Divider().foregroundColor(.gray)
+            Spacer().frame(height: 10)
+            HStack{
+                Button {
+                    print("Edit button was tapped")
+                } label: {
+                    Image(systemName: "chevron.left")
+                        .foregroundColor(lightPink)
+                        .font(.system(size: 32))
+                    
+                }
+                Spacer().frame(width: 330)
+            }
+            Spacer().frame(height: 10)
+            Divider().foregroundColor(.gray)
+            Spacer().frame(height: 650)
+            Divider().foregroundColor(.gray)
+            Spacer().frame(height: 12)
+            HStack{
+                Button {
+                    print("Edit button was tapped")
+                } label: {
+                    Image(systemName: "house")
+                        .foregroundColor(lightGray)
+                        .font(.system(size: 32))
+
+                }
+                Spacer().frame(width: 45)
+                Button {
+                    print("Edit button was tapped")
+                } label: {
+                    Image(systemName: "magnifyingglass")
+                        .foregroundColor(lightGray)
+                        .font(.system(size: 32))
+                }
+                Spacer().frame(width: 45)
+                Button {
+                    print("Edit button was tapped")
+                } label: {
+                    Image(systemName: "ellipsis.bubble")
+                        .foregroundColor(lightPink)
+                        .font(.system(size: 32))
+                }
+                Spacer().frame(width: 45)
+                Button {
+                    print("Edit button was tapped")
+                } label: {
+                    Image(systemName: "person.circle")
+                        .foregroundColor(lightGray)
+                        .font(.system(size: 32))
+                }
+            }
+        }
     }
 }
 

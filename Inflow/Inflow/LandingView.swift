@@ -30,10 +30,11 @@ struct LandingView: View {
                     Button {
                         showingBookmarks = !showingBookmarks
                     } label: {
-                        Image("bookmark")
+                        Image(systemName: "bookmark")
                             .resizable()
                             .scaledToFill()
-                            .frame(width: 30,height: 30)
+                            .frame(width: 25,height: 25)
+                            .foregroundColor(lightPink)
                     }
                     Spacer().frame(width: 70)
                 }

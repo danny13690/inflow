@@ -11,20 +11,21 @@ struct SearchView: View {
     @State private var search: String = ""
     var body: some View {
         VStack{
-            HStack{
-                Spacer().frame(width: 90)
-                Image("textLogo")
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: 50,height: 50)
-                Spacer().frame(width: 250)
-                Image("bookmark")
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: 30,height: 30)
-                Spacer().frame(width: 70)
-            }
-            Divider().foregroundColor(.gray)
+//            HStack{
+//                Spacer().frame(width: 90)
+//                Image("textLogo")
+//                    .resizable()
+//                    .scaledToFill()
+//                    .frame(width: 50,height: 50)
+//                Spacer().frame(width: 250)
+//                Image("bookmark")
+//                    .resizable()
+//                    .scaledToFill()
+//                    .frame(width: 30,height: 30)
+//                Spacer().frame(width: 70)
+//            }
+//            Divider().foregroundColor(.gray)
+            Spacer().frame(height: 30)
             HStack{
                 Image(systemName: "magnifyingglass")
                     .foregroundColor(lightGray)
@@ -49,7 +50,7 @@ struct SearchView: View {
                     .foregroundColor(lightPink)
                 Spacer().frame(width: 160)
             }
-            Spacer().frame(height: 480)
+            Spacer().frame(height: 510)
             Divider().foregroundColor(.gray)
             Spacer().frame(height: 12)
             HStack{

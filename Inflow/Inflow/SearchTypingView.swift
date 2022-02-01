@@ -11,20 +11,21 @@ struct SearchTypingView: View {
     @State private var search: String = ""
     var body: some View {
         VStack{
-            HStack{
-                Spacer().frame(width: 90)
-                Image("textLogo")
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: 50,height: 50)
-                Spacer().frame(width: 250)
-                Image("bookmark")
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: 30,height: 30)
-                Spacer().frame(width: 70)
-            }
-            Divider().foregroundColor(.gray)
+//            HStack{
+//                Spacer().frame(width: 90)
+//                Image("textLogo")
+//                    .resizable()
+//                    .scaledToFill()
+//                    .frame(width: 50,height: 50)
+//                Spacer().frame(width: 250)
+//                Image("bookmark")
+//                    .resizable()
+//                    .scaledToFill()
+//                    .frame(width: 30,height: 30)
+//                Spacer().frame(width: 70)
+//            }
+//            Divider().foregroundColor(.gray)
+            Spacer().frame(height: 30)
             HStack{
                 Image(systemName: "magnifyingglass")
                     .foregroundColor(lightGray)
@@ -55,46 +56,44 @@ struct SearchTypingView: View {
                 }
                 
             }
-            
-            Spacer().frame(height: 100)
 
-            Spacer().frame(height: 480)
+            Spacer().frame(height: 670)
             Divider().foregroundColor(.gray)
             Spacer().frame(height: 12)
-            HStack{
-                Button {
-                    print("Edit button was tapped")
-                } label: {
-                    Image(systemName: "house")
-                        .foregroundColor(lightGray)
-                        .font(.system(size: 32))
-
-                }
-                Spacer().frame(width: 45)
-                Button {
-                    print("Edit button was tapped")
-                } label: {
-                    Image(systemName: "magnifyingglass")
-                        .foregroundColor(lightPink)
-                        .font(.system(size: 32))
-                }
-                Spacer().frame(width: 45)
-                Button {
-                    print("Edit button was tapped")
-                } label: {
-                    Image(systemName: "ellipsis.bubble")
-                        .foregroundColor(lightGray)
-                        .font(.system(size: 32))
-                }
-                Spacer().frame(width: 45)
-                Button {
-                    print("Edit button was tapped")
-                } label: {
-                    Image(systemName: "person.circle")
-                        .foregroundColor(lightGray)
-                        .font(.system(size: 32))
-                }
-            }
+//            HStack{
+//                Button {
+//                    print("Edit button was tapped")
+//                } label: {
+//                    Image(systemName: "house")
+//                        .foregroundColor(lightGray)
+//                        .font(.system(size: 32))
+//
+//                }
+//                Spacer().frame(width: 45)
+//                Button {
+//                    print("Edit button was tapped")
+//                } label: {
+//                    Image(systemName: "magnifyingglass")
+//                        .foregroundColor(lightPink)
+//                        .font(.system(size: 32))
+//                }
+//                Spacer().frame(width: 45)
+//                Button {
+//                    print("Edit button was tapped")
+//                } label: {
+//                    Image(systemName: "ellipsis.bubble")
+//                        .foregroundColor(lightGray)
+//                        .font(.system(size: 32))
+//                }
+//                Spacer().frame(width: 45)
+//                Button {
+//                    print("Edit button was tapped")
+//                } label: {
+//                    Image(systemName: "person.circle")
+//                        .foregroundColor(lightGray)
+//                        .font(.system(size: 32))
+//                }
+//            }
         }
     }
 }
