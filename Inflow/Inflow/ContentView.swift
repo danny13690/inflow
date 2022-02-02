@@ -142,11 +142,12 @@ struct ContentView: View {
                     Spacer().frame(width: 20)
                     Button {
                     } label: {
-                        Image("Apple")
+                        Image(systemName: "applelogo")
                             .resizable()
                             .scaledToFill()
-                            .frame(width: 50,height: 50)
+                            .frame(width: 40,height: 50)
                             .cornerRadius(15)
+                            .foregroundColor(.black)
                     }
                     Spacer().frame(width: 75)
                     Button {
