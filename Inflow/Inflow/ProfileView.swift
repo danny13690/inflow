@@ -13,8 +13,8 @@ struct ProfileView: View {
     @State private var showingHome = false
     @State private var showingProfile = false
     var body: some View {
-        if showingBookmarks {
-            BookmarksView()
+        if showingHome {
+            LandingView()
         } else {
             
             VStack{
