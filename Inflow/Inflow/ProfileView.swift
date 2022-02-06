@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct ProfileView: View {
-    @State private var showingBookmarks = false
-    
+    @State private var showingSettings = false
+    @State private var showingSearch = false
+    @State private var showingHome = false
+    @State private var showingProfile = false
     var body: some View {
         if showingBookmarks {
             BookmarksView()
@@ -22,6 +24,7 @@ struct ProfileView: View {
                         .resizable()
                         .scaledToFill()
                         .frame(width: 50,height: 50)
+                    
                     Spacer().frame(width: 250)
     //                Image("bookmark")
     //                    .resizable()
@@ -38,8 +41,8 @@ struct ProfileView: View {
                     }
                     Spacer().frame(width: 70)
                 }
-                Divider().foregroundColor(.gray)
-                Spacer().frame(height: 700)
+//                Divider().foregroundColor(.gray)
+                Spacer()
                 Divider().foregroundColor(.gray)
                 Spacer().frame(height: 12)
                 HStack{

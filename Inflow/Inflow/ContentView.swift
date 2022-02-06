@@ -89,88 +89,91 @@ let lightGray = Color(hex: "D4D4D4")
 struct ContentView: View {
     @State private var email: String = ""
     @State private var password: String = ""
+    @State private var showLandingPage = false
     var body: some View {
-        ZStack{
-            VStack{
-                Image("login")
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: 250,height: 250)
+        if showLandingPage {
+            LandingView()
+        } else {
+            ZStack{
+                VStack{
+                    Image("login")
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 250,height: 250)
 
-                TextField(
-                    "Email",
-                    text: $email
-                ).textFieldStyle(.roundedBorder)
-                    .frame(width: 250, height: 40,alignment: .center)
-                    .cornerRadius(10)
-                    .padding(.bottom, 10)
-
-                TextField(
-                    "Password",
-                    text: $password
-                ).textFieldStyle(.roundedBorder)
-                    .frame(width: 250, height: 40,alignment: .center)
-                    .cornerRadius(10)
-
-                HStack{
-                    Spacer().frame(width: 110)
-                    Text("Forget password?").foregroundColor(lightPink)
-                        .bold()
-                }
-
-                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/) {
-                    Text("Log In")
-                    .foregroundColor(.white)
-                    .font(.headline)
-                    .frame(width: 250, height: 40, alignment: .center)
-                }.background(lightPink)
-                    .cornerRadius(10)
-
-                HStack{
-                    Spacer().frame(width: 85)
-                    Text("New here?").foregroundColor(lightPink)
-                    Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/) {
-                        Text("Register?")
-                        .foregroundColor(lightPink)
-                        .font(.headline)
-                        .frame(width: 80, height: 40, alignment: .center)
-                    }
+                    TextField(
+                        "Email",
+                        text: $email
+                    ).textFieldStyle(.roundedBorder)
+                        .frame(width: 250, height: 40,alignment: .center)
                         .cornerRadius(10)
-                }.frame(width: 500, height: 40, alignment: .center)
-                Spacer().frame(height: 120)
-                HStack{
-                    Spacer().frame(width: 20)
-                    Button {
-                    } label: {
-                        Image(systemName: "applelogo")
-                            .resizable()
-                            .scaledToFill()
-                            .frame(width: 40,height: 50)
-                            .cornerRadius(15)
-                            .foregroundColor(.black)
+                        .padding(.bottom, 10)
+
+                    TextField(
+                        "Password",
+                        text: $password
+                    ).textFieldStyle(.roundedBorder)
+                        .frame(width: 250, height: 40,alignment: .center)
+                        .cornerRadius(10)
+
+                    HStack{
+                        Spacer().frame(width: 110)
+                        Text("Forget password?").foregroundColor(lightPink)
+                            .bold()
                     }
-                    Spacer().frame(width: 75)
-                    Button {
-                    } label:{
-                        Image("Facebook")
-                            .resizable()
-                            .scaledToFill()
-                            .frame(width: 50,height: 50)
-                            .cornerRadius(15)
-                    }
-                    Spacer().frame(width: 55)
-                    Button {
-                    } label: {
-                        Image("Google")
-                            .resizable()
-                            .scaledToFill()
-                            .frame(width:70,height: 70)
-                            .cornerRadius(15)
+
+                    Button(action: {showLandingPage.toggle()}) {
+                        Text("Log In")
+                        .foregroundColor(.white)
+                        .font(.headline)
+                        .frame(width: 250, height: 40, alignment: .center)
+                    }.background(lightPink)
+                        .cornerRadius(10)
+
+                    HStack{
+                        Spacer().frame(width: 85)
+                        Text("New here?").foregroundColor(lightPink)
+                        Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/) {
+                            Text("Register?")
+                            .foregroundColor(lightPink)
+                            .font(.headline)
+                            .frame(width: 80, height: 40, alignment: .center)
+                        }
+                            .cornerRadius(10)
+                    }.frame(width: 500, height: 40, alignment: .center)
+    //                Spacer().frame(height: 120)
+                    HStack{
+                        Spacer().frame(width: 20)
+                        Button {
+                        } label: {
+                            Image(systemName: "applelogo")
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width: 40,height: 50)
+                                .cornerRadius(15)
+                                .foregroundColor(.black)
+                        }
+                        Spacer().frame(width: 75)
+                        Button {
+                        } label:{
+                            Image("Facebook")
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width: 50,height: 50)
+                                .cornerRadius(15)
+                        }
+                        Spacer().frame(width: 55)
+                        Button {
+                        } label: {
+                            Image("Google")
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width:70,height: 70)
+                                .cornerRadius(15)
+                        }
                     }
                 }
-                
             }
-            
         }
     }
     

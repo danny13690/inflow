@@ -9,6 +9,10 @@ import SwiftUI
 
 struct BookmarksView: View {
     @State private var search: String = ""
+    @State private var showingChat = false
+    @State private var showingSearch = false
+    @State private var showingHome = false
+    @State private var showingProfile = false
     var body: some View {
         VStack{
             HStack{
@@ -40,7 +44,7 @@ struct BookmarksView: View {
                         .padding(.bottom, 10)
                 Spacer().frame(width: 10)
             }
-            Spacer().frame(height: 650)
+            Spacer()
             Divider().foregroundColor(.gray)
             Spacer().frame(height: 12)
             HStack{

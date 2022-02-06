@@ -9,7 +9,9 @@ import SwiftUI
 
 struct LandingView: View {
     @State private var showingBookmarks = false
-    
+    @State private var showingSearch = false
+    @State private var showingChat = false
+    @State private var showingProfile = false
     var body: some View {
         if showingBookmarks {
             BookmarksView()
@@ -22,6 +24,7 @@ struct LandingView: View {
                         .resizable()
                         .scaledToFill()
                         .frame(width: 50,height: 50)
+                    
                     Spacer().frame(width: 250)
     //                Image("bookmark")
     //                    .resizable()
@@ -39,9 +42,9 @@ struct LandingView: View {
                     Spacer().frame(width: 70)
                 }
                 Divider().foregroundColor(.gray)
-                Spacer().frame(height: 700)
+//                Spacer().frame(height: 700)
+                Spacer()
                 Divider().foregroundColor(.gray)
-                Spacer().frame(height: 12)
                 HStack{
                     Button {
                         print("Edit button was tapped")

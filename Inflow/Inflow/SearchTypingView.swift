@@ -57,9 +57,9 @@ struct SearchTypingView: View {
                 
             }
 
-            Spacer().frame(height: 670)
-            Divider().foregroundColor(.gray)
-            Spacer().frame(height: 12)
+            Spacer()
+//            Divider().foregroundColor(.gray)
+//            Spacer().frame(height: 12)
 //            HStack{
 //                Button {
 //                    print("Edit button was tapped")

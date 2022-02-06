@@ -10,6 +10,8 @@ import SwiftUI
 struct RegisterView: View {
     @State private var email: String = ""
     @State private var password: String = ""
+    @State private var showingLandingView = false
+
     var body: some View {
 
         ZStack{
@@ -18,6 +20,7 @@ struct RegisterView: View {
                     .resizable()
                     .scaledToFill()
                     .frame(width: 250,height: 250)
+                    .aspectRatio(2, contentMode: .fit)
                 
                 TextField(
                     "Email",

@@ -9,6 +9,10 @@ import SwiftUI
 
 struct MessageDetailView: View {
     @State private var search: String = ""
+    @State private var showingBookmarks = false
+    @State private var showingChat = false
+    @State private var showingProfile = false
+    @State private var showingHome = false
     var body: some View {
         VStack{
             HStack{
@@ -40,7 +44,7 @@ struct MessageDetailView: View {
             }
             Spacer().frame(height: 10)
             Divider().foregroundColor(.gray)
-            Spacer().frame(height: 650)
+            Spacer()
             Divider().foregroundColor(.gray)
             Spacer().frame(height: 12)
             HStack{

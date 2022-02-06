@@ -9,6 +9,9 @@ import SwiftUI
 
 struct SearchView: View {
     @State private var search: String = ""
+    @State private var showingChat = false
+    @State private var showingHome = false
+    @State private var showingProfile = false
     var body: some View {
         VStack{
 //            HStack{
@@ -50,7 +53,7 @@ struct SearchView: View {
                     .foregroundColor(lightPink)
                 Spacer().frame(width: 160)
             }
-            Spacer().frame(height: 510)
+            Spacer()
             Divider().foregroundColor(.gray)
             Spacer().frame(height: 12)
             HStack{
