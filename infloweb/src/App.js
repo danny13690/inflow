@@ -5,6 +5,10 @@ import { useTable } from 'react-table'
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
+// import { Sidebar } from "./components/layout/Sidebar.js";
+import { MainLayout } from "./components/layout/Layout.js";
+import { InfluencerTablev1 } from "./components/InfluencerTablev1";
+
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -25,126 +29,17 @@ const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 
 function App() {
-  const data = React.useMemo(
-    () => [
-      {
-        col1: 'Jannik Obenhoff',
-        col2: 'St Louis, Missouri, USA',
-        col3: '767,5k',
-        col4: 'placeholder',
-        col5: '1',
-        col6: 'May 28, 2019',
-        col7: '1',
-        col8: 'placeholder',
-      },
-      {
-        col1: 'react-table',
-        col2: 'rocks',
-      },
-      {
-        col1: 'whatever',
-        col2: 'you want',
-      },
-    ],
-    []
-  )
-
-  const columns = React.useMemo(
-    () => [
-      {
-        Header: 'Influencer',
-        accessor: 'col1', // accessor is the "key" in the data
-      },
-      {
-        Header: 'Location',
-        accessor: 'col2',
-      },
-      {
-        Header: 'Total Reach',
-        accessor: 'col3',
-      },
-      {
-        Header: 'Networks',
-        accessor: 'col4',
-      },
-      {
-        Header: 'Proposals',
-        accessor: 'col5',
-      },
-      {
-        Header: 'Proposal Created',
-        accessor: 'col6',
-      },
-      {
-        Header: 'Content Since Last Proposal',
-        accessor: 'col7',
-      },
-      {
-        Header: 'Actions',
-        accessor: 'col8',
-      },
-    ],
-    []
-  )
-
-  const {
-    getTableProps,
-    getTableBodyProps,
-    headerGroups,
-    rows,
-    prepareRow,
-  } = useTable({ columns, data })
   return (
     <div className="App">
+      <MainLayout>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo"/>
         <p>Inflow</p>
       </header>
       <body>
-        <table {...getTableProps()} style={{ border: 'solid 1px gray' }}>
-          <thead>
-            {headerGroups.map(headerGroup => (
-              <tr {...headerGroup.getHeaderGroupProps()}>
-                {headerGroup.headers.map(column => (
-                  <th
-                    {...column.getHeaderProps()}
-                    style={{
-                      background: 'white',
-                      color: 'black',
-                      fontWeight: 'bold',
-                    }}
-                  >
-                    {column.render('Header')}
-                  </th>
-                ))}
-              </tr>
-            ))}
-          </thead>
-          <tbody {...getTableBodyProps()}>
-            {rows.map(row => {
-              prepareRow(row)
-              return (
-                <tr {...row.getRowProps()}>
-                  {row.cells.map(cell => {
-                    return (
-                      <td
-                        {...cell.getCellProps()}
-                        style={{
-                          padding: '10px',
-                          border: 'white',
-                          background: 'white',
-                        }}
-                      >
-                        {cell.render('Cell')}
-                      </td>
-                    )
-                  })}
-                </tr>
-              )
-            })}
-          </tbody>
-        </table>
+        < InfluencerTablev1 />
       </body>
+    </MainLayout>
     </div>
   );
 }
