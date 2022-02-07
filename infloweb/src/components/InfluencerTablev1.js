@@ -1,7 +1,7 @@
 import React from 'react'
 import { useTable } from 'react-table'
 
-export function InfluencerTablev1 (props) {
+export function InfluencerTable (props) {
     const data = React.useMemo(
         () => [
           {

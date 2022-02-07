@@ -5,9 +5,8 @@ import { useTable } from 'react-table'
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
-// import { Sidebar } from "./components/layout/Sidebar.js";
 import { MainLayout } from "./components/layout/Layout.js";
-import { InfluencerTablev1 } from "./components/InfluencerTablev1";
+import { InfluencerTable } from "./components/InfluencerTable";
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -37,7 +36,7 @@ function App() {
         <p>Inflow</p>
       </header>
       <body>
-        < InfluencerTablev1 />
+        < InfluencerTable />
       </body>
     </MainLayout>
     </div>

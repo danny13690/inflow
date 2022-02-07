@@ -5,6 +5,7 @@
 [debug] [2022-01-28T05:22:51.331Z] Node Version:  v14.18.1
 [debug] [2022-01-28T05:22:51.339Z] Time:          Thu Jan 27 2022 21:22:51 GMT-0800 (Pacific Standard Time)
 [debug] [2022-01-28T05:22:51.339Z] ----------------------------------------------------------------------
+[debug] 
 [debug] [2022-01-28T05:22:51.348Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
 [debug] [2022-01-28T05:22:51.348Z] > authorizing via signed-in user (kjwu00@stanford.edu)
 [info] 
