@@ -13,53 +13,56 @@ struct RegisterView: View {
     @State private var showingLandingView = false
 
     var body: some View {
+        if showingLandingView {
+            SwitchView()
+        } else {
+            ZStack{
+                VStack{
+                    Image("login")
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 250,height: 250)
+                        .aspectRatio(2, contentMode: .fit)
+                    
+                    TextField(
+                        "Email",
+                        text: $email
+                    ).textFieldStyle(.roundedBorder)
+                        .frame(width: 250, height: 40,alignment: .center)
+                        .cornerRadius(10)
+                        .padding(.bottom, 10)
+                    
+                    TextField(
+                        "Password",
+                        text: $password
+                    ).textFieldStyle(.roundedBorder)
+                        .frame(width: 250, height: 40,alignment: .center)
+                        .cornerRadius(10)
+                        .padding(.bottom, 10)
+                    TextField(
+                        "Repeat Password",
+                        text: $password
+                    ).textFieldStyle(.roundedBorder)
+                        .frame(width: 250, height: 40,alignment: .center)
+                        .cornerRadius(10)
+                    HStack{
+                        Spacer().frame(width: 55)
+                        Text("Password must be at least 8 characters!").foregroundColor(lightPink)
+                            .font(.system(size: 10))
+                    }
+                    
+                    Button(action: {showingLandingView.toggle()}) {
+                        Text("Sign up")
+                        .foregroundColor(.white)
+                        .font(.headline)
+                        .frame(width: 250, height: 40, alignment: .center)
+                    }.background(lightPink)
+                        .cornerRadius(10)
+                    
 
-        ZStack{
-            VStack{
-                Image("login")
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: 250,height: 250)
-                    .aspectRatio(2, contentMode: .fit)
-                
-                TextField(
-                    "Email",
-                    text: $email
-                ).textFieldStyle(.roundedBorder)
-                    .frame(width: 250, height: 40,alignment: .center)
-                    .cornerRadius(10)
-                    .padding(.bottom, 10)
-                
-                TextField(
-                    "Password",
-                    text: $password
-                ).textFieldStyle(.roundedBorder)
-                    .frame(width: 250, height: 40,alignment: .center)
-                    .cornerRadius(10)
-                    .padding(.bottom, 10)
-                TextField(
-                    "Repeat Password",
-                    text: $password
-                ).textFieldStyle(.roundedBorder)
-                    .frame(width: 250, height: 40,alignment: .center)
-                    .cornerRadius(10)
-                HStack{
-                    Spacer().frame(width: 55)
-                    Text("Password must be at least 8 characters!").foregroundColor(lightPink)
-                        .font(.system(size: 10))
+                    Spacer().frame(height: 120)
+                    
                 }
-                
-                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/) {
-                    Text("Sign up")
-                    .foregroundColor(.white)
-                    .font(.headline)
-                    .frame(width: 250, height: 40, alignment: .center)
-                }.background(lightPink)
-                    .cornerRadius(10)
-                
-
-                Spacer().frame(height: 120)
-                
             }
         }
     }

@@ -47,40 +47,40 @@ struct BookmarksView: View {
             Spacer()
             Divider().foregroundColor(.gray)
             Spacer().frame(height: 12)
-            HStack{
-                Button {
-                    print("Edit button was tapped")
-                } label: {
-                    Image(systemName: "house")
-                        .foregroundColor(lightGray)
-                        .font(.system(size: 32))
-
-                }
-                Spacer().frame(width: 45)
-                Button {
-                    print("Edit button was tapped")
-                } label: {
-                    Image(systemName: "magnifyingglass")
-                        .foregroundColor(lightGray)
-                        .font(.system(size: 32))
-                }
-                Spacer().frame(width: 45)
-                Button {
-                    print("Edit button was tapped")
-                } label: {
-                    Image(systemName: "ellipsis.bubble")
-                        .foregroundColor(lightGray)
-                        .font(.system(size: 32))
-                }
-                Spacer().frame(width: 45)
-                Button {
-                    print("Edit button was tapped")
-                } label: {
-                    Image(systemName: "person.circle")
-                        .foregroundColor(lightGray)
-                        .font(.system(size: 32))
-                }
-            }
+//            HStack{
+//                Button {
+//                    print("Edit button was tapped")
+//                } label: {
+//                    Image(systemName: "house")
+//                        .foregroundColor(lightGray)
+//                        .font(.system(size: 32))
+//
+//                }
+//                Spacer().frame(width: 45)
+//                Button {
+//                    print("Edit button was tapped")
+//                } label: {
+//                    Image(systemName: "magnifyingglass")
+//                        .foregroundColor(lightGray)
+//                        .font(.system(size: 32))
+//                }
+//                Spacer().frame(width: 45)
+//                Button {
+//                    print("Edit button was tapped")
+//                } label: {
+//                    Image(systemName: "ellipsis.bubble")
+//                        .foregroundColor(lightGray)
+//                        .font(.system(size: 32))
+//                }
+//                Spacer().frame(width: 45)
+//                Button {
+//                    print("Edit button was tapped")
+//                } label: {
+//                    Image(systemName: "person.circle")
+//                        .foregroundColor(lightGray)
+//                        .font(.system(size: 32))
+//                }
+//            }
         }
     }
 }

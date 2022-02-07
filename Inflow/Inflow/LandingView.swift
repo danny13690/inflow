@@ -16,7 +16,7 @@ struct LandingView: View {
         if showingBookmarks {
             BookmarksView()
         } else {
-            
+
             VStack{
                 HStack{
                     Spacer().frame(width: 90)
@@ -24,7 +24,7 @@ struct LandingView: View {
                         .resizable()
                         .scaledToFill()
                         .frame(width: 50,height: 50)
-                    
+
                     Spacer().frame(width: 250)
     //                Image("bookmark")
     //                    .resizable()
@@ -45,42 +45,10 @@ struct LandingView: View {
 //                Spacer().frame(height: 700)
                 Spacer()
                 Divider().foregroundColor(.gray)
-                HStack{
-                    Button {
-                        print("Edit button was tapped")
-                    } label: {
-                        Image(systemName: "house")
-                            .foregroundColor(lightPink)
-                            .font(.system(size: 32))
-
-                    }
-                    Spacer().frame(width: 45)
-                    Button {
-                        print("Edit button was tapped")
-                    } label: {
-                        Image(systemName: "magnifyingglass")
-                            .foregroundColor(lightGray)
-                            .font(.system(size: 32))
-                    }
-                    Spacer().frame(width: 45)
-                    Button {
-                        print("Edit button was tapped")
-                    } label: {
-                        Image(systemName: "ellipsis.bubble")
-                            .foregroundColor(lightGray)
-                            .font(.system(size: 32))
-                    }
-                    Spacer().frame(width: 45)
-                    Button {
-                        print("Edit button was tapped")
-                    } label: {
-                        Image(systemName: "person.circle")
-                            .foregroundColor(lightGray)
-                            .font(.system(size: 32))
-                    }
-                }
+                
             }
         }
+
     }
 }
 

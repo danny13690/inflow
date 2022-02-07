@@ -90,9 +90,12 @@ struct ContentView: View {
     @State private var email: String = ""
     @State private var password: String = ""
     @State private var showLandingPage = false
+    @State private var showRegisterPage = false
     var body: some View {
-        if showLandingPage {
-            LandingView()
+        if showRegisterPage{
+            RegisterView()
+        } else if showLandingPage {
+            SwitchView()
         } else {
             ZStack{
                 VStack{
@@ -133,7 +136,7 @@ struct ContentView: View {
                     HStack{
                         Spacer().frame(width: 85)
                         Text("New here?").foregroundColor(lightPink)
-                        Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/) {
+                        Button(action: {showRegisterPage.toggle()}) {
                             Text("Register?")
                             .foregroundColor(lightPink)
                             .font(.headline)
