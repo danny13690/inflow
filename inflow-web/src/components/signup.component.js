@@ -42,9 +42,8 @@ export default class SignUp extends Component {
             this.props.history.push('/home')
           })
           .catch((error) => {
-            const errorCode = error.code;
             const errorMessage = error.message;
-            console.log(errorCode, errorMessage);
+            document.getElementById("error").innerHTML = errorMessage;
           });
     }
 
@@ -66,7 +65,7 @@ export default class SignUp extends Component {
                         <div className="form-group text-field">
                             <input type="password" value={this.password} onChange={this.onPasswordChange} className="form-control" placeholder="Enter password" />
                         </div>
-                        <h className="error-message">Password must be at least 8 characters!</h>
+                        <h className="error-message" id="error" >Password must be at least 8 characters!</h>
                         <button type="submit" className="sign-up-button">Sign Up</button>
                         <p className="forgot-password text-right">
                             Already registered <a href="/sign-in">sign in?</a>

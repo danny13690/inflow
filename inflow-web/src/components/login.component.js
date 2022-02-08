@@ -30,9 +30,8 @@ export default class Login extends Component {
           this.props.history.push('/home');
         })
         .catch((error) => {
-          const errorCode = error.code;
-          const errorMessage = error.message;
-          console.log(errorCode, errorMessage);
+            const errorMessage = error.message;
+            document.getElementById("error").innerHTML = errorMessage;
         });
     }
 
@@ -57,6 +56,7 @@ export default class Login extends Component {
                         <p className="forgot-password text-right">
                             Forgot <a href="#">password?</a>
                         </p>
+                        <h className="error-message" id="error" ></h>
                         <button type="submit" className="sign-up-button">Login</button>
 
                     </form>
