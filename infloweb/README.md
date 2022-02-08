@@ -6,6 +6,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 npm install firebase
 npm install react-table
 npm install antd
+npm install react-router-dom
 
 ## Available Scripts
 

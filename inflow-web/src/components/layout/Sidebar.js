@@ -1,14 +1,13 @@
 import React from 'react'
 import { Layout, Menu, Breadcrumb } from 'antd';
 import {
+  DesktopOutlined,
   BarChartOutlined,
   HomeOutlined,
   FieldTimeOutlined
 } from '@ant-design/icons';
-import '../../App.css';
 
 const { Sider } = Layout;
-const { SubMenu } = Menu;
 
 export class Sidebar extends React.Component {
   state = {
