@@ -9,13 +9,10 @@ import SwiftUI
 
 struct ProfileView: View {
     @State private var showingSettings = false
-    @State private var showingSearch = false
-    @State private var showingHome = false
-    @State private var showingProfile = false
     var body: some View {
-        if showingHome {
-            LandingView()
-        } else {
+//        if showingSettings {
+//            SettingsView()
+//        } else {
             
             VStack{
                 HStack{
@@ -31,7 +28,7 @@ struct ProfileView: View {
     //                    .scaledToFill()
     //                    .frame(width: 30,height: 30)
                     Button {
-                        showingHome = !showingHome
+                        showingSettings.toggle()
                     } label: {
                         Image(systemName: "gearshape")
                             .resizable()
@@ -79,7 +76,7 @@ struct ProfileView: View {
 //                            .font(.system(size: 32))
 //                    }
 //                }
-            }
+//            }
         }
         
     }
