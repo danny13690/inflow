@@ -40,10 +40,10 @@ export class Sidebar extends React.Component {
             <Link to="/home"> Home </Link>
             </Menu.Item>
             <Menu.Item key="2" icon={<FieldTimeOutlined />}>
-              Archives
+              <Link to="/home/CreateCampaign"> Archives </Link>
             </Menu.Item>
             <Menu.Item key="3" icon={<BarChartOutlined/>}>
-            Statistics
+            <Link to="/home/InfluencerTable"> Statistics </Link>
             </Menu.Item>
           </Menu>
         </Sider>
