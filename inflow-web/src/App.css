@@ -1,0 +1,17 @@
+.App-logo {
+  height: 10vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: #ffffff;
+  min-height: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  justify-content: left;
+  font-size: calc(10px + 2vmin);
+  font-family: "Pacifico", cursive;
+  font-weight: bold;
+  color: #ff89ab;
+}
