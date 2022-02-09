@@ -106,3 +106,10 @@ html,
   color: #ff89ab;
   font-weight: bold;
 }
+
+.campaign-title {
+  text-align: left;
+  margin-top: 80px;
+  margin-bottom: 0px;
+  color: #000000;
+}

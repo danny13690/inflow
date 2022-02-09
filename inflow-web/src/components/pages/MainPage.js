@@ -8,8 +8,8 @@ import '../../App.css';
 export const MainPage = () => {
     return (
     <main>
+        <body>
         <MainLayout>
-            <body>
                 <Switch>
                     <Route
                     exact path={"/home/InfluencerTable"}
@@ -20,8 +20,8 @@ export const MainPage = () => {
                     
                     </Route>
                 </Switch>
-            </body>
         </MainLayout>
+        </body>
     </main>
     );
 };

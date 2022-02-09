@@ -1,5 +1,6 @@
 import { List, Card } from 'antd';
 import { Row, Col } from 'antd';
+import '../App.css';
 
 export function CampaignList (props) {
 const listData = [];
@@ -30,7 +31,7 @@ return (
       <List.Item
         key={item.id}
       >
-        <Card title={item.title}>
+        <Card title={item.title} className="campaign-title">
           <Row>
           <Col span={12}>
           {item.deliverables}

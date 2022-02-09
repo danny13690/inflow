@@ -10,10 +10,6 @@ export const MainLayout = (props) => {
 
     return (
         <Layout>
-            <Header className="App-header">
-                <img src={logo} className="App-logo" alt="logo"/>
-                <p>Inflow</p>
-            </Header>
             <Layout style={{ minHeight: "100vh" }}>
                 <Sidebar />
                 <Layout className="site-layout">
