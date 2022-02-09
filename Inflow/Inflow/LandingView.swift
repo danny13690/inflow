@@ -13,9 +13,9 @@ struct LandingView: View {
     @State private var showingChat = false
     @State private var showingProfile = false
     var body: some View {
-        if showingBookmarks {
-            BookmarksView()
-        } else {
+//        if showingBookmarks {
+//            BookmarksView()
+//        } else {
 
             VStack{
                 HStack{
@@ -47,7 +47,7 @@ struct LandingView: View {
                 Divider().foregroundColor(.gray)
                 
             }
-        }
+//        }
 
     }
 }

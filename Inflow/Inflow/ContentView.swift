@@ -6,6 +6,24 @@
 //
 
 import SwiftUI
+import Firebase
+
+//https://www.letsbuildthatapp.com/course_video?id=7135
+class FirebaseManager: NSObject {
+
+    let auth: Auth
+
+    static let shared = FirebaseManager()
+
+    override init() {
+        FirebaseApp.configure()
+
+        self.auth = Auth.auth()
+
+        super.init()
+    }
+
+}
 
 //reference:  https://stackoverflow.com/questions/56874133/use-hex-color-in-swiftui
 extension Color {
@@ -87,96 +105,200 @@ let lightPink = Color(hex: "FF89AB")
 let lightGray = Color(hex: "D4D4D4")
 
 struct ContentView: View {
-    @State private var email: String = ""
-    @State private var password: String = ""
+//    @State private var email: String = ""
+//    @State private var password: String = ""
     @State private var showLandingPage = false
-    @State private var showRegisterPage = false
+//    @State private var showRegisterPage = false
+    @State var isLoginMode = false
+    @State var email = ""
+    @State var password = ""
+    
     var body: some View {
-        if showRegisterPage{
-            RegisterView()
-        } else if showLandingPage {
+        if showLandingPage {
             SwitchView()
         } else {
-            ZStack{
-                VStack{
-                    Image("login")
-                        .resizable()
-                        .scaledToFill()
-                        .frame(width: 250,height: 250)
+        NavigationView {
+                    ScrollView {
 
-                    TextField(
-                        "Email",
-                        text: $email
-                    ).textFieldStyle(.roundedBorder)
-                        .frame(width: 250, height: 40,alignment: .center)
-                        .cornerRadius(10)
-                        .padding(.bottom, 10)
+                        VStack(spacing: 16) {
+                            Image("login")
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: 250,height: 250)
+                            Picker(selection: $isLoginMode, label: Text("Picker here")) {
+                                Text("Login")
+                                    .tag(true)
+                                Text("Create Account")
+                                    .tag(false)
+                            }.pickerStyle(SegmentedPickerStyle())
 
-                    TextField(
-                        "Password",
-                        text: $password
-                    ).textFieldStyle(.roundedBorder)
-                        .frame(width: 250, height: 40,alignment: .center)
-                        .cornerRadius(10)
+                            if !isLoginMode {
+                                Button {
 
-                    HStack{
-                        Spacer().frame(width: 110)
-                        Text("Forget password?").foregroundColor(lightPink)
-                            .bold()
+                                } label: {
+                                    Image(systemName: "person.fill")
+                                        .font(.system(size: 64))
+                                        .padding()
+                                        .foregroundColor(lightPink)
+                                }
+                            }
+
+                            Group {
+                                TextField("Email", text: $email)
+                                    .keyboardType(.emailAddress)
+                                    .autocapitalization(.none)
+                                SecureField("Password", text: $password)
+                            }
+                            .padding(12)
+                            .background(Color.white)
+
+                            Button {
+                                handleAction()
+                            } label: {
+                                HStack {
+                                    Spacer()
+                                    Text(isLoginMode ? "Log In" : "Create Account")
+                                        .foregroundColor(.white)
+                                        .padding(.vertical, 10)
+                                        .font(.system(size: 14, weight: .semibold))
+                                    Spacer()
+                                }.background(lightPink)
+
+                            }
+                        }
+                        .padding()
+
                     }
-
-                    Button(action: {showLandingPage.toggle()}) {
-                        Text("Log In")
-                        .foregroundColor(.white)
-                        .font(.headline)
-                        .frame(width: 250, height: 40, alignment: .center)
-                    }.background(lightPink)
-                        .cornerRadius(10)
-
-                    HStack{
-                        Spacer().frame(width: 85)
-                        Text("New here?").foregroundColor(lightPink)
-                        Button(action: {showRegisterPage.toggle()}) {
-                            Text("Register?")
-                            .foregroundColor(lightPink)
-                            .font(.headline)
-                            .frame(width: 80, height: 40, alignment: .center)
-                        }
-                            .cornerRadius(10)
-                    }.frame(width: 500, height: 40, alignment: .center)
-    //                Spacer().frame(height: 120)
-                    HStack{
-                        Spacer().frame(width: 20)
-                        Button {
-                        } label: {
-                            Image(systemName: "applelogo")
-                                .resizable()
-                                .scaledToFill()
-                                .frame(width: 40,height: 50)
-                                .cornerRadius(15)
-                                .foregroundColor(.black)
-                        }
-                        Spacer().frame(width: 75)
-                        Button {
-                        } label:{
-                            Image("Facebook")
-                                .resizable()
-                                .scaledToFill()
-                                .frame(width: 50,height: 50)
-                                .cornerRadius(15)
-                        }
-                        Spacer().frame(width: 55)
-                        Button {
-                        } label: {
-                            Image("Google")
-                                .resizable()
-                                .scaledToFill()
-                                .frame(width:70,height: 70)
-                                .cornerRadius(15)
-                        }
-                    }
+//                    .navigationTitle(isLoginMode ? "Log In" : "Create Account")
+                    .background(Color.white)
                 }
+//        if showRegisterPage{
+//            RegisterView()
+//        } else if showLandingPage {
+//            SwitchView()
+//        } else {
+//            ZStack{
+//                VStack{
+//                    Image("login")
+//                        .resizable()
+//                        .scaledToFill()
+//                        .frame(width: 250,height: 250)
+//
+//                    TextField(
+//                        "Email",
+//                        text: $email
+//                    ).textFieldStyle(.roundedBorder)
+//                        .frame(width: 250, height: 40,alignment: .center)
+//                        .cornerRadius(10)
+//                        .padding(.bottom, 10)
+//
+//                    SecureField(
+//                        "Password",
+//                        text: $password
+//                    ).textFieldStyle(.roundedBorder)
+//                        .frame(width: 250, height: 40,alignment: .center)
+//                        .cornerRadius(10)
+//
+//                    HStack{
+//                        Spacer().frame(width: 110)
+//                        Text("Forget password?").foregroundColor(lightPink)
+//                            .bold()
+//                    }
+//
+//                    Button(action: {showLandingPage.toggle()
+//                        loginUser()
+//                    }) {
+//                        Text("Log In")
+//                        .foregroundColor(.white)
+//                        .font(.headline)
+//                        .frame(width: 250, height: 40, alignment: .center)
+//                    }.background(lightPink)
+//                        .cornerRadius(10)
+//
+//                    HStack{
+//                        Spacer().frame(width: 85)
+//                        Text("New here?").foregroundColor(lightPink)
+//                        Button(action: {showRegisterPage.toggle()}) {
+//                            Text("Register?")
+//                            .foregroundColor(lightPink)
+//                            .font(.headline)
+//                            .frame(width: 80, height: 40, alignment: .center)
+//                        }
+//                            .cornerRadius(10)
+//                    }.frame(width: 500, height: 40, alignment: .center)
+//    //                Spacer().frame(height: 120)
+//                    HStack{
+//                        Spacer().frame(width: 20)
+//                        Button {
+//                        } label: {
+//                            Image(systemName: "applelogo")
+//                                .resizable()
+//                                .scaledToFill()
+//                                .frame(width: 40,height: 50)
+//                                .cornerRadius(15)
+//                                .foregroundColor(.black)
+//                        }
+//                        Spacer().frame(width: 75)
+//                        Button {
+//                        } label:{
+//                            Image("Facebook")
+//                                .resizable()
+//                                .scaledToFill()
+//                                .frame(width: 50,height: 50)
+//                                .cornerRadius(15)
+//                        }
+//                        Spacer().frame(width: 55)
+//                        Button {
+//                        } label: {
+//                            Image("Google")
+//                                .resizable()
+//                                .scaledToFill()
+//                                .frame(width:70,height: 70)
+//                                .cornerRadius(15)
+//                        }
+//                    }
+//                }
+//            }
+//        }
+        }
+    }
+    private func handleAction() {
+        showLandingPage.toggle()
+        if isLoginMode {
+            
+            loginUser()
+        } else {
+            createNewAccount()
+        }
+    }
+
+    private func loginUser() {
+        FirebaseManager.shared.auth.signIn(withEmail: email, password: password) { result, err in
+            if let err = err {
+                print("Failed to login user:", err)
+                self.loginStatusMessage = "Failed to login user: \(err)"
+                return
             }
+
+            print("Successfully logged in as user: \(result?.user.uid ?? "")")
+
+            self.loginStatusMessage = "Successfully logged in as user: \(result?.user.uid ?? "")"
+        }
+    }
+
+    @State var loginStatusMessage = ""
+
+    private func createNewAccount() {
+        FirebaseManager.shared.auth.createUser(withEmail: email, password: password) { result, err in
+            if let err = err {
+                print("Failed to create user:", err)
+                self.loginStatusMessage = "Failed to create user: \(err)"
+                return
+            }
+
+            print("Successfully created user: \(result?.user.uid ?? "")")
+
+            self.loginStatusMessage = "Successfully created user: \(result?.user.uid ?? "")"
         }
     }
     
