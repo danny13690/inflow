@@ -1,35 +1,17 @@
-.App {
-  text-align: center;
-}
-
 .App-logo {
   height: 10vmin;
   pointer-events: none;
 }
 
 .App-header {
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   min-height: 0;
   display: flex;
   flex-direction: row;
   align-items: start;
   justify-content: left;
   font-size: calc(10px + 2vmin);
-  font-family: 'Pacifico', cursive;
+  font-family: "Pacifico", cursive;
   font-weight: bold;
-  color: #FF89AB;
-}
-
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  color: #ff89ab;
 }
