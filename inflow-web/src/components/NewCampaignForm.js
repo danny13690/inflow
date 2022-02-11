@@ -4,10 +4,10 @@ import { db } from "../index";
 import { createPortal } from 'react-dom';
 
 export const NewCampaignForm = () => {
-  const addCampaign = (values) => {
+  const addCampaign = async function (values) {
     console.log('Success:', values);
     
-    addDoc(collection(db, "campaigns"), {
+    await addDoc(collection(db, "campaigns"), {
       title: values["title"],
       deliverables: values["deliverables"],
       compensation: values["compensation"]
