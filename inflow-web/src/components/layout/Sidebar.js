@@ -3,7 +3,8 @@ import { Layout, Menu, Breadcrumb } from 'antd';
 import {
   BarChartOutlined,
   HomeOutlined,
-  FieldTimeOutlined
+  FieldTimeOutlined,
+  PlusCircleOutlined
 } from '@ant-design/icons';
 import '../../App.css';
 import { Link } from "react-router-dom";
@@ -39,10 +40,13 @@ export class Sidebar extends React.Component {
             <Menu.Item key="1" icon={<HomeOutlined />}>
             <Link to="/home"> Home </Link>
             </Menu.Item>
-            <Menu.Item key="2" icon={<FieldTimeOutlined />}>
-              <Link to="/home/CreateCampaign"> Archives </Link>
+            <Menu.Item key="2" icon={<PlusCircleOutlined />}>
+              <Link to="/home/CreateCampaign"> Create Campaign </Link>
             </Menu.Item>
-            <Menu.Item key="3" icon={<BarChartOutlined/>}>
+            <Menu.Item key="3" icon={<FieldTimeOutlined />}>
+              <Link to="/home"> Archives </Link>
+            </Menu.Item>
+            <Menu.Item key="4" icon={<BarChartOutlined/>}>
             <Link to="/home/InfluencerTable"> Statistics </Link>
             </Menu.Item>
           </Menu>

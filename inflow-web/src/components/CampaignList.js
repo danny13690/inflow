@@ -50,44 +50,44 @@ export class CampaignList extends React.Component {
     this.getCampaigns();
   }
 
-render() {
-  console.log("Render");
-  if (this.state.listData.length > 0 ){
-    return (
-      <List
-        itemLayout="vertical"
-        size="large"
-        pagination={{
-          onChange: page => {
-            console.log(page);
-          },
-          pageSize: 3,
-        }}
-        dataSource={this.state.listData}
+  render() {
+    console.log("Render");
+    if (this.state.listData.length > 0 ){
+      return (
+        <List
+          itemLayout="vertical"
+          size="large"
+          pagination={{
+            onChange: page => {
+              console.log(page);
+            },
+            pageSize: 3,
+          }}
+          dataSource={this.state.listData}
 
-        renderItem={item => (
-          <List.Item
-            key={item.id}
-          >
-            <Card title={item.title} className="campaign-title">
-              <Row>
-              <Col span={12}>
-              {item.deliverables}
-              </Col>    
-              <Col span={12}>  
-              {item.compensation}
-              </Col>  
-              </Row> 
-            </Card>
-          
-          </List.Item>
-        )}
-        />
-        )
-    } else {
-          return (
-            <p> Submit a Campaign! </p>
+          renderItem={item => (
+            <List.Item
+              key={item.id}
+            >
+              <Card title={item.title} className="campaign-title">
+                <Row>
+                <Col span={12}>
+                {item.deliverables}
+                </Col>    
+                <Col span={12}>  
+                {item.compensation}
+                </Col>  
+                </Row> 
+              </Card>
+            
+            </List.Item>
+          )}
+          />
           )
-    }
-}
+      } else {
+            return (
+              <p> Submit a Campaign! </p>
+            )
+      }
+  }
 };
