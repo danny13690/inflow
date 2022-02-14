@@ -5,6 +5,7 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from './reportWebVitals';
 import { initializeApp } from "firebase/app";
+import { getFirestore } from "firebase/firestore";
 
 ReactDOM.render(
     <BrowserRouter>
@@ -31,6 +32,7 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+export const db = getFirestore();
 // import { getAnalytics } from "firebase/analytics";
 // const analytics = getAnalytics(app);
 
