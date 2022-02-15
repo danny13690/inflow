@@ -30,17 +30,15 @@ export class CampaignList extends React.Component {
     const db = getFirestore();
     const campaignsCol = collection(db, "campaigns");
     const campaignsSnapshot = await getDocs(campaignsCol);
-    const campaignsList = campaignsSnapshot.docs.map(doc => doc.data());
-    let i = 1;
+    const campaignsList = campaignsSnapshot.docs.map(doc => {let d = doc.data(); d['id'] = doc.id; return d;});
     let newList = [];
     campaignsList.forEach((doc) => {
         newList.push({
-        id: i,
+        id: doc.id,
         title: doc.title,
         deliverables: doc.deliverables,
         compensation: doc.compensation,
       });
-      i+=1;
     })
     this.setState({listData: newList});
     console.log(this.state.listData);
@@ -67,6 +65,7 @@ export class CampaignList extends React.Component {
 
           renderItem={item => (
             <List.Item
+              onClick={() => window.location.replace(`/home/InfluencerTable/${item.id}`)}
               key={item.id}
             >
               <Card title={item.title} className="campaign-title">

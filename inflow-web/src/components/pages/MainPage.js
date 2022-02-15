@@ -16,6 +16,10 @@ export const MainPage = () => {
                     component={NewCampaignForm}>
                     </Route>
                     <Route
+                    exact path={"/home/InfluencerTable/:campaignID"}
+                    component={InfluencerTable}
+                    />
+                    <Route
                     exact path={"/home/InfluencerTable"}
                     component={InfluencerTable}
                     />
