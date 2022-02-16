@@ -269,7 +269,6 @@ struct ContentView: View {
         }
     }
     private func handleAction() {
-        showLandingPage.toggle()
         if isLoginMode {
             
             loginUser()
@@ -287,6 +286,7 @@ struct ContentView: View {
             }
 
             print("Successfully logged in as user: \(result?.user.uid ?? "")")
+            showLandingPage.toggle()
 
             self.loginStatusMessage = "Successfully logged in as user: \(result?.user.uid ?? "")"
         }
