@@ -43,12 +43,12 @@ export class Sidebar extends React.Component {
             <Menu.Item key="2" icon={<PlusCircleOutlined />}>
               <Link to="/home/CreateCampaign"> Create Campaign </Link>
             </Menu.Item>
-            <Menu.Item key="3" icon={<FieldTimeOutlined />}>
+            {/* <Menu.Item key="3" icon={<FieldTimeOutlined />}>
               <Link to="/home"> Archives </Link>
             </Menu.Item>
             <Menu.Item key="4" icon={<BarChartOutlined/>}>
             <Link to="/home/InfluencerTable"> Statistics </Link>
-            </Menu.Item>
+            </Menu.Item> */}
           </Menu>
         </Sider>
     );
