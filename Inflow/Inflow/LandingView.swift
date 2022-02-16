@@ -6,12 +6,20 @@
 //
 
 import SwiftUI
+import Firebase
+//import FirebaseDatabase
+
+
 
 struct LandingView: View {
     @State private var showingBookmarks = false
     @State private var showingSearch = false
     @State private var showingChat = false
     @State private var showingProfile = false
+//    let document = FirebaseManager.shared.firestore
+//        .collection("campaigns")
+
+    
     var body: some View {
 //        if showingBookmarks {
 //            BookmarksView()

@@ -7,7 +7,11 @@
 
 import SwiftUI
 import Firebase
-
+//import FirebaseDatabase
+//
+//var ref: DatabaseReference!
+//
+//ref = Database.database().reference()
 //https://www.letsbuildthatapp.com/course_video?id=7135
 class FirebaseManager: NSObject {
 
@@ -21,8 +25,10 @@ class FirebaseManager: NSObject {
         self.auth = Auth.auth()
 
         super.init()
+        
     }
 
+    
 }
 
 //reference:  https://stackoverflow.com/questions/56874133/use-hex-color-in-swiftui
@@ -263,7 +269,6 @@ struct ContentView: View {
         }
     }
     private func handleAction() {
-        showLandingPage.toggle()
         if isLoginMode {
             
             loginUser()
@@ -281,6 +286,7 @@ struct ContentView: View {
             }
 
             print("Successfully logged in as user: \(result?.user.uid ?? "")")
+            showLandingPage.toggle()
 
             self.loginStatusMessage = "Successfully logged in as user: \(result?.user.uid ?? "")"
         }
