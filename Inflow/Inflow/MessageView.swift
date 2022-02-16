@@ -17,15 +17,15 @@ struct MessageView: View {
 
 
     var body: some View {
-        NavigationView {
-
-            VStack {
-                messagesView
-            }
-            .overlay(
-                newMessageButton, alignment: .bottom)
-            .navigationBarHidden(true)
-        }
+//        NavigationView {
+            messagesView
+//            VStack {
+//                messagesView
+//            }
+//            .overlay(
+//                newMessageButton, alignment: .bottom)
+//            .navigationBarHidden(true)
+//        }
     }
 
     private var messagesView: some View {
