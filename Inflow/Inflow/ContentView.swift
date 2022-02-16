@@ -6,30 +6,6 @@
 //
 
 import SwiftUI
-import Firebase
-//import FirebaseDatabase
-//
-//var ref: DatabaseReference!
-//
-//ref = Database.database().reference()
-//https://www.letsbuildthatapp.com/course_video?id=7135
-class FirebaseManager: NSObject {
-
-    let auth: Auth
-
-    static let shared = FirebaseManager()
-
-    override init() {
-        FirebaseApp.configure()
-
-        self.auth = Auth.auth()
-
-        super.init()
-        
-    }
-
-    
-}
 
 //reference:  https://stackoverflow.com/questions/56874133/use-hex-color-in-swiftui
 extension Color {

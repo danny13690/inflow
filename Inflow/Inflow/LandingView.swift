@@ -6,9 +6,6 @@
 //
 
 import SwiftUI
-import Firebase
-//import FirebaseDatabase
-
 
 
 struct LandingView: View {
