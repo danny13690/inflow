@@ -9,14 +9,19 @@ import SwiftUI
 import Firebase
 
 @main
+
+
 struct InflowApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
         }
     }
+    
 }
 
+//import FirebaseDatabase
+//
 //var ref: DatabaseReference!
 //
 //ref = Database.database().reference()
@@ -24,15 +29,17 @@ struct InflowApp: App {
 class FirebaseManager: NSObject {
 
     let auth: Auth
-    var ref: DatabaseReference!
 
-    ref = Database.database().reference()
-    
     static let shared = FirebaseManager()
 
     override init() {
         FirebaseApp.configure()
+
         self.auth = Auth.auth()
+
         super.init()
+        
     }
+
+    
 }
