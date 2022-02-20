@@ -38,45 +38,22 @@ struct ProfileView: View {
                     }
                     Spacer().frame(width: 70)
                 }
-//                Divider().foregroundColor(.gray)
-                Spacer()
-                Divider().foregroundColor(.gray)
-                Spacer().frame(height: 12)
-//                HStack{
-//                    Button {
-//                        print("Edit button was tapped")
-//                    } label: {
-//                        Image(systemName: "house")
-//                            .foregroundColor(lightGray)
-//                            .font(.system(size: 32))
-//
-//                    }
-//                    Spacer().frame(width: 45)
-//                    Button {
-//                        print("Edit button was tapped")
-//                    } label: {
-//                        Image(systemName: "magnifyingglass")
-//                            .foregroundColor(lightGray)
-//                            .font(.system(size: 32))
-//                    }
-//                    Spacer().frame(width: 45)
-//                    Button {
-//                        print("Edit button was tapped")
-//                    } label: {
-//                        Image(systemName: "ellipsis.bubble")
-//                            .foregroundColor(lightGray)
-//                            .font(.system(size: 32))
-//                    }
-//                    Spacer().frame(width: 45)
-//                    Button {
-//                        print("Edit button was tapped")
-//                    } label: {
-//                        Image(systemName: "person.circle")
-//                            .foregroundColor(lightPink)
-//                            .font(.system(size: 32))
-//                    }
-//                }
-//            }
+                Spacer().frame(height: 50)
+                Image(systemName: "person.crop.circle")
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: 150,height: 150)
+                    .foregroundColor(lightPink)
+                Text("Sample User").font(Font.custom("Avenir", size: 30))
+                Spacer().frame(height: 50)
+                Group {
+                    Text("age: 23").font(Font.custom("Avenir", size: 25))
+                    Text("gender: female").font(Font.custom("Avenir", size: 25))
+                    Text("location: SF, CA").font(Font.custom("Avenir", size: 25))
+                    Text("total reach: 500").font(Font.custom("Avenir", size: 25))
+                    Text("number of follower: 1897").font(Font.custom("Avenir", size: 25))
+                    Spacer()
+                }
         }
         
     }

@@ -29,6 +29,7 @@ struct InflowApp: App {
 class FirebaseManager: NSObject {
 
     let auth: Auth
+//    let ref = DatabaseRefer
 
     static let shared = FirebaseManager()
 
