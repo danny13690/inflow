@@ -15,7 +15,8 @@ import FirebaseFirestore
 struct InflowApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+//            ContentView()
+            FeedView(feedViewModel: FeedViewModel())
         }
     }
 }
@@ -23,11 +24,13 @@ struct InflowApp: App {
 
 class FirebaseManager: NSObject {
     let auth: Auth
+    let store: Firestore
     static let shared = FirebaseManager()
     
     override init() {
         FirebaseApp.configure()
         self.auth = Auth.auth()
+        self.store = Firestore.firestore()
         super.init()
     }
     

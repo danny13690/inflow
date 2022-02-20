@@ -9,9 +9,8 @@ import Foundation
 import FirebaseFirestore
 import Combine
 
-final class CampaignRepository {
+final class CampaignRepository: ObservableObject {
     private let path = "campaigns"
-    private let store = Firestore.firestore()
     @Published var campaigns: [Campaign] = []
     
     init() {
@@ -19,25 +18,23 @@ final class CampaignRepository {
     }
     
     func get() {
-        store.collection(path).addSnapshotListener { (snapshot, err) in
+        FirebaseManager.shared.store.collection(path).addSnapshotListener { (snapshot, err) in
             if let err = err {
                 print("Get campaigns failed.")
                 print(err)
             } else {
-                print("successfully obtained campaigns")
-                print(snapshot!.documents[0].data())
+                print("successfully obtained \(snapshot!.documents.count) campaigns")
                 self.campaigns = snapshot?.documents.compactMap {
                     try? $0.data(as: Campaign.self)
                 } ?? []
+                print("successfully saved \(self.campaigns.count) campaigns")
             }
         }
-        print("hi")
-        print(self.campaigns)
     }
     
     func add(_ campaign: Campaign) {
         do {
-            _ = try store.collection(path).addDocument(from: campaign)
+            _ = try FirebaseManager.shared.store.collection(path).addDocument(from: campaign)
         } catch {
             fatalError("Adding campaign failed")
         }

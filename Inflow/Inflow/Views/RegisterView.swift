@@ -10,10 +10,10 @@ import SwiftUI
 struct RegisterView: View {
     @State private var email: String = ""
     @State private var password: String = ""
-    @State private var showingLandingView = false
+    @State private var showingFeedView = false
 
     var body: some View {
-        if showingLandingView {
+        if showingFeedView {
             SwitchView()
         } else {
             ZStack{
@@ -51,7 +51,7 @@ struct RegisterView: View {
                             .font(.system(size: 10))
                     }
                     
-                    Button(action: {showingLandingView.toggle()}) {
+                    Button(action: {showingFeedView.toggle()}) {
                         Text("Sign up")
                         .foregroundColor(.white)
                         .font(.headline)

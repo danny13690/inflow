@@ -10,11 +10,11 @@ import FirebaseFirestoreSwift
 
 struct Filters: Codable {
     // limit to 2 memebrs per array, [low, high]
-    var follower: [Int]
-    var engagement: [Float]
+    var follower: [Int]?
+    var engagement: [Float]?
     
     // as many items as needed
-    var locations: [String]
+    var locations: [String]?
 }
 
 struct Campaign: Identifiable, Codable {
@@ -25,14 +25,14 @@ struct Campaign: Identifiable, Codable {
     // as many items as needed
     var deliverables: [String]
     var compensation: [String]
-    var hashtags: [String]
+    var hashtags: [String]?
     
     // limit to 2 memebrs per array, [start,end]
-    var signUpPeriod: [String]
-    var campaignPeriod: [String]
+    var signUpPeriod: [String]?
+    var campaignPeriod: [String]?
     
     // company internal parameters
-    var industry: String
+    var industry: String?
     
     // see struct above
     var filters: Filters

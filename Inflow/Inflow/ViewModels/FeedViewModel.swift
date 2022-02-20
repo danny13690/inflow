@@ -6,8 +6,9 @@
 //
 
 import Combine
+import SwiftUI
 
-class FeedViewModel: ObservableObject {
+final class FeedViewModel: ObservableObject {
     @Published var campaignRepository = CampaignRepository()
     @Published var campaigns: [Campaign] = []
     
@@ -17,6 +18,26 @@ class FeedViewModel: ObservableObject {
         campaignRepository.$campaigns
             .assign(to: \.campaigns, on: self)
             .store(in: &cancellables)
+    }
+    
+    func printCampaigns() {
+        print("Repository has \(campaignRepository.campaigns.count) campaigns")
+        print("MV has \(self.campaigns.count) campaigns")
+    }
+    
+    func reload() async {
+        await FirebaseManager.shared.store.collection("campaigns").addSnapshotListener { (snapshot, err) in
+            if let err = err {
+                print("Get campaigns failed.")
+                print(err)
+            } else {
+                print("successfully obtained campaigns")
+                print(snapshot!.documents[0].data())
+                self.campaigns = snapshot?.documents.compactMap {
+                    try? $0.data(as: Campaign.self)
+                } ?? []
+            }
+        }
     }
     
     func add(_ campaign: Campaign) {
