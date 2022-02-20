@@ -25,12 +25,14 @@ struct InflowApp: App {
 class FirebaseManager: NSObject {
     let auth: Auth
     let store: Firestore
+    let storage: Storage
     static let shared = FirebaseManager()
     
     override init() {
         FirebaseApp.configure()
         self.auth = Auth.auth()
         self.store = Firestore.firestore()
+        self.storage = Storage.storage()
         super.init()
     }
     

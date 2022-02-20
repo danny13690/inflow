@@ -10,6 +10,7 @@ def firebase
   pod 'Firebase/Core'
   pod 'Firebase/Firestore'
   pod 'FirebaseFirestoreSwift', '8.12.1-beta'
+  pod 'FirebaseStorage', '~> 8.12'
 end
 
 target 'Inflow' do

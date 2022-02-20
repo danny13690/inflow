@@ -1,6 +1,0 @@
-framework module Pods_Inflow_InflowUITests {
-  umbrella header "Pods-Inflow-InflowUITests-umbrella.h"
-
-  export *
-  module * { export * }
-}

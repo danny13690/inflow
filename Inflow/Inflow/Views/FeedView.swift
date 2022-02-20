@@ -49,40 +49,42 @@ struct FeedView: View {
             }
             
             //feed content
-            if (feedViewModel.campaigns.isEmpty) {
-                VStack{
-                    Text("Sorry, no campaigns available!")
-                        .font(.custom("Avenir", size: 24))
+            VStack {
+                List(feedViewModel.campaigns) {campaign in
+                    Text(campaign.name).font(.custom("Avenir", size: 24))
                         .foregroundColor(Color.black)
-                }
-            } else {
-                ScrollView(.vertical) {
-                    VStack {
-                        List(feedViewModel.campaigns) {campaign in
-                            Text(campaign.name).font(.custom("Avenir", size: 24))
-                                .foregroundColor(Color.black)
-                            Text("Compensation: $1000000000")
-                                .font(.custom("Avenir", size: 18))
-                                .foregroundColor(Color.black)
-                            Text("Deliberables: take photos")
-                                .font(.custom("Avenir", size: 18))
-                                .foregroundColor(Color.black)
-                            Image("sampleCampaign")
-                                .resizable()
-                                .scaledToFill()
+                    Text("Deliberables")
+                        .font(.custom("Avenir", size: 18))
+                        .foregroundColor(Color.black)
+                    ForEach(0..<campaign.deliverables.count) { i in
+                        Text(" - \(campaign.deliverables[i])")
+                            .font(.custom("Avenir", size: 18))
+                            .foregroundColor(Color.black)
+                    }
+                    
+                    Text("Compensation")
+                        .font(.custom("Avenir", size: 18))
+                        .foregroundColor(Color.black)
+                    ForEach(0..<campaign.compensation.count) { i in
+                        Text(" - \(campaign.compensation[i])")
+                            .font(.custom("Avenir", size: 18))
+                            .foregroundColor(Color.black)
+                    }
+                    
+                    Image("sampleCampaign")
+                        .resizable()
+                        .scaledToFill()
 //                        }.refreshable {
 //                            print("refreshing")
 //                            await feedViewModel.reload()
-                        }
-                        Button("print") {
-                            feedViewModel.printCampaigns()
-                        }
-                        Button("fuck you") {
-                            let test_filter = Filters(follower: [1,2], engagement: [0.1,0.2], locations: ["Beijing","Boston"])
-                            let campaign = Campaign(name: "test", description: "test description", deliverables: ["x", "y"], compensation: ["z1", "z2"], hashtags: ["#fuck", "this"], signUpPeriod: ["monday", "tuesday"], campaignPeriod: ["wed", "fri"], industry: "weed", filters: test_filter)
-                            feedViewModel.add(campaign)
-                        }
-                    }
+                }
+                Button("print") {
+                    feedViewModel.printCampaigns()
+                }
+                Button("fuck you") {
+                    let test_filter = Filters(follower: [1,2], engagement: [0.1,0.2], locations: ["Beijing","Boston"])
+                    let campaign = Campaign(name: "test", description: "test description", deliverables: ["x", "y"], compensation: ["z1", "z2"], hashtags: ["#fuck", "this"], signUpPeriod: ["monday", "tuesday"], campaignPeriod: ["wed", "fri"], industry: "weed", filters: test_filter)
+                    feedViewModel.add(campaign)
                 }
             }
         }

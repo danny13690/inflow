@@ -15,6 +15,7 @@
 #import "FIRDatabaseReference.h"
 #import "FIRDataEventType.h"
 #import "FIRDataSnapshot.h"
+#import "FirebaseDatabase 2.h"
 #import "FirebaseDatabase.h"
 #import "FIRMutableData.h"
 #import "FIRServerValue.h"
