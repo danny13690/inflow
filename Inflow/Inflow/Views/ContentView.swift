@@ -6,10 +6,6 @@
 //
 
 import SwiftUI
-<<<<<<< HEAD
-=======
-import Firebase
->>>>>>> 65726dc54ea3facf00e4f13a4c768eaf4d744bb1
 
 //reference:  https://stackoverflow.com/questions/56874133/use-hex-color-in-swiftui
 extension Color {
@@ -248,9 +244,9 @@ struct ContentView: View {
 //        }
         }
     }
+    
     private func handleAction() {
         if isLoginMode {
-            
             loginUser()
         } else {
             createNewAccount()

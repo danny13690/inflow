@@ -12,7 +12,7 @@ struct BookmarksView: View {
     @State private var showingHome = false
     var body: some View {
         if showingHome {
-            LandingView()
+            FeedView(feedViewModel: FeedViewModel())
         } else {
             VStack{
                 HStack{

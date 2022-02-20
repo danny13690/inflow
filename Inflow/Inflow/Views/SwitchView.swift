@@ -10,7 +10,7 @@ import SwiftUI
 struct SwitchView: View {
     var body: some View {
         TabView{
-            LandingView()
+            FeedView(feedViewModel: FeedViewModel())
                 .tabItem(){
                     Image(systemName:"house").renderingMode(.template)
                     Text("Home")
