@@ -10,8 +10,13 @@ import { auth } from "./index";
 import EmailVerify from './components/EmailVerify';
 
 
+const SIGNED_OUT = 1;
+const SIGNED_IN = 2;
+const EMAIL_VERIFIED = 3;
+
 function App() {
-  const [authStatus, authStatusChanged] = useState(1);
+
+  const [authStatus, authStatusChanged] = useState(SIGNED_OUT);
 
   useEffect(() => {
     onLoad();
@@ -20,39 +25,41 @@ function App() {
   async function onLoad() {
     if (auth.currentUser && auth.currentUser.emailVerified) {
       if (auth.currentUser.emailVerified) {
-        authStatusChanged(3);
+        authStatusChanged(EMAIL_VERIFIED);
       } else {
-        authStatusChanged(2);
+        authStatusChanged(SIGNED_IN);
       }
     } else {
-      authStatusChanged(1);
+      authStatusChanged(SIGNED_OUT);
     }
   }
 
   onAuthStateChanged(auth, (user) => {
     if (user && user.emailVerified) {
-      authStatusChanged(3);
+      authStatusChanged(EMAIL_VERIFIED);
     } else if (user) {
-      authStatusChanged(2);
+      authStatusChanged(SIGNED_IN);
     } else {
-      authStatusChanged(1);
+      authStatusChanged(SIGNED_OUT);
     }
   });
+
+  console.log(authStatus);
 
   return (<Router>
       <Switch>
         <Redirect exact from='/' to='/home'/>
-        {authStatus === 1 ? (
+        {authStatus === SIGNED_OUT ? (
           <Route path='/sign-in' component={SignIn} />
         ) : (
           <Redirect from='/sign-in' to='/home'/>
         )}
-        {authStatus === 2 ? (
+        {authStatus === SIGNED_IN ? (
           <Route path='/email' component={EmailVerify} />
         ) : (
           <Redirect from='/email' to='/sign-in'/>
         )}
-        {authStatus === 3 ? (
+        {authStatus === EMAIL_VERIFIED ? (
           <Route path='/home' component={MainPage} />
         ) : (
           <Redirect from='/home' to='/email'/>

@@ -30,7 +30,6 @@ export class CampaignList extends React.Component {
   }
 
   render() {
-    console.log("Render");
     if (this.state.listData.length > 0 ){
       return (
         <List
@@ -46,8 +45,8 @@ export class CampaignList extends React.Component {
 
           renderItem={item => (
             <List.Item
-              onClick={() => window.location.assign(`/home/InfluencerTable/${item.id}`)}
-              key={item.id}
+            onClick={() => this.props.history.push(`/home/InfluencerTable/${item.id}`)}
+            key={item.id}
             >
               <Card title={item.name} className="campaign-title">
                 <Row>
