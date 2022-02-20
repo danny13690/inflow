@@ -1,0 +1,15 @@
+.header {
+  display: inherit;
+}
+
+.logo {
+  height: 42px;
+  width: 95px;
+  margin: 16px;
+}
+
+.flex-setting {
+  display: flex;
+  flex-direction: row-reverse;
+  width: 100%;
+}

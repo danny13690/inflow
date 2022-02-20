@@ -8,8 +8,6 @@ import '../../App.css';
 
 export const MainPage = () => {
     return (
-    <main>
-        <body>
         <MainLayout>
                 <Switch>
                     <Route exact path={"/home/CreateCampaign"}
@@ -23,12 +21,10 @@ export const MainPage = () => {
                     exact path={"/home/InfluencerTable"}
                     component={InfluencerTable}
                     />
-                    <Route exact path={"/home/"}
+                    <Route exact path={"/home"}
                     component={CampaignList}>
                     </Route>
                 </Switch>
         </MainLayout>
-        </body>
-    </main>
     );
 };

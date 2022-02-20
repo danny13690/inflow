@@ -1,7 +1,13 @@
 import React, { Component } from "react";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { sendEmailVerification } from "firebase/auth"; 
 import "../index.css";
 import logo from '../images/logo2.png';
+import {toast} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+
+toast.configure();
 
 export default class SignUp extends Component {
     constructor(props) {
@@ -38,8 +44,14 @@ export default class SignUp extends Component {
         createUserWithEmailAndPassword(auth, this.state.email, this.state.password)
           .then((userCredential) => {
             const user = userCredential.user;
-            console.log(user);
-            this.props.history.push('/home')
+            sendEmailVerification(user)
+                .then(() => {
+                    this.props.history.push('/sign-in/email');
+                    toast("Verification email sent!");
+                })
+                .catch((error) => {
+                    console.log(error)
+                });
           })
           .catch((error) => {
             const errorMessage = error.message;

@@ -1,9 +1,12 @@
+import { Typography } from '@material-ui/core';
 import { List, Card } from 'antd';
 import { Row, Col } from 'antd';
 import { collection, getDocs } from "firebase/firestore";
 import React from 'react';
 import '../App.css';
 import { db } from "../index";
+import { CampaignCard } from './CampaignCard';
+import { CampaignCardAdd } from './CampaignCardAdd';
 
 
 export class CampaignList extends React.Component {
@@ -26,57 +29,46 @@ export class CampaignList extends React.Component {
         compensation: doc.compensation,
       });
     })
+    newList.push({
+      name: "dummy"
+    })
     this.setState({listData: newList});
   }
 
   render() {
-    console.log("Render");
     if (this.state.listData.length > 0 ){
       return (
+        <>
+        <Typography variant="h5" style={{marginBottom: "40px"}}>
+          Active Campaigns
+        </Typography>
         <List
-          itemLayout="vertical"
+          itemLayout="horizontal"
           size="large"
-          pagination={{
-            onChange: page => {
-              console.log(page);
-            },
-            pageSize: 3,
+          grid={{
+            gutter: 16,
           }}
           dataSource={this.state.listData}
-
-          renderItem={item => (
+          renderItem={(item, idx) => {
+            return idx < this.state.listData.length - 1 ? 
             <List.Item
-              onClick={() => window.location.assign(`/home/InfluencerTable/${item.id}`)}
-              key={item.id}
+            onClick={() => this.props.history.push(`/home/InfluencerTable/${item.id}`)}
+            key={item.id}
             >
-              <Card title={item.name} className="campaign-title">
-                <Row>
-                <Col span={12}>
-                  <h>Deliverables</h>
-                <ul>
-                {item.deliverables.map(n => {
-                  return (
-                    <li>{n}</li>
-                  );
-                })}
-                </ul>
-                </Col> 
-                <Col span={12}>
-                <h>Compensation</h>
-                <ul>
-                {item.compensation.map(n => {
-                  return (
-                    <li>{n}</li>
-                  );
-                })}
-                </ul>
-                </Col>
-                </Row> 
-              </Card>
-            
+              <CampaignCard item={item}/>
+            </List.Item> :
+            <List.Item
+            onClick={() => this.props.history.push(`/home/CreateCampaign`)}
+            key="add_campaign_card"
+            >
+              <CampaignCardAdd/>
             </List.Item>
-          )}
-          />
+          }
+          }/>
+        <Typography variant="h5" style={{marginBottom: "40px", marginTop: "80px"}}>
+          Past Campaigns
+        </Typography>
+          </>
           )
       } else {
             return (
