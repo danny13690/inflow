@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Firebase
+import FirebaseFirestore
 
 @main
 
@@ -14,33 +15,25 @@ import Firebase
 struct InflowApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+//            ContentView()
+            FeedView(feedViewModel: FeedViewModel())
         }
     }
-    
 }
 
-//import FirebaseDatabase
-//
-//var ref: DatabaseReference!
-//
-//ref = Database.database().reference()
-//https://www.letsbuildthatapp.com/course_video?id=7135
+
 class FirebaseManager: NSObject {
-
     let auth: Auth
-
+    let store: Firestore
     static let shared = FirebaseManager()
-
+    
     override init() {
         FirebaseApp.configure()
-
         self.auth = Auth.auth()
-
+        self.store = Firestore.firestore()
         super.init()
-        
     }
-
     
 }
+
 
