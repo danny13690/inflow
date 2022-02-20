@@ -23,7 +23,6 @@ struct InflowApp: App {
 
 class FirebaseManager: NSObject {
     let auth: Auth
-    
     static let shared = FirebaseManager()
     
     override init() {
