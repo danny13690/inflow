@@ -30,7 +30,7 @@ struct ProfileView: View {
                     Button {
                         showingSettings.toggle()
                     } label: {
-                        Image(systemName: "gearshape")
+                        Image(systemName: "pencil")
                             .resizable()
                             .scaledToFill()
                             .frame(width: 35,height: 35)
