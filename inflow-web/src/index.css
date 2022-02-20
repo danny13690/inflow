@@ -113,8 +113,20 @@ html,
   margin-top: 80px;
   margin-bottom: 0px;
   color: #000000;
+  height: 250px;
+  width: 400px;
+  border-radius: 45;
 }
 
 .campaign-title:hover {
   cursor: pointer;
+}
+
+.add-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+  text-align: center;
+  color: gray !important;
 }

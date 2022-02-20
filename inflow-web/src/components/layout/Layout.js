@@ -1,16 +1,21 @@
 import React from 'react'
 import { Sidebar } from "./Sidebar.js";
-import { Layout } from "antd";
+import { HeaderBar } from "./HeaderBar.js";
+import { Layout, Menu, Breadcrumb } from "antd";
 import 'antd/dist/antd.css';
 import '../../App.css';
 import logo from '../../images/logo2.png';
+import { UserOutlined, LaptopOutlined, NotificationOutlined } from '@ant-design/icons';
+const { SubMenu } = Menu;
+
 const { Header, Sider, Content } = Layout;
 
 export const MainLayout = (props) => {
 
     return (
-        <Layout>
-            <Layout style={{ minHeight: "100vh" }}>
+        <Layout style={{ minHeight: '100vh' }}>
+            <HeaderBar />
+            <Layout>
                 <Sidebar />
                 <Layout className="site-layout">
 
