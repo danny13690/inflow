@@ -7,6 +7,8 @@ import reportWebVitals from './reportWebVitals';
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 import { getStorage } from "firebase/storage";
+import { getAuth } from "firebase/auth";
+
 
 // Import the functions you need from the SDKs you need
 // TODO: Add SDKs for Firebase products that you want to use
@@ -25,9 +27,10 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-export const app = initializeApp(firebaseConfig);
+export const fbApp = initializeApp(firebaseConfig);
 export const db = getFirestore();
-export const storage = getStorage(app);
+export const storage = getStorage(fbApp);
+export const auth = getAuth();
 // import { getAnalytics } from "firebase/analytics";
 // const analytics = getAnalytics(app);
 

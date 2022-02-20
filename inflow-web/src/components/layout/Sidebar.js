@@ -1,5 +1,5 @@
 import React from 'react'
-import { Layout, Menu, Breadcrumb } from 'antd';
+import { Layout, Menu, Breadcrumb, Button } from 'antd';
 import {
   BarChartOutlined,
   HomeOutlined,
@@ -10,9 +10,15 @@ import '../../App.css';
 import { Link } from "react-router-dom";
 import logo from '../../images/plane.jpeg';
 import words from '../../images/words.jpeg';
+import { getAuth, signOut } from "firebase/auth";
+
 const { Sider } = Layout;
 
 export class Sidebar extends React.Component {
+  constructor(props) {
+    super(props);
+    this.onSignOut = this.onSignOut.bind(this);
+}
 
   state = {
     collapsed: false,
@@ -23,7 +29,13 @@ export class Sidebar extends React.Component {
     this.setState({ collapsed });
   };
 
-  // <Link to="/home/alert"> Security Alerts </Link>
+  onSignOut() {
+    signOut(getAuth()).then(() => {
+      window.location.href='/home'
+    }).catch((error) => {
+      console.log(error)
+    });
+  }
 
   render() {
     const { collapsed } = this.state;
@@ -49,6 +61,9 @@ export class Sidebar extends React.Component {
             <Menu.Item key="4" icon={<BarChartOutlined/>}>
             <Link to="/home/InfluencerTable"> Statistics </Link>
             </Menu.Item> */}
+            <Menu.Item key="3">
+              <Button onClick={this.onSignOut}>Sign Out</Button>
+            </Menu.Item>
           </Menu>
         </Sider>
     );

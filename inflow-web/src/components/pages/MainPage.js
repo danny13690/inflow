@@ -23,7 +23,7 @@ export const MainPage = () => {
                     exact path={"/home/InfluencerTable"}
                     component={InfluencerTable}
                     />
-                    <Route exact path={"/home/"}
+                    <Route exact path={"/home"}
                     component={CampaignList}>
                     </Route>
                 </Switch>

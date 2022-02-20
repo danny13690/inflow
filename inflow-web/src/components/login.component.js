@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import logo from '../images/logo2.png';
+import { auth } from "../index";
+
 
 export default class Login extends Component {
     constructor(props) {
@@ -23,7 +25,7 @@ export default class Login extends Component {
 
     handleSubmit(event) {
         event.preventDefault();
-        const auth = getAuth();
+        // const auth = getAuth();
         signInWithEmailAndPassword(auth, this.state.email, this.state.password)
         .then((userCredential) => {
           const user = userCredential.user;
@@ -61,7 +63,7 @@ export default class Login extends Component {
 
                     </form>
 
-                    <p className="new-here">New Here? <a href="/sign-up">Register</a></p>
+                    <p className="new-here">New Here? <a href="/sign-in/new">Register</a></p>
                 </div>
             </div>
         );
