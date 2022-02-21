@@ -28,7 +28,7 @@ struct SwitchView: View {
                 }
             ProfileView()
                 .tabItem(){
-                    Image(systemName:"ellipsis.bubble")
+                    Image(systemName:"person.crop.circle")
                         .renderingMode(.template)
                     Text("Profile")
                 }

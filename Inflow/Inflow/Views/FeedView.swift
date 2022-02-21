@@ -51,43 +51,57 @@ struct FeedView: View {
             //feed content
             VStack {
                 List(feedViewModel.campaigns) {campaign in
-                    Text(campaign.name).font(.custom("Avenir", size: 24))
-                        .foregroundColor(Color.black)
-                    Text("Deliberables")
-                        .font(.custom("Avenir", size: 18))
-                        .foregroundColor(Color.black)
-                    ForEach(0..<campaign.deliverables.count) { i in
-                        Text(" - \(campaign.deliverables[i])")
-                            .font(.custom("Avenir", size: 18))
-                            .foregroundColor(Color.black)
-                    }
-                    
-                    Text("Compensation")
-                        .font(.custom("Avenir", size: 18))
-                        .foregroundColor(Color.black)
-                    ForEach(0..<campaign.compensation.count) { i in
-                        Text(" - \(campaign.compensation[i])")
-                            .font(.custom("Avenir", size: 18))
-                            .foregroundColor(Color.black)
-                    }
-                    
+                    VStack(alignment: .leading){
                     Image("sampleCampaign")
                         .resizable()
                         .scaledToFill()
+                    Text(campaign.name).font(.custom("Avenir", size: 14))
+                        .foregroundColor(Color.black)
+                    Text("")
+                    HStack(alignment: .top){
+                    VStack(alignment: .leading){
+                    Text("Deliberables")
+                        .font(.custom("Avenir", size: 12))
+                        .foregroundColor(Color.black)
+                    Text("")
+                    ForEach(0..<campaign.deliverables.count) { i in
+                        Text(" - \(campaign.deliverables[i])")
+                            .font(.custom("Avenir", size: 12))
+                            .foregroundColor(Color.black)
+                    }
+                    }
+                    VStack(alignment: .leading){
+                    Text("Compensation")
+                        .font(.custom("Avenir", size: 12))
+                        .foregroundColor(Color.black)
+                    Text("")
+                    ForEach(0..<campaign.compensation.count) { i in
+                        Text(" - \(campaign.compensation[i])")
+                            .font(.custom("Avenir", size: 12))
+                            .foregroundColor(Color.black)
+                    }
+                    }
+                    }
+                    }.padding()
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 16)
+                                .stroke(lightGray, lineWidth: 1)
+                        )
+                       
 //                        }.refreshable {
 //                            print("refreshing")
 //                            await feedViewModel.reload()
-                }
-                Button("print") {
-                    feedViewModel.printCampaigns()
-                }
-                Button("fuck you") {
-                    let test_filter = Filters(follower: [1,2], engagement: [0.1,0.2], locations: ["Beijing","Boston"])
-                    let campaign = Campaign(name: "test", description: "test description", deliverables: ["x", "y"], compensation: ["z1", "z2"], hashtags: ["#fuck", "this"], signUpPeriod: ["monday", "tuesday"], campaignPeriod: ["wed", "fri"], industry: "weed", filters: test_filter)
-                    feedViewModel.add(campaign)
-                }
+                }.listStyle(PlainListStyle())
+//                Button("print") {
+//                    feedViewModel.printCampaigns()
+//                }
+//                Button("fuck you") {
+//                    let test_filter = Filters(follower: [1,2], engagement: [0.1,0.2], locations: ["Beijing","Boston"])
+//                    let campaign = Campaign(name: "test", description: "test description", deliverables: ["x", "y"], compensation: ["z1", "z2"], hashtags: ["#fuck", "this"], signUpPeriod: ["monday", "tuesday"], campaignPeriod: ["wed", "fri"], industry: "weed", filters: test_filter)
+//                    feedViewModel.add(campaign)
+//                }
             }
-        }
+        }.background(Color.white)
     }
 }
 
