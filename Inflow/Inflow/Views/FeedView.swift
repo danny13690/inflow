@@ -42,7 +42,7 @@ struct FeedView: View {
                     Image(systemName: "bookmark")
                         .resizable()
                         .scaledToFill()
-                        .frame(width: 25,height: 25)
+                        .frame(width: 17,height: 17)
                         .foregroundColor(lightPink)
                 }
                 Spacer().frame(width: 70)
@@ -82,6 +82,39 @@ struct FeedView: View {
                     }
                     }
                     }
+                        HStack(alignment:.center){
+                            Spacer()
+                            Button {
+                                showingBookmarks = !showingBookmarks
+                            } label: {
+                                Image(systemName: "xmark")
+                                    .resizable()
+                                    .scaledToFill()
+                                    .frame(width: 22,height: 22)
+                                    .foregroundColor(lightGray)
+                            }
+                            Spacer()
+                            Button {
+                                showingBookmarks = !showingBookmarks
+                            } label: {
+                                Image(systemName: "bookmark")
+                                    .resizable()
+                                    .scaledToFill()
+                                    .frame(width: 17,height: 17)
+                                    .foregroundColor(lightPink)
+                            }
+                            Spacer()
+                            Button {
+                                showingBookmarks = !showingBookmarks
+                            } label: {
+                                Image(systemName: "paperplane")
+                                    .resizable()
+                                    .scaledToFill()
+                                    .frame(width: 30,height:30)
+                                    .foregroundColor(lightPink)
+                            }
+                            Spacer()
+                        }
                     }.padding()
                         .overlay(
                             RoundedRectangle(cornerRadius: 16)
