@@ -7,14 +7,35 @@ import '../App.css';
 import { db } from "../index";
 import { CampaignCard } from './CampaignCard';
 import { CampaignCardAdd } from './CampaignCardAdd';
+import CampaignModal from './CampaignModal';
 
 
 export class CampaignList extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { listData:[]};
+    this.state = { 
+      listData:[],
+      show: false,
+      campaign: null
+    };
     this.getCampaigns();
+    this.showModal = this.showModal.bind(this);
+    this.hideModal = this.hideModal.bind(this);
+    this.campaignClicked = this.campaignClicked.bind(this);
   }
+
+  showModal = () => {
+    this.setState({ show: true });
+  };
+
+  hideModal = () => {
+    this.setState({ show: false });
+  };
+
+  campaignClicked = (campaign_) => {
+    this.setState({ campaign: campaign_ });
+    this.showModal();
+  };
 
   getCampaigns = async (values) => {
     const campaignsCol = collection(db, "campaigns");
@@ -39,12 +60,12 @@ export class CampaignList extends React.Component {
     if (this.state.listData.length > 0 ){
       return (
         <>
+        <CampaignModal show={this.state.show} handleClose={this.hideModal} campaign={this.state.campaign} />
         <Typography variant="h5" style={{marginBottom: "40px"}}>
           Active Campaigns
         </Typography>
         <List
           itemLayout="horizontal"
-          size="large"
           grid={{
             gutter: 16,
           }}
@@ -52,10 +73,11 @@ export class CampaignList extends React.Component {
           renderItem={(item, idx) => {
             return idx < this.state.listData.length - 1 ? 
             <List.Item
-            onClick={() => this.props.history.push(`/home/InfluencerTable/${item.id}`)}
+            // onClick={() => this.props.history.push(`/home/InfluencerTable/${item.id}`)}
+            onClick={() => this.campaignClicked(item)}
             key={item.id}
             >
-              <CampaignCard item={item}/>
+              <CampaignCard item={item} />
             </List.Item> :
             <List.Item
             onClick={() => this.props.history.push(`/home/CreateCampaign`)}

@@ -110,11 +110,9 @@ html,
 
 .campaign-title {
   text-align: left;
-  margin-top: 80px;
-  margin-bottom: 0px;
   color: #000000;
-  height: 250px;
-  width: 400px;
+  height: 220px;
+  width: 380px;
   border-radius: 45;
 }
 

@@ -80,22 +80,17 @@ export class InfluencerTable extends React.Component {
     const app = initializeApp(firebaseConfig);
 
     const db = getFirestore();
-    console.log(this.props);
     const docRef = doc(db, 'campaigns', this.props.match.params.campaignID);
     const docReceived = await getDoc(docRef); 
     const users = docReceived.data().completed_users;
     // const users = ['IzDzQSpzFSnIldYcQ7eF']
-    console.log("users");
-    console.log(users);
 
     const usersCol = collection(db, "users");
     const usersSnapshot = await getDocs(usersCol);
     const usersList = usersSnapshot.docs.map(doc => {let d = doc.data(); d['id'] = doc.id; return d;});
     let newList = [];
     usersList.forEach((doc) => {
-      console.log(doc.id)
       if (users.includes(doc.id)){
-        console.log("included")
           newList.push({
           id: doc.id,
           name: doc.name,
@@ -107,8 +102,6 @@ export class InfluencerTable extends React.Component {
       }
     })
     this.setState({listData: newList});
-    console.log("list data")
-    console.log(this.state.listData);
   }
 
   componentDidMount() {
