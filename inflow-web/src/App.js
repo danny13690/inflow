@@ -44,8 +44,6 @@ function App() {
     }
   });
 
-  console.log(authStatus);
-
   return (<Router>
       <Switch>
         <Redirect exact from='/' to='/home'/>
