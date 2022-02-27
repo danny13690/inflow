@@ -26,6 +26,7 @@ export class CampaignList extends React.Component {
 
   showModal = () => {
     this.setState({ show: true });
+    console.log("show modal")
   };
 
   hideModal = () => {
