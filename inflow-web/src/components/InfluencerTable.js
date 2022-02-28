@@ -8,7 +8,7 @@ export class InfluencerTable extends React.Component {
   constructor(props) {
     super(props);
     this.state = {listData:[]}
-
+    console.log("hello")
     this.columns = [
       {
         title: 'Name',

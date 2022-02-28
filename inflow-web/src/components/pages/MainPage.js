@@ -4,11 +4,14 @@ import { InfluencerTable } from "../InfluencerTable.js";
 import { CampaignList } from "../CampaignList.js";
 import { NewCampaignForm } from "../NewCampaignForm.js";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { useState } from 'react';
 import '../../App.css';
 
 export const MainPage = () => {
+    const [campaign, setCampaign] = useState(null);
+
     return (
-        <MainLayout>
+        <MainLayout campaign={campaign} setCampaign={setCampaign}>
                 <Switch>
                     <Route exact path={"/home/CreateCampaign"}
                     component={NewCampaignForm}>
@@ -22,7 +25,7 @@ export const MainPage = () => {
                     component={InfluencerTable}
                     />
                     <Route exact path={"/home"}
-                    component={CampaignList}>
+                    component={() => <CampaignList setCampaign={setCampaign}/> }>
                     </Route>
                 </Switch>
         </MainLayout>

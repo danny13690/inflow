@@ -18,6 +18,8 @@ export class CampaignList extends React.Component {
       show: false,
       campaign: null
     };
+
+    this.props.setCampaign(null);
     this.getCampaigns();
     this.showModal = this.showModal.bind(this);
     this.hideModal = this.hideModal.bind(this);
@@ -26,7 +28,6 @@ export class CampaignList extends React.Component {
 
   showModal = () => {
     this.setState({ show: true });
-    console.log("show modal")
   };
 
   hideModal = () => {
@@ -61,7 +62,7 @@ export class CampaignList extends React.Component {
     if (this.state.listData.length > 0 ){
       return (
         <>
-        <CampaignModal show={this.state.show} handleClose={this.hideModal} campaign={this.state.campaign} />
+        <CampaignModal show={this.state.show} handleClose={this.hideModal} campaign={this.state.campaign} setCampaign={this.props.setCampaign} />
         <Typography variant="h5" style={{marginBottom: "40px"}}>
           Active Campaigns
         </Typography>
