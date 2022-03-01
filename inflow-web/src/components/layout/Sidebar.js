@@ -87,13 +87,13 @@ export class Sidebar extends React.Component {
               </Menu.Item>
             </Menu.ItemGroup>
             <Menu.ItemGroup key="g2" title="Current Campaign">
-              <Menu.Item key="3" icon={<HomeOutlined />}>
+              <Menu.Item disabled key="3" icon={<HomeOutlined />}>
               <Link to="/home"> Campaign Home </Link>
               </Menu.Item>
-              <Menu.Item key="4" icon={<TeamOutlined />}>
+              <Menu.Item disabled key="4" icon={<TeamOutlined />}>
               <Link to="/home"> Influencers </Link>
               </Menu.Item>
-              <Menu.Item key="5" icon={<MessageOutlined />}>
+              <Menu.Item disabled key="5" icon={<MessageOutlined />}>
                 <Link to="/home/CreateCampaign"> Messaging </Link>
               </Menu.Item>
             </Menu.ItemGroup>

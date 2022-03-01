@@ -43,22 +43,37 @@ export class CampaignList extends React.Component {
     const campaignsCol = collection(db, "campaigns");
     const campaignsSnapshot = await getDocs(campaignsCol);
     const campaignsList = campaignsSnapshot.docs.map(doc => {let d = doc.data(); d['id'] = doc.id; return d;});
+    
     let newList = [];
+    let oldCampaigns = [];
     campaignsList.forEach((doc) => {
+      if (!doc.ended) {
         newList.push({
         id: doc.id,
         name: doc.name,
         deliverables: doc.deliverables,
         compensation: doc.compensation,
       });
+      }
+      else {
+        oldCampaigns.push({
+          id: doc.id,
+          name: doc.name,
+          deliverables: doc.deliverables,
+          compensation: doc.compensation,
+        });
+      }
     })
     newList.push({
       name: "dummy"
     })
     this.setState({listData: newList});
+    this.setState({listDataOld: oldCampaigns});
+
   }
 
   render() {
+    console.log(this.state.listDataOld)
     if (this.state.listData.length > 0 ){
       return (
         <>
@@ -92,6 +107,23 @@ export class CampaignList extends React.Component {
         <Typography variant="h5" style={{marginBottom: "40px", marginTop: "80px"}}>
           Past Campaigns
         </Typography>
+        <List
+          itemLayout="horizontal"
+          grid={{
+            gutter: 16,
+          }}
+          dataSource={this.state.listDataOld}
+          renderItem={(item, idx) => {
+    
+            <List.Item
+            // onClick={() => this.props.history.push(`/home/InfluencerTable/${item.id}`)}
+            onClick={() => this.campaignClicked(item)}
+            key={item.id}
+            >
+              <CampaignCard item={item} />
+            </List.Item>
+          }
+          }/>
           </>
           )
       } else {
