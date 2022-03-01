@@ -114,13 +114,19 @@ export class CampaignList extends React.Component {
           }}
           dataSource={this.state.listDataOld}
           renderItem={(item, idx) => {
-    
+            return idx < this.state.listDataOld.length ? 
             <List.Item
             // onClick={() => this.props.history.push(`/home/InfluencerTable/${item.id}`)}
             onClick={() => this.campaignClicked(item)}
             key={item.id}
             >
               <CampaignCard item={item} />
+            </List.Item> :
+            <List.Item
+            onClick={() => this.props.history.push(`/home/CreateCampaign`)}
+            key="add_campaign_card"
+            >
+              <CampaignCardAdd/>
             </List.Item>
           }
           }/>
