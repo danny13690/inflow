@@ -17,7 +17,7 @@ class CampaignModal extends React.Component {
     if (this.state.redirect && this.props.campaign) {
       this.props.setCampaign(this.props.campaign);
       return (
-        <Redirect to={`/home/InfluencerTable/${this.props.campaign.id}`}/>
+        <Redirect to={`/home/CampaignHome/${this.props.campaign.id}`}/>
       )
     } 
 

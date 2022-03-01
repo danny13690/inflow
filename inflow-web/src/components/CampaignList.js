@@ -8,7 +8,7 @@ import { db } from "../index";
 import { CampaignCard } from './CampaignCard';
 import { CampaignCardAdd } from './CampaignCardAdd';
 import CampaignModal from './CampaignModal';
-
+import { Link } from "react-router-dom";
 
 export class CampaignList extends React.Component {
   constructor(props) {
@@ -19,7 +19,7 @@ export class CampaignList extends React.Component {
       campaign: null
     };
 
-    this.props.setCampaign(null);
+    props.setCampaign(null);
     this.getCampaigns();
     this.showModal = this.showModal.bind(this);
     this.hideModal = this.hideModal.bind(this);
@@ -69,12 +69,10 @@ export class CampaignList extends React.Component {
     })
     this.setState({listData: newList});
     this.setState({listDataOld: oldCampaigns});
-
   }
 
   render() {
-    console.log(this.state.listDataOld)
-    if (this.state.listData.length > 0 ){
+    if (this.state.listData && this.state.listData.length > 0 && this.state.listDataOld && this.state.listDataOld.length > 0 ){
       return (
         <>
         <CampaignModal show={this.state.show} handleClose={this.hideModal} campaign={this.state.campaign} setCampaign={this.props.setCampaign} />
@@ -97,10 +95,10 @@ export class CampaignList extends React.Component {
               <CampaignCard item={item} />
             </List.Item> :
             <List.Item
-            onClick={() => this.props.history.push(`/home/CreateCampaign`)}
+            // onClick={() => this.props.history.push(`/home/CreateCampaign`)}
             key="add_campaign_card"
             >
-              <CampaignCardAdd/>
+               <Link to="/home/CreateCampaign"> <CampaignCardAdd/> </Link>
             </List.Item>
           }
           }/>
@@ -114,7 +112,7 @@ export class CampaignList extends React.Component {
           }}
           dataSource={this.state.listDataOld}
           renderItem={(item, idx) => {
-            return idx < this.state.listDataOld.length ? 
+            return true ? 
             <List.Item
             // onClick={() => this.props.history.push(`/home/InfluencerTable/${item.id}`)}
             onClick={() => this.campaignClicked(item)}
@@ -123,19 +121,57 @@ export class CampaignList extends React.Component {
               <CampaignCard item={item} />
             </List.Item> :
             <List.Item
-            onClick={() => this.props.history.push(`/home/CreateCampaign`)}
+            // onClick={() => this.props.history.push(`/home/CreateCampaign`)}
             key="add_campaign_card"
             >
-              <CampaignCardAdd/>
+              <Link to="/home/CreateCampaign"> <CampaignCardAdd/> </Link>
             </List.Item>
           }
           }/>
           </>
           )
-      } else {
+      } else if (this.state.listData && this.state.listData.length > 0) {
+            console.log(this.props)
             return (
-              <p> Submit a Campaign! </p>
+              <>
+              <CampaignModal show={this.state.show} handleClose={this.hideModal} campaign={this.state.campaign} setCampaign={this.props.setCampaign} />
+              <Typography variant="h5" style={{marginBottom: "40px"}}>
+                Active Campaigns
+              </Typography>
+              <List
+                itemLayout="horizontal"
+                grid={{
+                  gutter: 16,
+                }}
+                dataSource={this.state.listData}
+                renderItem={(item, idx) => {
+                  return idx < this.state.listData.length - 1 ? 
+                  <List.Item
+                  // onClick={() => this.props.history.push(`/home/InfluencerTable/${item.id}`)}
+                  onClick={() => this.campaignClicked(item)}
+                  key={item.id}
+                  >
+                    <CampaignCard item={item} />
+                  </List.Item> :
+                  <List.Item
+                  //onClick={() => this.props.history.push(`/home/CreateCampaign`)}
+                  key="add_campaign_card"
+                  >
+                    <Link to="/home/CreateCampaign"> <CampaignCardAdd/> </Link>
+                  </List.Item>
+                }
+                }/>
+              <Typography variant="h5" style={{marginBottom: "40px", marginTop: "80px"}}>
+                No Past Campaigns
+              </Typography>     
+              </>
             )
+      }
+      else {
+        return (
+          <>
+          </>
+        )
       }
   }
 };

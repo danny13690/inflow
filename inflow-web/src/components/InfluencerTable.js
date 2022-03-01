@@ -8,7 +8,6 @@ export class InfluencerTable extends React.Component {
   constructor(props) {
     super(props);
     this.state = {listData:[]}
-    console.log("hello")
     this.columns = [
       {
         title: 'Name',
@@ -107,26 +106,6 @@ export class InfluencerTable extends React.Component {
   componentDidMount() {
     this.getInfluencers();
   }
-
-
-  // const data = [
-  //   {
-  //     key: '1',
-  //     name: 'Jannik Obenhoff',
-  //     gender: 'F',
-  //     age: 20,
-  //     location: 'New York',
-  //     reach: 767.5
-  //   },
-  //   {
-  //     key: '2',
-  //     name: 'Maria Chen',
-  //     gender: 'F',
-  //     age: 22,
-  //     location: 'SF',
-  //     reach: 10
-  //   },
-  // ];
 
   render() {
     return (
