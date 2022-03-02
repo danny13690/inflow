@@ -53,6 +53,10 @@ export class CampaignList extends React.Component {
         name: doc.name,
         deliverables: doc.deliverables,
         compensation: doc.compensation,
+        description: doc.description,
+        filters: doc.filters,
+        hashtags: doc.hashtags,
+        industry: doc.industry,
       });
       }
       else {
@@ -61,6 +65,10 @@ export class CampaignList extends React.Component {
           name: doc.name,
           deliverables: doc.deliverables,
           compensation: doc.compensation,
+          description: doc.description,
+          filters: doc.filters,
+          hashtags: doc.hashtags,
+          industry: doc.industry,
         });
       }
     })
