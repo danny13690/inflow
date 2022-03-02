@@ -14,14 +14,14 @@ export class HeaderBar extends React.Component {
         if (this.props.campaign) {
             return (
                 <Header className="header" style={{backgroundColor: "white"}} >
-                    <img src={logo} className="logo" ></img>
+                    <img src={logo} className="logo-header" ></img>
                     <p> <b> {this.props.campaign.name} </b></p>
                 </Header>
             );
         }
         return (
             <Header className="header" style={{backgroundColor: "white"}} >
-                <img src={logo} className="logo" ></img>
+                <img src={logo} className="logo-header" ></img>
             </Header>
         );
       };
