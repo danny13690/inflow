@@ -12,12 +12,11 @@ const { Header, Sider, Content } = Layout;
 
 export const MainLayout = (props) => {
     return (
-        <Layout style={{ minHeight: '100vh' }}>
+        <Layout style={{ minHeight: '100' }}>
             <HeaderBar campaign={props.campaign}/>
             <Layout>
                 <Sidebar campaign={props.campaign} setCampaign={props.setCampaign}/>
                 <Layout className="site-layout">
-
                     <Content
                     style={{
                         margin: "24px 16px",

@@ -27,3 +27,12 @@
 
 .campaign-modal {
 }
+
+.modal-head {
+  font-size: large;
+  margin-top: 10px;
+}
+
+.modal-sub-head {
+  font-size: medium;
+}
