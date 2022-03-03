@@ -12,7 +12,7 @@ class CampaignModal extends React.Component {
     };
   }
 
-    render() {
+  render() {
     const showHideClassName =  this.props.show ? "modal display-block" : "modal display-none";
     if (this.state.redirect && this.props.campaign) {
       this.props.setCampaign(this.props.campaign);
