@@ -95,6 +95,13 @@ struct ContentView: View {
     @State var email = ""
     @State var password = ""
     
+    @State var name = ""
+    @State var age = ""
+    @State var gender = ""
+    @State var location = ""
+    @State var instagram_handle = ""
+    @State var followers = ""
+    
     var body: some View {
         if showFeedPage {
             SwitchView()
@@ -102,7 +109,7 @@ struct ContentView: View {
         NavigationView {
                     ScrollView {
 
-                        VStack(spacing: 16) {
+                        VStack() {
                             Image("login")
                             .resizable()
                             .scaledToFill()
@@ -115,14 +122,25 @@ struct ContentView: View {
                             }.pickerStyle(SegmentedPickerStyle())
 
                             if !isLoginMode {
-                                Button {
+//                                Button {
 
-                                } label: {
-                                    Image(systemName: "person.fill")
-                                        .font(.system(size: 64))
-                                        .padding()
-                                        .foregroundColor(lightPink)
+//                                } label: {
+//                                    Image(systemName: "person.fill")
+//                                        .font(.system(size: 64))
+//                                        .padding()
+//                                        .foregroundColor(lightPink)
+                                Group {
+                                TextField("Name", text: $name)
+                                HStack{
+                                    TextField("Age", text: $age)
+                                    TextField("Gender", text: $gender)
                                 }
+        
+                                TextField("Location", text: $location)
+                                TextField("Instagram Account", text: $instagram_handle)
+                                TextField("Number of followers", text: $followers)
+                                } .padding(5)
+                        
                             }
 
                             Group {
@@ -131,7 +149,7 @@ struct ContentView: View {
                                     .autocapitalization(.none)
                                 SecureField("Password", text: $password)
                             }
-                            .padding(12)
+                            .padding(5)
                             .background(Color.white)
 
                             Button {
@@ -145,6 +163,7 @@ struct ContentView: View {
                                         .font(.system(size: 14, weight: .semibold))
                                     Spacer()
                                 }.background(lightPink)
+                                    .cornerRadius(5)
 
                             }
                         }

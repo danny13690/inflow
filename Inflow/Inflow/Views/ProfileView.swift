@@ -9,11 +9,13 @@ import SwiftUI
 
 struct ProfileView: View {
     @State private var showingSettings = false
+    @State var name = ""
+    @State var age = ""
+    @State var gender = ""
+    @State var location = ""
+    @State var instagram_handle = ""
+    @State var followers = ""
     var body: some View {
-//        if showingSettings {
-//            SettingsView()
-//        } else {
-            
             VStack{
                 HStack{
                     Spacer().frame(width: 90)
@@ -39,23 +41,40 @@ struct ProfileView: View {
                     Spacer().frame(width: 70)
                 }
                 Spacer().frame(height: 50)
+                
                 Image(systemName: "person.crop.circle")
                     .resizable()
                     .scaledToFill()
                     .frame(width: 150,height: 150)
                     .foregroundColor(lightPink)
+                
+                if (showingSettings){
+                Group {
+                TextField("Name", text: $name)
+                HStack{
+                    TextField("Age", text: $age)
+                    TextField("Gender", text: $gender)
+                }
+
+                TextField("Location", text: $location)
+                TextField("Instagram Account", text: $instagram_handle)
+                TextField("Number of followers", text: $followers)
+                } .padding(10)
+                    Spacer()
+                } else {
+            
                 Text("Sample User").font(Font.custom("Avenir", size: 30))
                 Spacer().frame(height: 50)
                 Group {
                     Text("age: 23").font(Font.custom("Avenir", size: 25))
                     Text("gender: female").font(Font.custom("Avenir", size: 25))
                     Text("location: SF, CA").font(Font.custom("Avenir", size: 25))
-                    Text("total reach: 500").font(Font.custom("Avenir", size: 25))
+                    Text("instagram: theInflow").font(Font.custom("Avenir", size: 25))
                     Text("number of follower: 1897").font(Font.custom("Avenir", size: 25))
                     Spacer()
                 }
         }
-        
+        }
     }
 }
 struct ProfileView_Previews: PreviewProvider {
