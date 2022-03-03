@@ -51,16 +51,20 @@ export class CampaignList extends React.Component {
         newList.push({
         id: doc.id,
         name: doc.name,
+        description: doc.description,
         deliverables: doc.deliverables,
         compensation: doc.compensation,
+        ended: doc.ended,
       });
       }
       else {
         oldCampaigns.push({
           id: doc.id,
           name: doc.name,
+          description: doc.description,
           deliverables: doc.deliverables,
           compensation: doc.compensation,
+          ended: doc.ended
         });
       }
     })

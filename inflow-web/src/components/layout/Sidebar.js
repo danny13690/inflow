@@ -60,9 +60,6 @@ export class Sidebar extends React.Component {
               <Menu.Item key="4" icon={<TeamOutlined />}>
               <Link to={`/home/InfluencerTable/${this.props.campaign.id}`}> Influencers </Link>
               </Menu.Item>
-              <Menu.Item key="5" icon={<MessageOutlined />}>
-                <Link to="/home/InfluencerTable"> Messaging </Link>
-              </Menu.Item>
             </Menu.ItemGroup>
           </Menu>
 
@@ -93,9 +90,6 @@ export class Sidebar extends React.Component {
               <Menu.Item disabled key="4" icon={<TeamOutlined />}>
               Influencers
               </Menu.Item>
-              <Menu.Item disabled key="5" icon={<MessageOutlined />}>
-                 Messaging
-              </Menu.Item> 
             </Menu.ItemGroup>
           </Menu>
 

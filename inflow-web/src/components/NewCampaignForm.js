@@ -1,7 +1,6 @@
 import { Form, Input, Button, Checkbox } from 'antd';
 import { collection, addDoc, refEqual } from "firebase/firestore";
 import { db, storage } from "../index";
-import { createPortal } from 'react-dom';
 import { ref, uploadBytes } from "firebase/storage";
 
 export const NewCampaignForm = () => {
