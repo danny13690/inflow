@@ -21,22 +21,22 @@ export class CampaignList extends React.Component {
 
     props.setCampaign(null);
     this.getCampaigns();
-    this.showModal = this.showModal.bind(this);
-    this.hideModal = this.hideModal.bind(this);
-    this.campaignClicked = this.campaignClicked.bind(this);
+    // this.showModal = this.showModal.bind(this);
+    // this.hideModal = this.hideModal.bind(this);
+    // this.campaignClicked = this.campaignClicked.bind(this);
   }
 
-  showModal = () => {
-    this.setState({ show: true });
-  };
+  // showModal = () => {
+  //   this.setState({ show: true });
+  // };
 
-  hideModal = () => {
-    this.setState({ show: false });
-  };
+  // hideModal = () => {
+  //   this.setState({ show: false });
+  // };
 
   campaignClicked = (campaign_) => {
     this.setState({ campaign: campaign_ });
-    this.showModal();
+    this.props.setCampaign(campaign_);
   };
 
   getCampaigns = async (values) => {
@@ -69,13 +69,10 @@ export class CampaignList extends React.Component {
   }
 
   render() {
-    console.log(this.state.listData)
-    console.log(this.state.listData.length)
-
     if (this.state.listData && this.state.listData.length > 0){
       return (
         <>
-        <CampaignModal show={this.state.show} handleClose={this.hideModal} campaign={this.state.campaign} setCampaign={this.props.setCampaign} />
+        {/* <CampaignModal show={this.state.show} handleClose={this.hideModal} campaign={this.state.campaign} setCampaign={this.props.setCampaign} /> */}
         <Typography variant="h5" style={{marginBottom: "40px"}}>
           {this.props.title}
         </Typography>
@@ -92,7 +89,7 @@ export class CampaignList extends React.Component {
             onClick={() => this.campaignClicked(item)}
             key={item.id}
             >
-              <CampaignCard item={item} />
+              <Link to={`/home/CampaignHome/${item.id}`}> <CampaignCard item={item} /> </Link>
             </List.Item> :
             <List.Item
             // onClick={() => this.props.history.push(`/home/CreateCampaign`)}
