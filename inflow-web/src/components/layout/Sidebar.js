@@ -41,7 +41,8 @@ export class Sidebar extends React.Component {
 
   render() {
     const { collapsed } = this.state;
-    return (
+    if (this.props.campaign) {
+      return (
         <Sider theme="light" className="sidebar" collapsible width={200} collapsed={collapsed} onCollapse={this.onCollapse}>
           <Menu theme="light" defaultSelectedKeys={['1']} mode="inline">
             <Menu.ItemGroup key="g1" title="General">
@@ -54,13 +55,40 @@ export class Sidebar extends React.Component {
             </Menu.ItemGroup>
             <Menu.ItemGroup key="g2" title="Current Campaign">
               <Menu.Item key="3" icon={<HomeOutlined />}>
-              <Link to="/home"> Campaign Home </Link>
+              <Link to={`/home/CampaignHome/${this.props.campaign.id}`}> Campaign Home </Link>
               </Menu.Item>
               <Menu.Item key="4" icon={<TeamOutlined />}>
-              <Link to="/home"> Influencers </Link>
+              <Link to={`/home/InfluencerTable/${this.props.campaign.id}`}> Influencers </Link>
               </Menu.Item>
-              <Menu.Item key="5" icon={<MessageOutlined />}>
-                <Link to="/home/CreateCampaign"> Messaging </Link>
+            </Menu.ItemGroup>
+          </Menu>
+
+          <Menu theme="light" defaultSelectedKeys={['1']} mode="inline">
+
+            <Menu.Item key="5">
+              <Button onClick={this.onSignOut}>Sign Out</Button>
+            </Menu.Item>
+          </Menu>
+        </Sider>
+      )
+    } 
+    return (
+        <Sider theme="light" className="sidebar" collapsible width={200} collapsed={collapsed} onCollapse={this.onCollapse}>
+          <Menu theme="light" defaultSelectedKeys={['1']} mode="inline">
+            <Menu.ItemGroup key="g1" title="General">
+              <Menu.Item key="1" icon={<HomeOutlined />}>
+              <Link to="/home"> Home </Link>
+              </Menu.Item>
+              <Menu.Item key="2" icon={<ShoppingOutlined />}>
+                <Link to="/home"> Campaigns </Link>
+              </Menu.Item>
+            </Menu.ItemGroup>
+            <Menu.ItemGroup key="g2" title="Current Campaign">
+              <Menu.Item disabled key="3" icon={<HomeOutlined />}>
+               Campaign Home
+              </Menu.Item>
+              <Menu.Item disabled key="4" icon={<TeamOutlined />}>
+              Influencers
               </Menu.Item>
             </Menu.ItemGroup>
           </Menu>

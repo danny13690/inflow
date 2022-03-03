@@ -1,7 +1,6 @@
 import { Form, Input, Button, Checkbox } from 'antd';
 import { collection, addDoc, refEqual } from "firebase/firestore";
 import { db, storage } from "../index";
-import { createPortal } from 'react-dom';
 import { ref, uploadBytes } from "firebase/storage";
 
 export const NewCampaignForm = () => {
@@ -16,7 +15,8 @@ export const NewCampaignForm = () => {
       name: values["title"],
       deliverables: [values["deliverables"]],
       compensation: [values["compensation"]],
-      description: values["description"]
+      description: values["description"],
+      ended: false
     });
     if (file != null) {
       const storageRef = ref(storage, 'campaigns/'+ docRef.id + '/image.jpg');
