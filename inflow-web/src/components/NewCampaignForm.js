@@ -4,6 +4,7 @@ import { db, storage } from "../index";
 import { list, ref, uploadBytes } from "firebase/storage";
 import React from "react";
 import './campaignForm.css';
+import "../index.css";
 
 export const NewCampaignForm = () => {
   let file = null;
@@ -192,14 +193,15 @@ export const NewCampaignForm = () => {
             message: 'What do you expect from the influencer?',
           },
         ]}
+        style={{marginBottom: "-5px"}}
       >
         <div id="deliverables-yo">
         <input className="short-input deliv-item" />
         </div>
       </Form.Item>
       <Form.Item >
-      <Button onClick={onAddDeliverable} className="add-button">Add</Button>
-      <Button onClick={onRemoveDeliverable} className="add-button">Remove</Button>
+      <button onClick={onAddDeliverable} className="normal-button add-button">Add</button>
+      <button onClick={onRemoveDeliverable} className="normal-button add-button">Remove</button>
       </Form.Item>
 
       <Form.Item
@@ -211,14 +213,15 @@ export const NewCampaignForm = () => {
             message: 'What will you give the influencer?',
           },
         ]}
+        style={{marginBottom: "-5px" }}
       >
         <div id="compensation-yo">
         <input className="short-input comp-item" />
         </div>
       </Form.Item>
       <Form.Item >
-      <Button onClick={onAddCompensation} className="add-button">Add</Button>
-      <Button onClick={onRemoveCompensation} className="add-button">Remove</Button>
+      <button onClick={onAddCompensation} className="normal-button add-button">Add</button>
+      <button onClick={onRemoveCompensation} className="normal-button add-button">Remove</button>
       </Form.Item>
 
       <Form.Item
@@ -229,14 +232,15 @@ export const NewCampaignForm = () => {
             message: 'What hashtags for the campaign can help it be discovered?',
           },
         ]}
+        style={{marginBottom: "-5px"}}
       >
         <div id="hashtags-yo">
         <input className="short-input hash-item" />
         </div>
       </Form.Item>
       <Form.Item >
-      <Button onClick={onAddHashtag} className="add-button">Add</Button>
-      <Button onClick={onRemoveHashtag} className="add-button">Remove</Button>
+      <button onClick={onAddHashtag} className="normal-button add-button">Add</button>
+      <button onClick={onRemoveHashtag} className="normal-button add-button">Remove</button>
       </Form.Item>
 
       <Form.Item
@@ -263,14 +267,15 @@ export const NewCampaignForm = () => {
             message: 'What locations would you like your influencers to reach?',
           },
         ]}
+        style={{marginBottom: "-5px"}}
       >
         <div id="locations-yo">
         <input className="short-input loc-item" />
         </div>
       </Form.Item>
       <Form.Item >
-      <Button onClick={onAddLocation} className="add-button">Add</Button>
-      <Button onClick={onRemoveLocation} className="add-button">Remove</Button>
+      <button onClick={onAddLocation} className="normal-button add-button" >Add</button>
+      <button onClick={onRemoveLocation} className="normal-button add-button">Remove</button>
       </Form.Item>
 
       <Form.Item
@@ -294,9 +299,9 @@ export const NewCampaignForm = () => {
           span: 16,
         }}
       >
-        <Button type="primary" htmlType="submit">
+        <button htmlType="submit" className="normal-button">
           Submit
-        </Button>
+        </button>
       </Form.Item>
     </Form>
   );

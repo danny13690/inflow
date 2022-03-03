@@ -3,6 +3,7 @@ import { db, storage } from "../index";
 import { Card, Button, Row, Col, Typography } from 'antd';
 import { collection, updateDoc, doc } from "firebase/firestore";
 import EditCampaignModal from './EditCampaignModal';
+import "../index.css";
 
 export class CampaignHome extends React.Component {
     constructor(props) {
@@ -43,9 +44,7 @@ export class CampaignHome extends React.Component {
         return (
         <>
         <EditCampaignModal show={this.state.show} handleClose={this.hideModal} campaign={campaign} setCampaign={this.props.setCampaign} />
-        <Button onClick={this.showModal}>Edit</Button>
-        <Button onClick={this.EndStartCampaign}> {this.state.ended? "Start Campaign" : "End Campaign"} </Button>
-        
+
         <Card title={campaign.name} className="campaign-modal" >
             <Row>
             <Col span={24}>
@@ -119,7 +118,8 @@ export class CampaignHome extends React.Component {
             </Col>
             </Row>
         </Card>
-
+        <button className="normal-button" onClick={this.showModal}>Edit</button>
+        <button className="normal-button" onClick={this.EndStartCampaign}> {this.state.ended? "Start Campaign" : "End Campaign"} </button>
         </>
         )
       }
