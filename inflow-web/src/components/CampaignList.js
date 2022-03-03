@@ -67,7 +67,7 @@ export class CampaignList extends React.Component {
           description: doc.description,
           deliverables: doc.deliverables,
           compensation: doc.compensation,
-          ended: doc.ended
+          ended: doc.ended,
           filters: doc.filters,
           hashtags: doc.hashtags,
           industry: doc.industry,
