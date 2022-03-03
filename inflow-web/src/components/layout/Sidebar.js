@@ -50,7 +50,7 @@ export class Sidebar extends React.Component {
               <Link to="/home"> Home </Link>
               </Menu.Item>
               <Menu.Item key="2" icon={<ShoppingOutlined />}>
-                <Link to="/home"> Campaigns </Link>
+                <Link to="/home/PastCampaigns"> Past Campaigns </Link>
               </Menu.Item>
             </Menu.ItemGroup>
             <Menu.ItemGroup key="g2" title="Current Campaign">
@@ -80,7 +80,7 @@ export class Sidebar extends React.Component {
               <Link to="/home"> Home </Link>
               </Menu.Item>
               <Menu.Item key="2" icon={<ShoppingOutlined />}>
-                <Link to="/home"> Campaigns </Link>
+                <Link to="/home/PastCampaigns"> Past Campaigns </Link>
               </Menu.Item>
             </Menu.ItemGroup>
             <Menu.ItemGroup key="g2" title="Current Campaign">

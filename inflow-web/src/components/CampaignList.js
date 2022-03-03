@@ -45,9 +45,8 @@ export class CampaignList extends React.Component {
     const campaignsList = campaignsSnapshot.docs.map(doc => {let d = doc.data(); d['id'] = doc.id; return d;});
     
     let newList = [];
-    let oldCampaigns = [];
     campaignsList.forEach((doc) => {
-      if (!doc.ended) {
+      if (doc.ended == this.props.ended) {
         newList.push({
         id: doc.id,
         name: doc.name,
@@ -60,34 +59,25 @@ export class CampaignList extends React.Component {
         industry: doc.industry,
       });
       }
-      else {
-        oldCampaigns.push({
-          id: doc.id,
-          name: doc.name,
-          description: doc.description,
-          deliverables: doc.deliverables,
-          compensation: doc.compensation,
-          ended: doc.ended,
-          filters: doc.filters,
-          hashtags: doc.hashtags,
-          industry: doc.industry,
-        });
-      }
     })
-    newList.push({
-      name: "dummy"
-    })
+    if (!this.props.ended) {
+      newList.push({
+        name: "dummy"
+      })
+    }
     this.setState({listData: newList});
-    this.setState({listDataOld: oldCampaigns});
   }
 
   render() {
-    if (this.state.listData && this.state.listData.length > 0 && this.state.listDataOld && this.state.listDataOld.length > 0 ){
+    console.log(this.state.listData)
+    console.log(this.state.listData.length)
+
+    if (this.state.listData && this.state.listData.length > 0){
       return (
         <>
         <CampaignModal show={this.state.show} handleClose={this.hideModal} campaign={this.state.campaign} setCampaign={this.props.setCampaign} />
         <Typography variant="h5" style={{marginBottom: "40px"}}>
-          Active Campaigns
+          {this.props.title}
         </Typography>
         <List
           itemLayout="horizontal"
@@ -96,7 +86,7 @@ export class CampaignList extends React.Component {
           }}
           dataSource={this.state.listData}
           renderItem={(item, idx) => {
-            return idx < this.state.listData.length - 1 ? 
+            return item.name !== "dummy" ? 
             <List.Item
             // onClick={() => this.props.history.push(`/home/InfluencerTable/${item.id}`)}
             onClick={() => this.campaignClicked(item)}
@@ -112,70 +102,14 @@ export class CampaignList extends React.Component {
             </List.Item>
           }
           }/>
-        <Typography variant="h5" style={{marginBottom: "40px", marginTop: "80px"}}>
-          Past Campaigns
-        </Typography>
-        <List
-          itemLayout="horizontal"
-          grid={{
-            gutter: 16,
-          }}
-          dataSource={this.state.listDataOld}
-          renderItem={(item, idx) => {
-            return true ? 
-            <List.Item
-            // onClick={() => this.props.history.push(`/home/InfluencerTable/${item.id}`)}
-            onClick={() => this.campaignClicked(item)}
-            key={item.id}
-            >
-              <CampaignCard item={item} />
-            </List.Item> :
-            <List.Item
-            // onClick={() => this.props.history.push(`/home/CreateCampaign`)}
-            key="add_campaign_card"
-            >
-              <Link to="/home/CreateCampaign"> <CampaignCardAdd/> </Link>
-            </List.Item>
-          }
-          }/>
-          </>
-          )
-      } else if (this.state.listData && this.state.listData.length > 0) {
-            console.log(this.props)
-            return (
-              <>
-              <CampaignModal show={this.state.show} handleClose={this.hideModal} campaign={this.state.campaign} setCampaign={this.props.setCampaign} />
-              <Typography variant="h5" style={{marginBottom: "40px"}}>
-                Active Campaigns
-              </Typography>
-              <List
-                itemLayout="horizontal"
-                grid={{
-                  gutter: 16,
-                }}
-                dataSource={this.state.listData}
-                renderItem={(item, idx) => {
-                  return idx < this.state.listData.length - 1 ? 
-                  <List.Item
-                  // onClick={() => this.props.history.push(`/home/InfluencerTable/${item.id}`)}
-                  onClick={() => this.campaignClicked(item)}
-                  key={item.id}
-                  >
-                    <CampaignCard item={item} />
-                  </List.Item> :
-                  <List.Item
-                  //onClick={() => this.props.history.push(`/home/CreateCampaign`)}
-                  key="add_campaign_card"
-                  >
-                    <Link to="/home/CreateCampaign"> <CampaignCardAdd/> </Link>
-                  </List.Item>
-                }
-                }/>
-              <Typography variant="h5" style={{marginBottom: "40px", marginTop: "80px"}}>
-                No Past Campaigns
-              </Typography>     
-              </>
-            )
+        </>
+        )
+      } else if (this.props.ended) {
+        return(
+          <Typography variant="h5" style={{marginBottom: "40px"}}>
+            There are no past campaigns.
+          </Typography>
+        )
       }
       else {
         return (
