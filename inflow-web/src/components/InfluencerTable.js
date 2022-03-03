@@ -3,6 +3,7 @@ import React from 'react';
 import { FirebaseError } from 'firebase/app';
 import { initializeApp } from "firebase/app";
 import { collection, doc, getDoc, getDocs, getFirestore } from "firebase/firestore";
+import { db, storage } from "../index";
 
 export class InfluencerTable extends React.Component {
   constructor(props) {
@@ -13,6 +14,13 @@ export class InfluencerTable extends React.Component {
         title: 'Name',
         dataIndex: 'name',
         sorter: (a, b) => a.name.localeCompare(b.name),
+        sortDirections: ['ascend', 'descend'],
+      },
+      {
+        title: 'Instagram Handle',
+        dataIndex: 'instagram_handle',
+        defaultSortOrder: 'descend',
+        sorter: (a, b) => a.instagram_handle.localeCompare(b.instagram_handle),
         sortDirections: ['ascend', 'descend'],
       },
       {
@@ -31,13 +39,13 @@ export class InfluencerTable extends React.Component {
             },
         ],
         onFilter: (value, record) => record.gender === value,
-  
       },
       {
         title: 'Age',
         dataIndex: 'age',
         defaultSortOrder: 'descend',
         sorter: (a, b) => a.age - b.age,
+        sortDirections: ['ascend', 'descend'],
       },
       {
         title: 'Location',
@@ -53,32 +61,18 @@ export class InfluencerTable extends React.Component {
             },
         ],
         onFilter: (value, record) => record.location === value,
-  
       },
       {
-        title: 'Total Reach',
-        dataIndex: 'reach',
+        title: 'Followers',
+        dataIndex: 'followers',
         defaultSortOrder: 'descend',
         sorter: (a, b) => a.reach - b.reach,
+        sortDirections: ['ascend', 'descend'],
       }
     ];
   }
 
   getInfluencers = async (values) => {
-    const firebaseConfig = {
-      apiKey: "AIzaSyBQ9pLA5iHoAijrd-Gf7XHOH_qhz7asE74",
-      authDomain: "inflow-3382f.firebaseapp.com",
-      projectId: "inflow-3382f",
-      storageBucket: "inflow-3382f.appspot.com",
-      messagingSenderId: "16173008953",
-      appId: "1:16173008953:web:dd099b7b74b4c64d1ee5e8",
-      measurementId: "G-8FCDTE5ZRY"
-    };
-
-    // Initialize Firebase
-    const app = initializeApp(firebaseConfig);
-
-    const db = getFirestore();
     const docRef = doc(db, 'campaigns', this.props.match.params.campaignID);
     const docReceived = await getDoc(docRef); 
     const users = docReceived.data().completed_users;
