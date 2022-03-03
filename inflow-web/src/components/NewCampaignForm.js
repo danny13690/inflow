@@ -140,10 +140,12 @@ export const NewCampaignForm = () => {
       wrapperCol={{
         span: 16,
       }}
+      layout="vertical"
       onFinish={addCampaign}
       onFinishFailed={onFinishFailed}
       autoComplete="off"
-      style={{ textAlign: "right" }}
+      style={{ textAlign: "left" }}
+      requiredMark="optional"
     >
       <Form.Item
         label="Campaign Title"
@@ -151,9 +153,12 @@ export const NewCampaignForm = () => {
         rules={[
           {
             required: true,
-            message: 'Your Campaign Title',
+            message: 'Please name your campaign',
           },
         ]}
+        style={{
+          fontSize: "30px"
+        }}
       >
         <input className="short-input"/>
       </Form.Item>
@@ -164,7 +169,7 @@ export const NewCampaignForm = () => {
         rules={[
           {
             required: true,
-            message: 'Your Campaign Industry',
+            message: 'Please input your campaign industry',
           },
         ]}
       >
@@ -177,7 +182,7 @@ export const NewCampaignForm = () => {
         rules={[
           {
             required: true,
-            message: 'A description for your campaign',
+            message: 'Please include a short description about your campaign',
           },
         ]}
       >
