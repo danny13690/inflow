@@ -57,7 +57,7 @@ export const NewCampaignForm = () => {
       }
     });
     if (file != null) {
-      const storageRef = ref(storage, 'campaigns/'+ docRef.id + '/image.jpg');
+      const storageRef = ref(storage, 'campaigns/'+ docRef.id + '/banner.jpg');
       uploadBytes(storageRef, file).then(snapshot => {
         console.log("successfully uploaded", snapshot);
       }).catch(error => {
