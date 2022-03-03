@@ -1,0 +1,15 @@
+.short-input,
+.long-input {
+  width: 100%;
+  border: 2px solid lightgray;
+  border-radius: 4px;
+}
+
+.long-input {
+  height: 100px;
+}
+
+.add-button {
+  margin-bottom: 10px;
+  width: 100px;
+}

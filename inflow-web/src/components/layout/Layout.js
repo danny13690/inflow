@@ -16,7 +16,9 @@ export const MainLayout = (props) => {
             <HeaderBar campaign={props.campaign}/>
             <Layout>
                 <Sidebar campaign={props.campaign} setCampaign={props.setCampaign}/>
+                <div style={{backgroundColor: "#f7f7f7", height: "100%", width: "100%"}}>
                 <Layout className="site-layout">
+                    <div style={{backgroundColor: "#f7f7f7", height: "100%", width: "100%"}}>
                     <Content
                     style={{
                         margin: "24px 16px",
@@ -26,7 +28,9 @@ export const MainLayout = (props) => {
                     >
                         {props.children}
                     </Content>
+                    </div>
                 </Layout>
+                </div>
             </Layout>
         </Layout>
       );

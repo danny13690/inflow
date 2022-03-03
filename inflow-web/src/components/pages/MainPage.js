@@ -30,10 +30,10 @@ export const MainPage = () => {
                     component={InfluencerTable}
                     />
                     <Route exact path={"/home/PastCampaigns"}
-                    component={() => <CampaignList setCampaign={setCampaign} ended={true} title={"Past Campaigns"}/> }>
+                    component={() => <CampaignList setCampaign={setCampaign} ended={true} title={"Inactive Campaigns"}/> }>
                     </Route>
                     <Route exact path={"/home"}
-                    component={() => <CampaignList setCampaign={setCampaign} ended={false} title={"Current Campaigns"}/> }>
+                    component={() => <CampaignList setCampaign={setCampaign} ended={false} title={"Active Campaigns"}/> }>
                     </Route>
                 </Switch>
         </MainLayout>
