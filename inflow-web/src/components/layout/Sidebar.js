@@ -6,7 +6,8 @@ import {
   PlusCircleOutlined,
   MessageOutlined,
   TeamOutlined,
-  ShoppingOutlined
+  ShoppingOutlined,
+  UserOutlined
 } from '@ant-design/icons';
 import '../../App.css';
 import './Sidebar.css'
@@ -46,11 +47,13 @@ export class Sidebar extends React.Component {
     if (window.location.href.includes("CreateCampaign")) {
       headerKey = '3';
     } else if (window.location.href.includes("CampaignHome")) {
-      headerKey = '4';
-    } else if (window.location.href.includes("InfluencerTable")) {
       headerKey = '5';
+    } else if (window.location.href.includes("InfluencerTable")) {
+      headerKey = '6';
     } else if (window.location.href.includes("PastCampaigns")) {
       headerKey = '2';
+    } else if (window.location.href.includes("Profile")) {
+      headerKey = '4';
     }
     console.log(headerKey);
     if (this.props.campaign) {
@@ -64,15 +67,18 @@ export class Sidebar extends React.Component {
               <Menu.Item key="2" icon={<ShoppingOutlined />}>
                 <Link to="/home/PastCampaigns"> Inactive Campaigns </Link>
               </Menu.Item>
-              <Menu.Item key="3" icon={<ShoppingOutlined />}>
+              <Menu.Item key="3" icon={<PlusCircleOutlined />}>
                 <Link to="/home/CreateCampaign"> Create Campaign </Link>
+              </Menu.Item>
+              <Menu.Item key="4" icon={<UserOutlined />}>
+                <Link to="/home/Profile"> Profile </Link>
               </Menu.Item>
             </Menu.ItemGroup>
             <Menu.ItemGroup key="g2" title="Current Campaign">
-              <Menu.Item key="4" icon={<HomeOutlined />}>
+              <Menu.Item key="5" icon={<HomeOutlined />}>
               <Link to={`/home/CampaignHome/${this.props.campaign.id}`}> Campaign Home </Link>
               </Menu.Item>
-              <Menu.Item key="5" icon={<TeamOutlined />}>
+              <Menu.Item key="6" icon={<TeamOutlined />}>
               <Link to={`/home/InfluencerTable/${this.props.campaign.id}`}> Influencers </Link>
               </Menu.Item>
             </Menu.ItemGroup>
@@ -80,7 +86,7 @@ export class Sidebar extends React.Component {
 
           <Menu theme="light" defaultSelectedKeys={['1']} mode="inline">
 
-            <Menu.Item key="5">
+            <Menu.Item key="7">
               <Button onClick={this.onSignOut}>Sign Out</Button>
             </Menu.Item>
           </Menu>
@@ -97,15 +103,18 @@ export class Sidebar extends React.Component {
               <Menu.Item key="2" icon={<ShoppingOutlined />}>
                 <Link to="/home/PastCampaigns"> Inactive Campaigns </Link>
               </Menu.Item>
-              <Menu.Item key="3" icon={<ShoppingOutlined />}>
+              <Menu.Item key="3" icon={<PlusCircleOutlined />}>
                 <Link to="/home/CreateCampaign"> Create Campaign </Link>
+              </Menu.Item>
+              <Menu.Item key="4" icon={<UserOutlined />}>
+                <Link to="/home/Profile"> Profile </Link>
               </Menu.Item>
             </Menu.ItemGroup>
             <Menu.ItemGroup key="g2" title="Current Campaign">
-              <Menu.Item disabled key="4" icon={<HomeOutlined />}>
+              <Menu.Item disabled key="5" icon={<HomeOutlined />}>
                Campaign Home
               </Menu.Item>
-              <Menu.Item disabled key="5" icon={<TeamOutlined />}>
+              <Menu.Item disabled key="6" icon={<TeamOutlined />}>
               Influencers
               </Menu.Item>
             </Menu.ItemGroup>
@@ -113,7 +122,7 @@ export class Sidebar extends React.Component {
 
           <Menu theme="light" defaultSelectedKeys={['1']} mode="inline">
 
-            <Menu.Item key="5">
+            <Menu.Item key="7">
               <Button onClick={this.onSignOut}>Sign Out</Button>
             </Menu.Item>
           </Menu>
