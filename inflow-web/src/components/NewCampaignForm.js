@@ -5,8 +5,17 @@ import { list, ref, uploadBytes } from "firebase/storage";
 import React from "react";
 import './campaignForm.css';
 import "../index.css";
+import { useHistory } from "react-router-dom";
+import {toast} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { getAuth } from "firebase/auth";
 
-export const NewCampaignForm = () => {
+
+export const NewCampaignForm = ({setCampaign}) => {
+  setCampaign(null);
+  let history = useHistory();
+  toast.configure();
+
   let file = null;
   function chooseFile(e) {
     file = e.target.files[0];
@@ -37,7 +46,7 @@ export const NewCampaignForm = () => {
     for (var i = 0; i < locs.length; i++) {
       locations.push(locs[i].value);
     }
-
+    console.log(locations)
     let engMin = document.getElementById("eng-min").value;
     let engMax = document.getElementById("eng-max").value;
     let followMax = document.getElementById("follower-max").value;
@@ -48,15 +57,19 @@ export const NewCampaignForm = () => {
       deliverables: deliverables,
       compensation: compensations,
       description: values["description"],
-      ended: false,
+      ended: !values["remember"],
       industry: values["industry"],
       hashtags: hashtags,
       filters: {
         engagement: [engMin, engMax],
-        followers: [followMin, followMax],
+        follower: [followMin, followMax],
         locations: locations
-      }
-    });
+      },
+      brandId: getAuth().currentUser.uid,
+    }).then(() => {
+      history.push('/home/');
+      toast("Campaign created!");
+    })
     if (file != null) {
       const storageRef = ref(storage, 'campaigns/'+ docRef.id + '/banner.jpg');
       uploadBytes(storageRef, file).then(snapshot => {
@@ -67,19 +80,22 @@ export const NewCampaignForm = () => {
     }
   };
 
-  const onAddDeliverable = () => {
+  const onAddDeliverable = (e) => {
+    e.preventDefault()
     let newInput = document.createElement("input");
     newInput.className = "short-input deliv-item";
     document.getElementById("deliverables-yo").appendChild(newInput);
   };
 
-  const onAddCompensation = () => {
+  const onAddCompensation = (e) => {
+    e.preventDefault()
     let newInput = document.createElement("input");
     newInput.className = "short-input comp-item";
     document.getElementById("compensation-yo").appendChild(newInput);
   };
 
-  const onRemoveDeliverable = () => {
+  const onRemoveDeliverable = (e) => {
+    e.preventDefault()
     let newInput = document.createElement("input");
     newInput.className = "short-input";
     let listDeliverables = document.getElementById("deliverables-yo");
@@ -88,7 +104,8 @@ export const NewCampaignForm = () => {
     }
   };
 
-  const onRemoveCompensation = () => {
+  const onRemoveCompensation = (e) => {
+    e.preventDefault()
     let newInput = document.createElement("input");
     newInput.className = "short-input";
     let listDeliverables = document.getElementById("compensation-yo");
@@ -97,13 +114,15 @@ export const NewCampaignForm = () => {
     }
   };
 
-  const onAddHashtag = () => {
+  const onAddHashtag = (e) => {
+    e.preventDefault()
     let newInput = document.createElement("input");
     newInput.className = "short-input hash-item";
     document.getElementById("hashtags-yo").appendChild(newInput);
   };
 
-  const onRemoveHashtag = () => {
+  const onRemoveHashtag = (e) => {
+    e.preventDefault()
     let newInput = document.createElement("input");
     newInput.className = "short-input";
     let listDeliverables = document.getElementById("hashtags-yo");
@@ -112,13 +131,15 @@ export const NewCampaignForm = () => {
     }
   };
 
-  const onAddLocation = () => {
+  const onAddLocation = (e) => {
+    e.preventDefault()
     let newInput = document.createElement("input");
     newInput.className = "short-input loc-item";
     document.getElementById("locations-yo").appendChild(newInput);
   };
 
-  const onRemoveLocation = () => {
+  const onRemoveLocation = (e) => {
+    e.preventDefault()
     let newInput = document.createElement("input");
     newInput.className = "short-input";
     let listDeliverables = document.getElementById("locations-yo");
@@ -156,9 +177,6 @@ export const NewCampaignForm = () => {
             message: 'Please name your campaign',
           },
         ]}
-        style={{
-          fontSize: "30px"
-        }}
       >
         <input className="short-input"/>
       </Form.Item>
@@ -297,10 +315,12 @@ export const NewCampaignForm = () => {
           onChange={chooseFile}
         />
       </Form.Item>
-
+      <Form.Item name="remember" valuePropName="checked" >
+        <Checkbox >Publish as active campaign</Checkbox>
+      </Form.Item>
       <Form.Item
         wrapperCol={{
-          offset: 8,
+          offset: 6,
           span: 16,
         }}
       >

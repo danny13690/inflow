@@ -94,7 +94,7 @@ export class CampaignHome extends React.Component {
             </Col>
             <Col span={8}>
             <Typography className="modal-sub-head">Location</Typography>
-            {"follower" in campaign.filters ? 
+            {"locations" in campaign.filters ? 
             <ul>
             {campaign.filters.locations.map(n => {
             return (

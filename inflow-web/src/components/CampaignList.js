@@ -1,7 +1,8 @@
 import { Typography } from '@material-ui/core';
 import { List, Card } from 'antd';
 import { Row, Col } from 'antd';
-import { collection, getDocs } from "firebase/firestore";
+import { getAuth } from "firebase/auth";
+import { collection, query, where, getDocs } from "firebase/firestore";
 import React from 'react';
 import '../App.css';
 import { db } from "../index";
@@ -40,7 +41,7 @@ export class CampaignList extends React.Component {
   };
 
   getCampaigns = async (values) => {
-    const campaignsCol = collection(db, "campaigns");
+    const campaignsCol = query(collection(db, "campaigns"), where("brandId", "==", getAuth().currentUser.uid));
     const campaignsSnapshot = await getDocs(campaignsCol);
     const campaignsList = campaignsSnapshot.docs.map(doc => {let d = doc.data(); d['id'] = doc.id; return d;});
     
@@ -104,7 +105,7 @@ export class CampaignList extends React.Component {
       } else if (this.props.ended) {
         return(
           <Typography variant="h5" style={{marginBottom: "40px"}}>
-            There are no past campaigns.
+            There are no inactive campaigns.
           </Typography>
         )
       }
