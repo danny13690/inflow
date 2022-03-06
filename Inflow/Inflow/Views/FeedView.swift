@@ -16,6 +16,7 @@ struct FeedView: View {
     @State private var showingSearch = false
     @State private var showingChat = false
     @State private var showingProfile = false
+
     
 //    private var scrollWidth
 //
@@ -104,6 +105,17 @@ struct FeedView: View {
                                     .foregroundColor(lightPink)
                             }
                             Spacer()
+                            Button {
+                                showingBookmarks = !showingBookmarks
+                            } label: {
+                                Image(systemName: "note.text")
+                                    .resizable()
+                                    .scaledToFill()
+                                    .frame(width: 25,height:25)
+                                    .foregroundColor(lightPink)
+                            }
+                            Spacer()
+                            //ellipsis.circle
                             Button {
                                 showingBookmarks = !showingBookmarks
                             } label: {
