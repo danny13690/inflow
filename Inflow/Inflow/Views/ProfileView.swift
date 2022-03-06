@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ProfileView: View {
-    @State private var showingSettings = true
+    @State private var showingSettings = false
     @State var name = ""
     @State var age = ""
     @State var gender = ""
