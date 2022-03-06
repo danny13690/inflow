@@ -111,9 +111,14 @@ html,
 .campaign-title {
   text-align: left;
   color: #000000;
-  height: 220px;
+  height: 240px;
   width: 380px;
   border-radius: 45;
+}
+
+.campaign-img {
+  width: 100%;
+  margin-top: -20px;
 }
 
 .campaign-title:hover {
@@ -127,4 +132,16 @@ html,
   flex-flow: column;
   text-align: center;
   color: gray !important;
+}
+
+.normal-button {
+  color: white;
+  background-color: #ff89ab;
+  margin: 10px;
+  border-radius: 8px;
+  padding: 5px 15px;
+  font-size: 15px;
+  width: 180px;
+  height: 40px;
+  border: 0px;
 }
