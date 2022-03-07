@@ -28,6 +28,10 @@ final class FeedViewModel: ObservableObject {
     func printCampaigns() {
         print("Repository has \(campaignRepository.campaigns.count) campaigns")
         print("MV has \(self.campaigns.count) campaigns")
+        for campaign in campaigns {
+            print(campaign.id)
+        }
+        campaignRepository.getImages()
     }
     
 //    func reload() async {

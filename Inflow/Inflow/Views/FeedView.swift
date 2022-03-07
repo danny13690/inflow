@@ -58,13 +58,13 @@ struct FeedView: View {
                         Image(systemName: "person.crop.circle")
                             .resizable()
                             .scaledToFill()
-                            .frame(width: 30)
+                            .frame(width: 10)
                             .foregroundColor(lightPink)
                         
                         Text(" Covet").font(.custom("Avenir", size: 14))
                             .foregroundColor(Color.black)
                     }
-                    Image("sampleCampaign")
+                        Image(uiImage: self.feedViewModel.images[campaign.id!] ?? UIImage(imageLiteralResourceName: "sampleCampaign"))
                         .resizable()
                         .scaledToFill()
                     Text(campaign.name).font(.custom("Avenir", size: 14))

@@ -15,8 +15,8 @@ import FirebaseFirestore
 struct InflowApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
-//            FeedView(feedViewModel: FeedViewModel())
+//            ContentView()
+            FeedView(feedViewModel: FeedViewModel())
         }
     }
 }
