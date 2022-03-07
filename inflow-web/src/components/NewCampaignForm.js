@@ -66,6 +66,10 @@ export const NewCampaignForm = ({setCampaign}) => {
         locations: locations
       },
       brandId: getAuth().currentUser.uid,
+      applied_users: [],
+      rejected_users: [],
+      saved_users: [],
+      completed_users: [],
     }).then(() => {
       history.push('/home/');
       toast("Campaign created!");

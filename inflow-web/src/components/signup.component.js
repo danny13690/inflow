@@ -47,6 +47,8 @@ export default class SignUp extends Component {
                         name: this.state.brand_name,
                         email: this.state.email,
                         userId: user.uid,
+                        industry: "",
+                        description: "",
                     });
                     this.props.history.push('/sign-in/email');
                     toast("Verification email sent!");
