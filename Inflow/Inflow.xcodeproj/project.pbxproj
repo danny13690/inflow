@@ -32,6 +32,7 @@
 		F5B8D20527A76DFA00E74166 /* MessageDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B8D20427A76DFA00E74166 /* MessageDetailView.swift */; };
 		F5BDBA6D27AA511000874FC6 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BDBA6C27AA511000874FC6 /* ProfileView.swift */; };
 		F5F603AC27B0AF39006D6895 /* SwitchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F603AB27B0AF39006D6895 /* SwitchView.swift */; };
+		F5FCE63E27D4815B00A6640E /* BrandDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FCE63D27D4815B00A6640E /* BrandDetailsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +85,7 @@
 		F5B8D20427A76DFA00E74166 /* MessageDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageDetailView.swift; sourceTree = "<group>"; };
 		F5BDBA6C27AA511000874FC6 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		F5F603AB27B0AF39006D6895 /* SwitchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchView.swift; sourceTree = "<group>"; };
+		F5FCE63D27D4815B00A6640E /* BrandDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandDetailsView.swift; sourceTree = "<group>"; };
 		F5FFE27671F2845FE85B216B /* Pods-Inflow.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Inflow.debug.xcconfig"; path = "Target Support Files/Pods-Inflow/Pods-Inflow.debug.xcconfig"; sourceTree = "<group>"; };
 		FB638997DC4194FFD917E550 /* Pods_InflowTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InflowTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -147,6 +149,7 @@
 				F5B8D1FE27A7659400E74166 /* SearchView.swift */,
 				F5B8D20027A7677400E74166 /* SearchTypingView.swift */,
 				F5B3C7E127B222BB00F37951 /* SettingsView.swift */,
+				F5FCE63D27D4815B00A6640E /* BrandDetailsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -489,6 +492,7 @@
 				332D07C327C1D0F4009891C0 /* CampaignRepository.swift in Sources */,
 				334CC2D827C1C5FB00AFC897 /* Campaign.swift in Sources */,
 				F5B8D20527A76DFA00E74166 /* MessageDetailView.swift in Sources */,
+				F5FCE63E27D4815B00A6640E /* BrandDetailsView.swift in Sources */,
 				F5BDBA6D27AA511000874FC6 /* ProfileView.swift in Sources */,
 				F5B737E527A349E20081CA75 /* ContentView.swift in Sources */,
 				F5B8D20127A7677400E74166 /* SearchTypingView.swift in Sources */,

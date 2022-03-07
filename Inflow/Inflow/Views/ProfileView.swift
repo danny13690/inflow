@@ -50,22 +50,67 @@ struct ProfileView: View {
                 
                 if (showingSettings){
                 Group {
-                TextField("Name", text: $name)
+                    Divider()
+                    HStack{
+                        Spacer()
+                        Text("Name").font(Font.custom("Avenir", size: 18))
+                        TextField("Name", text: $name)
+                    }
+                    Divider()
                 HStack{
+                    Spacer()
+                    Text("Age").font(Font.custom("Avenir", size: 18))
                     TextField("Age", text: $age)
+                    Text("Gender").font(Font.custom("Avenir", size: 18))
                     TextField("Gender", text: $gender)
                 }
-
-                TextField("Location", text: $location)
-                TextField("Instagram Account", text: $instagram_handle)
-                TextField("Number of followers", text: $followers)
-                } .padding(10)
+                    Divider()
+                HStack{
                     Spacer()
+                    Text("location").font(Font.custom("Avenir", size: 18))
+                    TextField("Location", text: $location)
+                }
+                    Divider()
+                HStack{
+                    Spacer()
+                    Text("Instagram Account").font(Font.custom("Avenir", size: 18))
+                    TextField("Instagram Account", text: $instagram_handle)
+          
+                }
+                Divider()
+                VStack{
+                    HStack{
+                        Spacer()
+                        Text("Number of Followers").font(Font.custom("Avenir", size: 18))
+                        TextField("Number of Followers", text: $followers)
+                    }
+                    Divider()
+                }
+                    
+                }
+//                Divider()
+                HStack{
+                    Spacer()
+                    Button {
+                        showingSettings = false
+                    } label: {
+                        Text("CANCEL     ").font(Font.custom("Avenir", size: 18)).foregroundColor(lightPink)
+                    }
+                    Spacer()
+//                    Spacer()
+                    Button {
+                        showingSettings = false
+                    } label: {
+                        Text("DONE").font(Font.custom("Avenir", size: 18)).foregroundColor(lightPink)
+                    }
+                    Spacer()
+                }
+                Spacer()
                 } else {
             
                 Text("Sample User").font(Font.custom("Avenir", size: 30))
                 Spacer().frame(height: 50)
-                Group {
+                    Group{
                     Text("age: 23").font(Font.custom("Avenir", size: 25))
                     Text("gender: female").font(Font.custom("Avenir", size: 25))
                     Text("location: SF, CA").font(Font.custom("Avenir", size: 25))
