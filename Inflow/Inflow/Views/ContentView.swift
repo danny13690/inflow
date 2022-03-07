@@ -94,6 +94,7 @@ struct ContentView: View {
     @State var isLoginMode = false
     @State var email = ""
     @State var password = ""
+    @State var repeatPassword = ""
     
     @State var name = ""
     @State var age = ""
@@ -138,10 +139,18 @@ struct ContentView: View {
         
                                 TextField("Location", text: $location)
                                 TextField("Instagram Account", text: $instagram_handle)
-                                TextField("Number of followers", text: $followers)
                                 } .padding(5)
+                                Group {
+                                    TextField("Email", text: $email)
+                                        .keyboardType(.emailAddress)
+                                        .autocapitalization(.none)
+                                    SecureField("Password", text: $password)
+                                    SecureField("Repeat Password", text: $repeatPassword)
+                                }
+                                .padding(5)
+                                .background(Color.white)
                         
-                            }
+                            } else {
 
                             Group {
                                 TextField("Email", text: $email)
@@ -151,6 +160,7 @@ struct ContentView: View {
                             }
                             .padding(5)
                             .background(Color.white)
+                            }
 
                             Button {
                                 handleAction()

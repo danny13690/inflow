@@ -53,6 +53,17 @@ struct FeedView: View {
             VStack {
                 List(feedViewModel.campaigns) {campaign in
                     VStack(alignment: .leading){
+                    HStack{
+                        Text(" ")
+                        Image(systemName: "person.crop.circle")
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: 30)
+                            .foregroundColor(lightPink)
+                        
+                        Text(" Covet").font(.custom("Avenir", size: 14))
+                            .foregroundColor(Color.black)
+                    }
                     Image("sampleCampaign")
                         .resizable()
                         .scaledToFill()
