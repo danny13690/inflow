@@ -12,6 +12,7 @@ import Combine
 final class CampaignRepository: ObservableObject {
     private let path = "campaigns"
     @Published var campaigns: [Campaign] = []
+    @Published var images: Dictionary<String, UIImage> = [:]
     
     init() {
         get()
@@ -28,6 +29,25 @@ final class CampaignRepository: ObservableObject {
                     try? $0.data(as: Campaign.self)
                 } ?? []
                 print("successfully saved \(self.campaigns.count) campaigns")
+            }
+        }
+        getImages()
+    }
+    
+    func getImages() {
+        if !campaigns.isEmpty {
+            for i in 0...campaigns.count-1 {
+                let pathReference = FirebaseManager.shared.storage.reference(withPath: "campaigns/\(campaigns[i].id)/stars.jpg")
+                pathReference.getData(maxSize: 1 * 1024 * 1024) { data, error in
+                  if let error = error {
+                    print("Get campaign images failed")
+                    print(error)
+                  } else {
+                    // Data for "images/island.jpg" is returned
+                    let image = UIImage(data: data!)
+                      self.images[self.campaigns[i].id!] = image
+                  }
+                }
             }
         }
     }
