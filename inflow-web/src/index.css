@@ -117,7 +117,9 @@ html,
 }
 
 .campaign-img {
-  width: 100%;
+  width: 330px;
+  height: 165px;
+  object-fit: contain;
   margin-top: -20px;
 }
 

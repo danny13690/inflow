@@ -13,7 +13,7 @@ export class CampaignCard extends React.Component {
 
       const storage = getStorage();
       const img = document.getElementById('banner' + item.id);
-      getDownloadURL(ref(storage, 'campaigns/'+ item.id + '/banner.jpg'))
+      getDownloadURL(ref(storage, 'campaigns/'+ item.id + '/image.jpg'))
         .then((url) => {
           img.setAttribute('src', url);
         }).catch(() => {
