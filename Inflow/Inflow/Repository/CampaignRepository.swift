@@ -41,11 +41,10 @@ final class CampaignRepository: ObservableObject {
                         } ?? []
                         if tmp.isEmpty {
                             print("Error, invalid user profile format on firebase")
-                        } else {
-                            GlobalUser.user = tmp[0]
-                            GlobalUser.userRef = (querySnapshot?.documents[0].reference)!
-                            print("successfully stored user with name: \(tmp[0].name ?? "no name")")
                         }
+                        GlobalUser.user = tmp[0]
+                        GlobalUser.userRef = (querySnapshot?.documents[0].reference)!
+                        print("successfully stored user with name: \(tmp[0].name ?? "no name")")
                         self.getCampaigns()
                     }
                 }
@@ -68,10 +67,6 @@ final class CampaignRepository: ObservableObject {
             }
         }
     }
-    
-//    func getCampaignRef(id: String) {
-//        
-//    }
     
     func clearCampaignLists() {
         self.feed = []

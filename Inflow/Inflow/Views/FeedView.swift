@@ -133,6 +133,9 @@ struct FeedView: View {
                                 }
                                 feedViewModel.campaignRepository.clearCampaignLists()
                                 feedViewModel.campaignRepository.buildCampaignLists()
+                                FirebaseManager.shared.store.collection("campaigns").document((campaign.id)!).updateData([
+                                        "applied_users": FieldValue.arrayUnion([GlobalUser.user.id])
+                                        ])
                                 
                             } label: {
                                 Image(systemName: "paperplane")
