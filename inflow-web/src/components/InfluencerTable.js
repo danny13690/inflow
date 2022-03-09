@@ -109,6 +109,7 @@ export class InfluencerTable extends React.Component {
           age: doc.age,
           location: doc.location,
           reach: doc.reach,
+          instagram_handle: doc.instagram_handle,
         });
       }
     })
