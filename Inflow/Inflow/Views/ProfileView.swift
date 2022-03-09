@@ -10,7 +10,7 @@ import SwiftUI
 struct ProfileView: View {
     @State private var showingSettings = false
     @State var name = "Tracy C"
-    @State var age = "23"
+    @State var age = "20"
     @State var gender = "Female"
     @State var location = "Stanford, CA"
     @State var instagram_handle = "ccai_tracy"
