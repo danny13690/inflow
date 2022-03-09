@@ -158,9 +158,6 @@ struct ContentView: View {
                                     .keyboardType(.emailAddress)
                                     .autocapitalization(.none)
                                 SecureField("Password", text: $password)
-                                if wrongCredentials{
-                                    Text("Incorrect email address and / or password.").foregroundColor(.red).font(.system(size: 12))
-                                }
                             }
                             .padding(5)
                             .background(Color.white)
@@ -180,6 +177,10 @@ struct ContentView: View {
                                     .cornerRadius(5)
 
                             }
+                            if wrongCredentials{
+                                Text("Incorrect email address and / or password.").foregroundColor(.red).font(.system(size: 12)).multilineTextAlignment(.trailing)
+                            }
+                            
                         }
                         .padding()
 
