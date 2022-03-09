@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		332D07C327C1D0F4009891C0 /* CampaignRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332D07C227C1D0F4009891C0 /* CampaignRepository.swift */; };
+		3335CFC727D8621400A5C0FD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3335CFC627D8621400A5C0FD /* User.swift */; };
 		334CC2D427C1A63100AFC897 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 334CC2D327C1A63100AFC897 /* GoogleService-Info.plist */; };
 		334CC2D627C1BD6400AFC897 /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334CC2D527C1BD6300AFC897 /* FeedViewModel.swift */; };
 		334CC2D827C1C5FB00AFC897 /* Campaign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334CC2D727C1C5FB00AFC897 /* Campaign.swift */; };
@@ -57,6 +58,7 @@
 		240D7CB24C1A84BA0E70288C /* Pods-Inflow-InflowUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Inflow-InflowUITests.release.xcconfig"; path = "Target Support Files/Pods-Inflow-InflowUITests/Pods-Inflow-InflowUITests.release.xcconfig"; sourceTree = "<group>"; };
 		3171B40B67FA8B85A056C18F /* Pods-InflowTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InflowTests.debug.xcconfig"; path = "Target Support Files/Pods-InflowTests/Pods-InflowTests.debug.xcconfig"; sourceTree = "<group>"; };
 		332D07C227C1D0F4009891C0 /* CampaignRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampaignRepository.swift; sourceTree = "<group>"; };
+		3335CFC627D8621400A5C0FD /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		334CC2D327C1A63100AFC897 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		334CC2D527C1BD6300AFC897 /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
 		334CC2D727C1C5FB00AFC897 /* Campaign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Campaign.swift; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				334CC2D727C1C5FB00AFC897 /* Campaign.swift */,
+				3335CFC627D8621400A5C0FD /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -500,6 +503,7 @@
 				F5B3C7E527B3AE4900F37951 /* BookmarksView.swift in Sources */,
 				F5B8D20327A76C2C00E74166 /* MessageView.swift in Sources */,
 				F5F603AC27B0AF39006D6895 /* SwitchView.swift in Sources */,
+				3335CFC727D8621400A5C0FD /* User.swift in Sources */,
 				F5B3C7E227B222BB00F37951 /* SettingsView.swift in Sources */,
 				F5B8D1FF27A7659400E74166 /* SearchView.swift in Sources */,
 				F5ACB14C279B6A7700DC5A82 /* InflowApp.swift in Sources */,

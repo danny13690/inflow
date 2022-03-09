@@ -11,6 +11,11 @@ import SwiftUI
 final class FeedViewModel: ObservableObject {
     @Published var campaignRepository = CampaignRepository()
     @Published var campaigns: [Campaign] = []
+    @Published var feed: [Campaign] = []
+    @Published var saved: [Campaign] = []
+    @Published var rejected: [Campaign] = []
+    @Published var applied: [Campaign] = []
+    @Published var completed: [Campaign] = []
     @Published var images: Dictionary<String, UIImage> = [:]
     
     private var cancellables: Set<AnyCancellable> = []
@@ -23,6 +28,21 @@ final class FeedViewModel: ObservableObject {
         campaignRepository.$images
             .assign(to: \.images, on: self)
             .store(in: &imageCancellables)
+        campaignRepository.$feed
+            .assign(to: \.feed, on: self)
+            .store(in: &imageCancellables)
+        campaignRepository.$saved
+            .assign(to: \.saved, on: self)
+            .store(in: &imageCancellables)
+        campaignRepository.$rejected
+            .assign(to: \.rejected, on: self)
+            .store(in: &imageCancellables)
+        campaignRepository.$applied
+            .assign(to: \.applied, on: self)
+            .store(in: &imageCancellables)
+        campaignRepository.$completed
+            .assign(to: \.completed, on: self)
+            .store(in: &imageCancellables)
     }
     
     func printCampaigns() {
@@ -33,22 +53,7 @@ final class FeedViewModel: ObservableObject {
         }
         campaignRepository.getImages()
     }
-    
-//    func reload() async {
-//        await FirebaseManager.shared.store.collection("campaigns").addSnapshotListener { (snapshot, err) in
-//            if let err = err {
-//                print("Get campaigns failed.")
-//                print(err)
-//            } else {
-//                print("successfully obtained campaigns")
-//                print(snapshot!.documents[0].data())
-//                self.campaigns = snapshot?.documents.compactMap {
-//                    try? $0.data(as: Campaign.self)
-//                } ?? []
-//            }
-//        }
-//    }
-//
+
     func add(_ campaign: Campaign) {
         campaignRepository.add(campaign)
     }

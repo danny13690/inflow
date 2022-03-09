@@ -15,8 +15,8 @@ import FirebaseFirestore
 struct InflowApp: App {
     var body: some Scene {
         WindowGroup {
-//            ContentView()
-            FeedView(feedViewModel: FeedViewModel())
+            ContentView()
+//            FeedView(feedViewModel: FeedViewModel())
         }
     }
 }
@@ -38,4 +38,9 @@ class FirebaseManager: NSObject {
     
 }
 
+class GlobalUser {
+    static var auth = ""
+    static var email = ""
+    static var user = User(saved_campaigns: [], rejected_campaigns: [], applied_campaigns: [], completed_campaigns: [], hashtags_following: [], brands_following: [])
+}
 

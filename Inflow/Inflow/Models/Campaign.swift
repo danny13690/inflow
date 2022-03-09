@@ -27,6 +27,18 @@ struct Campaign: Identifiable, Codable {
     var compensation: [String]
     var hashtags: [String]?
     
+    // user management
+    var rejected_users: [String]?
+    var saved_users: [String]?
+    var applied_users: [String]?
+    var completed_uesrs: [String]?
+    
+    // brand information
+    var brandID: String?
+    var brandName: String?
+    
+    var ended: Bool?
+    
     // limit to 2 memebrs per array, [start,end]
     var signUpPeriod: [String]?
     var campaignPeriod: [String]?

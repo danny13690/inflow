@@ -203,6 +203,8 @@ struct ContentView: View {
             }
 
             print("Successfully logged in as user: \(result?.user.uid ?? "")")
+            GlobalUser.auth = result?.user.uid ?? ""
+            GlobalUser.email = email
             showFeedPage.toggle()
 
             self.loginStatusMessage = "Successfully logged in as user: \(result?.user.uid ?? "")"

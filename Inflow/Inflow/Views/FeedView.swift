@@ -51,7 +51,7 @@ struct FeedView: View {
             
             //feed content
             VStack {
-                List(feedViewModel.campaigns) {campaign in
+                List(feedViewModel.feed) {campaign in
                     VStack(alignment: .leading){
                     HStack{
                         Text(" ")
