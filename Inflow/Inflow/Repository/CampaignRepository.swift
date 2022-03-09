@@ -82,23 +82,29 @@ final class CampaignRepository: ObservableObject {
                 
                 // if in saved list, add to saved
                 if (GlobalUser.user.saved_campaigns.contains(where: {$0 == campaigns[i].id})) {
-                    self.saved.append(campaigns[i])
-                    
+                    if (!self.saved.contains(where: {$0.id == campaigns[i].id})) {
+                        self.saved.append(campaigns[i])
+                    }
                 // if in applied list, add to applied
                 } else if (GlobalUser.user.applied_campaigns.contains(where: {$0 == campaigns[i].id})) {
-                    self.applied.append(campaigns[i])
-                
+                    if (!self.applied.contains(where: {$0.id == campaigns[i].id})) {
+                        self.applied.append(campaigns[i])
+                    }
                 // if in completed, add to completed
                 } else if (GlobalUser.user.completed_campaigns.contains(where: {$0 == campaigns[i].id})) {
-                    self.completed.append(campaigns[i])
-                    
+                    if (!self.completed.contains(where: {$0.id == campaigns[i].id})) {
+                        self.completed.append(campaigns[i])
+                    }
                 // if in rejected, add to rejected
                 } else if (GlobalUser.user.rejected_campaigns.contains(where: {$0 == campaigns[i].id})) {
-                    self.rejected.append(campaigns[i])
-                    
+                    if (!self.rejected.contains(where: {$0.id == campaigns[i].id})) {
+                        self.rejected.append(campaigns[i])
+                    }
                 // if in none of these, add to feed
                 } else {
-                    self.feed.append(campaigns[i])
+                    if (!self.feed.contains(where: {$0.id == campaigns[i].id})) {
+                        self.feed.append(campaigns[i])
+                    }
                 }
             }
             print("saved: \(self.saved.count), applied: \(self.applied.count), completed: \(self.completed.count), rejected: \(self.rejected.count), feed: \(self.feed.count)")
