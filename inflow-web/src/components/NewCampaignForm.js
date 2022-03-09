@@ -52,7 +52,7 @@ export const NewCampaignForm = ({setCampaign}) => {
     let followMax = document.getElementById("follower-max").value;
     let followMin = document.getElementById("follower-min").value;
 
-    const docRef = await addDoc(collection(db, "campaigns"), {
+    addDoc(collection(db, "campaigns"), {
       name: values["title"],
       deliverables: deliverables,
       compensation: compensations,
@@ -70,18 +70,18 @@ export const NewCampaignForm = ({setCampaign}) => {
       rejected_users: [],
       saved_users: [],
       completed_users: [],
-    }).then(() => {
+    }).then((docRef) => {
       history.push('/home/');
       toast("Campaign created!");
+      if (file != null) {
+        const storageRef = ref(storage, 'campaigns/'+ docRef.id + '/image.jpg');
+        uploadBytes(storageRef, file).then(snapshot => {
+          console.log("successfully uploaded", snapshot);
+        }).catch(error => {
+          console.log(error.message);
+        });
+      }
     })
-    if (file != null) {
-      const storageRef = ref(storage, 'campaigns/'+ docRef.id + '/banner.jpg');
-      uploadBytes(storageRef, file).then(snapshot => {
-        console.log("successfully uploaded", snapshot);
-      }).catch(error => {
-        console.log(error.message);
-      });
-    }
   };
 
   const onAddDeliverable = (e) => {

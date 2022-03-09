@@ -17,36 +17,43 @@ struct ProfileView: View {
     @State var followers = ""
     var body: some View {
             VStack{
-                HStack{
-                    Spacer().frame(width: 90)
-                    Image("textLogo")
-                        .resizable()
-                        .scaledToFill()
-                        .frame(width: 50,height: 50)
-                    
-                    Spacer().frame(width: 250)
-    //                Image("bookmark")
-    //                    .resizable()
-    //                    .scaledToFill()
-    //                    .frame(width: 30,height: 30)
-                    Button {
-                        showingSettings.toggle()
-                    } label: {
-                        Image(systemName: "pencil")
-                            .resizable()
-                            .scaledToFill()
-                            .frame(width: 35,height: 35)
-                            .foregroundColor(lightPink)
-                    }
-                    Spacer().frame(width: 70)
-                }
-                Spacer().frame(height: 50)
-                
+//                HStack{
+//                    Spacer().frame(width: 90)
+//                    Image("textLogo")
+//                        .resizable()
+//                        .scaledToFill()
+//                        .frame(width: 50,height: 50)
+//
+//                    Spacer().frame(width: 250)
+//    //                Image("bookmark")
+//    //                    .resizable()
+//    //                    .scaledToFill()
+//    //                    .frame(width: 30,height: 30)
+//                    Button {
+//                        showingSettings.toggle()
+//                    } label: {
+//                        Image(systemName: "pencil")
+//                            .resizable()
+//                            .scaledToFill()
+//                            .frame(width: 35,height: 35)
+//                            .foregroundColor(lightPink)
+//                    }
+//                    Spacer().frame(width: 70)
+//                }
+////                Spacer().frame(height: 50)
+                VStack{
+                HStack(alignment: .center){
+                    Spacer()
                 Image(systemName: "person.crop.circle")
                     .resizable()
                     .scaledToFill()
                     .frame(width: 150,height: 150)
-                    .foregroundColor(lightPink)
+                    .foregroundColor(Color.white)
+                    .background(lightPink)
+                    Spacer()
+                }
+                    Spacer().frame(height: 10)
+                }.background(lightPink)
                 
                 if (showingSettings){
                 Group {
@@ -107,17 +114,62 @@ struct ProfileView: View {
                 }
                 Spacer()
                 } else {
-            
-                Text("Sample User").font(Font.custom("Avenir", size: 30))
-                Spacer().frame(height: 50)
-                    Group{
-                    Text("age: 23").font(Font.custom("Avenir", size: 25))
-                    Text("gender: female").font(Font.custom("Avenir", size: 25))
-                    Text("location: SF, CA").font(Font.custom("Avenir", size: 25))
-                    Text("instagram: theInflow").font(Font.custom("Avenir", size: 25))
-                    Text("number of follower: 1897").font(Font.custom("Avenir", size: 25))
+                    VStack(alignment: .leading){
+                        Text("Name").foregroundColor(lightGray).padding([.leading, .trailing], 50)
+                            .padding([.top], 5)
+                        Text("Tracy C").padding([.top, .bottom], 1)
+                            .padding([.leading], 50)
+                        Divider()
+                        Text("Age").foregroundColor(lightGray).padding([.leading, .trailing], 50)
+                        Text("20").padding([.top, .bottom], 1)
+                            .padding([.leading], 50)
+                        Divider()
+                        Text("Gender").foregroundColor(lightGray).padding([.leading, .trailing], 50)
+                        Text("Female").padding([.top, .bottom], 1)
+                            .padding([.leading], 50)
+                        Divider()
+                    }
+                    VStack(alignment: .leading){
+                        Text("Location").foregroundColor(lightGray).padding([.leading, .trailing], 50)
+                        Text("Stanford, CA").padding([.top, .bottom], 1)
+                            .padding([.leading], 50)
+                        Divider()
+                        Text("Instagram Account").foregroundColor(lightGray).padding([.leading, .trailing], 50)
+                        Text("ccai_tracy").padding([.top, .bottom], 1)
+                            .padding([.leading], 50)
+                        Divider()
+                    }
+                    VStack(alignment: .leading){
+                        Text("Number of followers").foregroundColor(lightGray).padding([.leading, .trailing], 50)
+                        Text("253").padding([.top, .bottom], 1)
+                            .padding([.leading], 50)
+                        Divider()
+                    }
+                    VStack(alignment: .center){
+                        Button {
+                            showingSettings = true
+                        } label: {
+                            Text("Edit Profile").font(Font.custom("Avenir", size: 18)).foregroundColor(lightPink)
+                                .padding()
+//                                .frame(minWidth: 0, maxWidth: .infinity)
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 10)
+                                        .stroke(lightPink, lineWidth: 1))
+                        }
+                    }
                     Spacer()
-                }
+//                    }
+//                    }
+//                Text("Sample User").font(Font.custom("Avenir", size: 30))
+//                Spacer().frame(height: 50)
+//                    Group{
+//                    Text("Age: 23").font(Font.custom("Avenir", size: 25))
+//                    Text("Gender: female").font(Font.custom("Avenir", size: 25))
+//                    Text("Location: SF, CA").font(Font.custom("Avenir", size: 25))
+//                    Text("Instagram: theInflow").font(Font.custom("Avenir", size: 25))
+//                    Text("Number of followers: 1897").font(Font.custom("Avenir", size: 25))
+//                    Spacer()
+//                }
         }
         }
     }

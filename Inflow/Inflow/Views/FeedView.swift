@@ -58,10 +58,10 @@ struct FeedView: View {
                         Image(systemName: "person.crop.circle")
                             .resizable()
                             .scaledToFill()
-                            .frame(width: 10)
+                            .frame(width:30, height: 30)
                             .foregroundColor(lightPink)
-                        
-                        Text(" Covet").font(.custom("Avenir", size: 14))
+                        Text(" ")
+                        Text("Covet").font(.custom("Avenir", size: 14))
                             .foregroundColor(Color.black)
                     }
                         Image(uiImage: self.feedViewModel.images[campaign.id!] ?? UIImage(imageLiteralResourceName: "sampleCampaign"))
@@ -97,45 +97,35 @@ struct FeedView: View {
                         HStack(alignment:.center){
                             Spacer()
                             Button {
-                                showingBookmarks = !showingBookmarks
+//                                showingBookmarks = !showingBookmarks
                             } label: {
                                 Image(systemName: "xmark")
                                     .resizable()
                                     .scaledToFill()
                                     .frame(width: 22,height: 22)
                                     .foregroundColor(lightGray)
-                            }
+                            }.buttonStyle(PlainButtonStyle())
                             Spacer()
                             Button {
-                                showingBookmarks = !showingBookmarks
+//                                showingBookmarks = !showingBookmarks
                             } label: {
                                 Image(systemName: "bookmark")
                                     .resizable()
                                     .scaledToFill()
                                     .frame(width: 17,height: 17)
                                     .foregroundColor(lightPink)
-                            }
-                            Spacer()
-                            Button {
-                                showingBookmarks = !showingBookmarks
-                            } label: {
-                                Image(systemName: "note.text")
-                                    .resizable()
-                                    .scaledToFill()
-                                    .frame(width: 25,height:25)
-                                    .foregroundColor(lightPink)
-                            }
+                            }.buttonStyle(PlainButtonStyle())
                             Spacer()
                             //ellipsis.circle
                             Button {
-                                showingBookmarks = !showingBookmarks
+//                                showingBookmarks = !showingBookmarks
                             } label: {
                                 Image(systemName: "paperplane")
                                     .resizable()
                                     .scaledToFill()
                                     .frame(width: 30,height:30)
                                     .foregroundColor(lightPink)
-                            }
+                            }.buttonStyle(PlainButtonStyle())
                             Spacer()
                         }
                     }.padding()
