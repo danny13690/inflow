@@ -43,15 +43,15 @@ struct SearchView: View {
                 Spacer().frame(width: 10)
             }
             HStack{
-                Text("Trends to follow").font(Font.custom("Avenir", size: 20))
+                Text("Trends to follow").font(Font.custom("Avenir", size: 16))
                     .foregroundColor(lightPink)
-                Spacer().frame(width: 160)
+                Spacer().frame(width: 200)
             }
             Spacer().frame(height: 100)
             HStack{
-                Text("Brands to follow").font(Font.custom("Avenir", size: 20))
+                Text("Brands to follow").font(Font.custom("Avenir", size: 16))
                     .foregroundColor(lightPink)
-                Spacer().frame(width: 160)
+                Spacer().frame(width: 200)
             }
             Spacer()
             Divider().foregroundColor(.gray)

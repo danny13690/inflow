@@ -91,7 +91,8 @@ struct ContentView: View {
 //    @State private var password: String = ""
     @State private var showFeedPage = false
 //    @State private var showRegisterPage = false
-    @State var isLoginMode = false
+    @State var isLoginMode = true
+    @State var wrongCredentials = false
     @State var email = ""
     @State var password = ""
     @State var repeatPassword = ""
@@ -157,6 +158,9 @@ struct ContentView: View {
                                     .keyboardType(.emailAddress)
                                     .autocapitalization(.none)
                                 SecureField("Password", text: $password)
+                                if wrongCredentials{
+                                    Text("Incorrect email address and / or password.").foregroundColor(.red).font(.system(size: 12))
+                                }
                             }
                             .padding(5)
                             .background(Color.white)
@@ -198,10 +202,11 @@ struct ContentView: View {
         FirebaseManager.shared.auth.signIn(withEmail: email, password: password) { result, err in
             if let err = err {
                 print("Failed to login user:", err)
+                wrongCredentials = true
                 self.loginStatusMessage = "Failed to login user: \(err)"
                 return
             }
-
+            wrongCredentials = false
             print("Successfully logged in as user: \(result?.user.uid ?? "")")
             GlobalUser.auth = (result?.user.uid)!
             GlobalUser.email = email
