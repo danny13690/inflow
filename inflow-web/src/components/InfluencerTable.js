@@ -56,9 +56,25 @@ export class InfluencerTable extends React.Component {
                 value: 'SF',
             },
             {
-                text: 'New York',
-                value: 'New York',
+                text: 'Seattle',
+                value: 'Seattle',
             },
+            {
+              text: 'LA',
+              value: 'LA',
+            },
+          {
+            text: 'NYC',
+            value: 'NYC',
+          },
+          {
+            text: 'Chicago',
+            value: 'Chicago',
+          },
+        {
+          text: 'USA',
+          value: 'USA',
+          },
         ],
         onFilter: (value, record) => record.location === value,
       },

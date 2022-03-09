@@ -17,14 +17,12 @@ class EditCampaignModal extends React.Component {
         const docRef2 = await updateDoc(docRef, {
             name: values["title"],
             description: values["description"],
-            deliverables: [values["deliverables"]],
-            compensation: [values["compensation"]],
+            industry: values["industry"],
         });
     this.props.setCampaign({
             name: values["title"],
             description: values["description"],
-            deliverables: [values["deliverables"]],
-            compensation: [values["compensation"]],
+            industry: values["industry"],
         });
     this.props.handleClose();
 
@@ -93,29 +91,15 @@ class EditCampaignModal extends React.Component {
             </Form.Item>
 
             <Form.Item
-              label="Deliverables"
-              name="deliverables"
+              label="Campaign Industry"
+              name="industry"
               rules={[
                 {
                   required: true,
-                  message: 'What do you expect from the influencer?',
+                  message: 'Industry of your campaign',
                 },
               ]}
-              initialValue={this.props.campaign.deliverables}
-            >
-              <Input />
-            </Form.Item>
-
-            <Form.Item
-              label="Compensation"
-              name="compensation"
-              rules={[
-                {
-                  required: true,
-                  message: 'What will you give the influencer?',
-                },
-              ]}
-              initialValue={this.props.campaign.compensation}
+              initialValue={this.props.campaign.industry}
             >
               <Input />
             </Form.Item>
