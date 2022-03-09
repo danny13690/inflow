@@ -76,8 +76,8 @@ struct FeedView: View {
                         .font(.custom("Avenir", size: 12))
                         .foregroundColor(Color.black)
                     Text("")
-                    ForEach(0..<campaign.deliverables.count) { i in
-                        Text(" - \(campaign.deliverables[i])")
+                    ForEach(campaign.deliverables, id: \.self) { i in
+                        Text(" - \(i)")
                             .font(.custom("Avenir", size: 12))
                             .foregroundColor(Color.black)
                     }
@@ -87,8 +87,8 @@ struct FeedView: View {
                         .font(.custom("Avenir", size: 12))
                         .foregroundColor(Color.black)
                     Text("")
-                    ForEach(0..<campaign.compensation.count) { i in
-                        Text(" - \(campaign.compensation[i])")
+                    ForEach(campaign.compensation, id: \.self) { j in
+                        Text(" - \(j)")
                             .font(.custom("Avenir", size: 12))
                             .foregroundColor(Color.black)
                     }
@@ -97,7 +97,14 @@ struct FeedView: View {
                         HStack(alignment:.center){
                             Spacer()
                             Button {
-//                                showingBookmarks = !showingBookmarks
+                                GlobalUser.user.rejected_campaigns.append(campaign.id!)
+                                do {
+                                    try GlobalUser.userRef.setData(from: GlobalUser.user)
+                                } catch {
+                                    print("User update failed with : \(error)")
+                                }
+                                feedViewModel.campaignRepository.clearCampaignLists()
+                                feedViewModel.campaignRepository.buildCampaignLists()
                             } label: {
                                 Image(systemName: "xmark")
                                     .resizable()
@@ -118,7 +125,15 @@ struct FeedView: View {
                             Spacer()
                             //ellipsis.circle
                             Button {
-//                                showingBookmarks = !showingBookmarks
+                                GlobalUser.user.applied_campaigns.append(campaign.id!)
+                                do {
+                                    try GlobalUser.userRef.setData(from: GlobalUser.user)
+                                } catch {
+                                    print("User update failed with : \(error)")
+                                }
+                                feedViewModel.campaignRepository.clearCampaignLists()
+                                feedViewModel.campaignRepository.buildCampaignLists()
+                                
                             } label: {
                                 Image(systemName: "paperplane")
                                     .resizable()

@@ -42,5 +42,15 @@ class GlobalUser {
     static var auth = ""
     static var email = ""
     static var user = User(saved_campaigns: [], rejected_campaigns: [], applied_campaigns: [], completed_campaigns: [], hashtags_following: [], brands_following: [])
+    static var userRef = FirebaseManager.shared.store.collection("users").document("2fG8WYHYmpZjMm1RCwB7")
+    
+//    func updateUser() {
+//        do {
+//            try GlobalUser.userRef.setData(from: GlobalUser.user)
+//        } catch {
+//            print("User update failed with : \(error)")
+//        }
+//    }
+
 }
 
