@@ -80,7 +80,7 @@ export class InfluencerTable extends React.Component {
       },
       {
         title: 'Followers',
-        dataIndex: 'followers',
+        dataIndex: 'reach',
         defaultSortOrder: 'descend',
         sorter: (a, b) => a.reach - b.reach,
         sortDirections: ['ascend', 'descend'],
@@ -91,7 +91,9 @@ export class InfluencerTable extends React.Component {
   getInfluencers = async (values) => {
     const docRef = doc(db, 'campaigns', this.props.match.params.campaignID);
     const docReceived = await getDoc(docRef); 
-    const users = docReceived.data().completed_users;
+    const users = docReceived.data().applied_users;
+    console.log("users HERE")
+    console.log(users[0])
     // const users = ['IzDzQSpzFSnIldYcQ7eF']
 
     const usersCol = collection(db, "users");
@@ -106,7 +108,7 @@ export class InfluencerTable extends React.Component {
           gender: doc.gender,
           age: doc.age,
           location: doc.location,
-          reach: doc.reach
+          reach: doc.reach,
         });
       }
     })
